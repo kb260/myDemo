@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/toolbar_white"
+    tools:context="com.kb260.gxdk.view.me.InviteFriendActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="25dp"
+        android:src="@drawable/login_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@color/a_main_bg"/>
+
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/txt333"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/a_inviteFriend_inviteRegister"
+        android:layout_width="match_parent"
+        android:layout_height="36dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+
+    <LinearLayout
+        android:id="@+id/a_inviteFriend_friendRegister"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="@string/a_inviteFriend_friendRegister"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+    <LinearLayout
+        android:id="@+id/a_inviteFriend_llQRCode"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="@string/a_inviteFriend_QRCode"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/a_inviteFriend_Agents"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="@string/a_inviteFriend_Agents"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/a_inviteFriend_bankManager"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="@string/a_inviteFriend_bankManager"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="16dp"
+        android:background="@color/a_main_bg"/>
+
+    <TextView
+        android:textSize="14sp"
+        android:textColor="@color/txt333"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:text="@string/a_inviteFriend_registerDetail"
+        android:layout_width="match_parent"
+        android:layout_height="36dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/a_inviteFriend_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+    <Button
+        android:visibility="gone"
+        android:id="@+id/a_inviteFriend_btApplication"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/application"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_width="150dp"
+        android:layout_height="44dp" />
+
+</LinearLayout>

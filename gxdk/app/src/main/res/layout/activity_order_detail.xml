@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/toolbar_white"
+    tools:context="com.kb260.gxdk.view.gradmonad.OrderDetailActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/orderDetail_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <TextView
+                android:id="@+id/orderDetail_toolbarTitle"
+                android:layout_gravity="center"
+                android:textSize="17sp"
+                android:textColor="@color/a_main_pg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/orderDetail_toolbarRight"
+                android:padding="5dp"
+                android:drawablePadding="5dp"
+                android:layout_gravity="end"
+                android:text="反馈"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:textColor="@color/a_main_pg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </android.support.v7.widget.Toolbar>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/a_main_bg"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/a_orderDetail_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+            <!--<include layout="@layout/order_detail_top"/>
+
+
+            <LinearLayout
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:orientation="vertical"
+                android:id="@+id/a_orderDetail_llFd1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_age"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_age"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="30"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_houseAddress"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_houseAddress"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="杭州滨江区浦沿街道"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_houseArea"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_houseArea"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="111平方米"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_houseNature"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_houseNature"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="住宅"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_houseStatus"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_houseStatus"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="全款"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/f_home_fdsq_applicationMoney"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_applicationMoney"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="3333万"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:background="@color/a_main_bg"/>
+
+            <LinearLayout
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:orientation="vertical"
+                android:id="@+id/a_orderDetail_llFd2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_rate"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_rate"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="4.7厘至9厘"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/f_home_fdsq_term"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_term"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="12个月"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_company"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_company"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="是"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_identity"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_identity"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="股东 占股比例30%"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_site"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_site"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="是"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_overdue"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_overdue"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="否"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginRight="13dp"
+                android:background="@color/a_main_bg"/>
+
+            <LinearLayout
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:orientation="vertical"
+                android:id="@+id/a_orderDetail_llFd3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_overdueType"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_overdueType"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="信用卡"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_overdueTime"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_overdueTime"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="22天"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_money"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_money"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="33333元"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:paddingLeft="13dp"
+                    android:paddingRight="13dp"
+                    android:paddingTop="7dp"
+                    android:paddingBottom="7dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="14sp"
+                        android:textColor="@color/txt34"
+                        android:text="@string/a_myApplicationDetail_other"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_orderDetail_other"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:text="无"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/a_orderDetail_btGrabSingle"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/f_grabMonad_order"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />-->
+
+</LinearLayout>

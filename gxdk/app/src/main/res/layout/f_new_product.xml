@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/a_main_bg"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_marginTop="12dp"
+            android:id="@+id/f_newProduct_llType"
+            style="@style/item_llTheme"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_type"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/f_newProduct_tvType"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llBank"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_bank"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/f_newProduct_tvBank"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llBranch"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_branch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/f_newProduct_etBranch"
+                android:gravity="end"
+                android:textSize="16sp"
+                android:hint="@string/f_newProduct_branchHint"
+                android:textColorHint="@color/txt999"
+                android:background="@null"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llTime"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/f_newProduct_tvTime"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/day"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llAge"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_age"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/f_newProduct_tvMinAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/f_home_fdsq_hint"
+                android:textColor="@color/txt666"
+                android:textSize="15sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/age"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/f_home_fdsq_zhi"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+            <TextView
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/f_newProduct_tvMaxAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/f_home_fdsq_hint"
+                android:textColor="@color/txt666"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/age"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/f_newProduct_llTypeHouse"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:id="@+id/f_newProduct_llHouseAge"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_houseAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvHouseAge"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="年以内"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/f_newProduct_llHouseTLoanType"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="产品性质"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvHouseTLoanType"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/f_newProduct_llBusinessPremises"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_businessPremises"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvBusinessPremises"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/f_newProduct_llUserType"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_userType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvUserType"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/f_newProduct_llZhaGu"
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f_home_fdsq_zgbl"
+                    android:textColor="@color/txt34"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvZhaGu"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="%以上"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/f_newProduct_llHouseArea"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_houseArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvHouseArea"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="平方米以上"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/f_newProduct_llNature"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_nature"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvNature"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:id="@+id/f_newProduct_llHouseCarDoArea"
+                style="@style/item_llTheme3"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/f_newProduct_tvHouseCarDoArea"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:id="@+id/f_newProduct_llTypeCar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/f_newProduct_llDistance"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/f_newProduct_tvDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="万公里内"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/f_newProduct_llYear"
+                style="@style/item_llTheme2"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_year"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--<TextView
+                    android:gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/f_newProduct_tvMinCarAge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/f_home_fdsq_hint"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/year"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/f_home_fdsq_zhi"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />-->
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/f_newProduct_tvMaxCarAge"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="年以内"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:id="@+id/f_newProduct_llCarDoPlate"
+                style="@style/item_llTheme3"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:text="@string/f_newProduct_areaCar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/f_newProduct_tvCarDoPlate"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llMaxMoney"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_maxMoney"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/f_newProduct_tvMaxMoney"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/million"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/item_llTheme2">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_rate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:hint="@string/f_home_fdsq_hint"
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/f_newProduct_tvMinInterestRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/txt666"
+                android:textSize="15sp" />
+            <TextView
+                android:textColor="@color/txt666"
+                android:text="@string/rct"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/f_home_fdsq_zhi"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+            <TextView
+                android:gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:id="@+id/f_newProduct_tvMaxInterestRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/f_home_fdsq_hint"
+                android:textColor="@color/txt666"
+                android:textSize="15sp" />
+
+            <TextView
+                android:textColor="@color/txt666"
+                android:text="@string/rct"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_newProduct_llRepaymentType"
+            style="@style/item_llTheme2"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="@string/f_newProduct_repaymentType"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/f_newProduct_tvRepaymentType"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/f_newProduct_llRepaymentTime"
+            style="@style/item_llTheme3"
+            >
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="还款周期(可多选)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="end"
+                android:id="@+id/f_newProduct_tvRepaymentTime"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:visibility="gone"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/f_newProduct_llMaterial"
+            style="@style/item_llTheme3"
+            >
+            <TextView
+                android:lines="1"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:text="所需材料(可多选)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="end"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/f_newProduct_tvMaterial"
+                android:textSize="16sp"
+                android:textColor="@color/txt34"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="1dp"
+            android:background="@color/toolbar_white"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/f_newProduct_btApplication"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/f_newProduct_application"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="33dp"
+                android:layout_marginBottom="33dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

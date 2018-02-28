@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    android:id="@+id/top_teacherDetail_rg"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:maxLines="1"
+        android:id="@+id/top_teacherDetail_rbEvaluation"
+        android:text="@string/home_teacherDetail_evaluation"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:button="@null"
+        android:background="@drawable/coursesorts_button"
+        android:textColor="@color/text_content_999"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    <RadioButton
+        android:paddingLeft="19dp"
+        android:paddingRight="19dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:maxLines="1"
+        android:id="@+id/top_teacherDetail_rbOnlineClass"
+        android:text="@string/home_teacherDetail_onlineClass"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:button="@null"
+        android:background="@drawable/coursesorts_button"
+        android:textColor="@color/text_content_999"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+
+</RadioGroup>

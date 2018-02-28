@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:gravity="center_vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:layout_height="49dp">
+
+    <TextView
+        android:id="@+id/item_order_detail_result_description_tvKey"
+        android:textSize="14sp"
+        android:textColor="@color/txt333"
+        android:text="额度"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/item_order_detail_result_description_tvValue"
+        android:textSize="14sp"
+        android:textColor="@color/txt333"
+        android:text="60万"
+        android:layout_width="152dp"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

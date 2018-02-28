@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="register_type">
+        <item>用户</item>
+        <item>代理商</item>
+        <item>客户经理</item>
+    </string-array>
+
+    <string-array name="integral_type">
+        <item>充值积分</item>
+        <item>提现积分</item>
+    </string-array>
+
+    <string-array name="application">
+        <item>代理商</item>
+        <item>客户经理</item>
+    </string-array>
+</resources>

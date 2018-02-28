@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/toolbar_white"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/twoSelect_xz"
+        android:padding="15dp"
+        android:gravity="center"
+        android:text="选择输入"
+        android:textColor="@color/txt333"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/a_main_bottom0"/>
+    <TextView
+        android:id="@+id/twoSelect_sd"
+        android:padding="15dp"
+        android:gravity="center"
+        android:textColor="@color/txt333"
+        android:text="手动输入"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

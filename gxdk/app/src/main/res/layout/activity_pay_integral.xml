@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.PayIntegralActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:background="@color/toolbar_white"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/txt333"
+                android:text="购买内容："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/a_payIntegral_tvIntegral"
+                android:textColor="@color/txt_black"
+                android:gravity="end"
+                android:text="111111积分"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="@color/txt333"
+                android:text="需支付："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/txt_black"
+                android:text="￥"
+                android:gravity="end"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/a_payIntegral_tvMoney"
+                android:textColor="@color/txt_black"
+                android:text="117.00"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:background="@color/toolbar_white"
+        android:layout_marginTop="21dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/a_payIntegral_ll1"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_syjf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_recharge_integralSy"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_payIntegral_tvSyIntegral"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_payIntegral_ll2"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_zfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_rechargePay_zfb"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_payIntegral_ll3"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_yhk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_rechargePay_yhk"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/a_payIntegral_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:checked="true"
+                android:id="@+id/a_payIntegral_rb1"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+            <RadioButton
+                android:id="@+id/a_payIntegral_rb2"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+            <RadioButton
+                android:id="@+id/a_payIntegral_rb3"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/a_payIntegral_btPay"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/confirm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+
+
+
+
+</LinearLayout>

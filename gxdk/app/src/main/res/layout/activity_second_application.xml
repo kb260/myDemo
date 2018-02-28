@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_main_bg"
+    android:orientation="vertical"
+    tools:context="com.kb260.gxdk.view.home.SecondApplicationLoanActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/a_secondApplicationLoan_llApplicationMoney"
+                style="@style/item_llTheme">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f_home_fdsq_applicationMoney"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_secondApplicationLoan_tvApplicationMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/f_home_fdsq_million"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout style="@style/item_llTheme">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/f_home_fdsq_interestRate"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/a_secondApplicationLoan_tvMinInterestRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4.7"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+                <TextView
+                    android:textColor="@color/txt666"
+                    android:text="@string/rct"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/f_home_fdsq_zhi"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/a_secondApplicationLoan_tvMaxInterestRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/f_home_fdsq_hint"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:textColor="@color/txt666"
+                    android:text="@string/rct"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:id="@+id/a_secondApplicationLoan_llRepaymentTime"
+                style="@style/item_llTheme4"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="还款周期(可多选)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/a_secondApplicationLoan_tvRepaymentTime"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:id="@+id/a_secondApplicationLoan_llRepaymentType"
+                style="@style/item_llTheme4"
+                >
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="还款方式(可多选)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:id="@+id/a_secondApplicationLoan_tvRepaymentType"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt34"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout
+                android:id="@+id/a_secondApplicationLoan_llMouth"
+                style="@style/item_llTheme">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/f_home_fdsq_term"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_secondApplicationLoan_tvMouth"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/month"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+                <!--<EditText
+                    android:id="@+id/a_secondApplicationLoan_etMouth"
+                    android:maxLength="3"
+                    android:lines="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:gravity="end"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/f_home_fdsq_mouth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />-->-
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout
+                android:id="@+id/a_secondApplicationLoan_llCompany"
+                style="@style/item_llTheme">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/f_home_fdsq_company"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_secondApplicationLoan_tvCompany"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/a_secondApplicationLoan_llIsCompany"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white" />
+
+                <LinearLayout
+                    android:id="@+id/a_secondApplicationLoan_llIdentity"
+                    style="@style/item_llTheme">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/f_home_fdsq_identity"
+                        android:textColor="@color/txt666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/a_secondApplicationLoan_tvIdentity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/me_arraw" />
+                </LinearLayout>
+
+               <LinearLayout
+                   android:visibility="gone"
+                   android:id="@+id/a_secondApplicationLoan_llIsZgbl"
+                   android:orientation="vertical"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <View
+                       android:layout_width="15dp"
+                       android:layout_height="1dp"
+                       android:background="@color/toolbar_white" />
+
+                   <LinearLayout
+                       android:id="@+id/a_secondApplicationLoan_llZgbl"
+                       style="@style/item_llTheme">
+
+                       <TextView
+                           android:layout_width="0dp"
+                           android:layout_weight="1"
+                           android:layout_height="wrap_content"
+                           android:text="@string/f_home_fdsq_zgbl"
+                           android:textColor="@color/txt666"
+                           android:textSize="16sp" />
+
+                       <TextView
+                           android:id="@+id/a_secondApplicationLoan_tvZgbl"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginEnd="15dp"
+                           android:layout_marginRight="15dp"
+                           android:textSize="16sp" />
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="@string/f_home_fdsq_percent"
+                           android:textColor="@color/txt666"
+                           android:textSize="16sp" />
+                   </LinearLayout>
+               </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white" />
+
+                <LinearLayout
+                    android:id="@+id/a_secondApplicationLoan_llSite"
+                    style="@style/item_llTheme">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/f_home_fdsq_site"
+                        android:textColor="@color/txt666"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/a_secondApplicationLoan_tvSite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/me_arraw" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white" />
+
+            <LinearLayout
+                android:id="@+id/a_secondHouseApplicationLoan_llSfyyq"
+                style="@style/item_llTheme">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_home_cdsqSecond_sfyyq"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_secondHouseApplicationLoan_tvSfyyq"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <include layout="@layout/application" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

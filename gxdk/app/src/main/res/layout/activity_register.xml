@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_main_bg"
+    android:orientation="vertical"
+    tools:context="com.kb260.gxdk.view.account.RegisterActivity">
+
+    <include layout="@layout/toolbar_account" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/login_top" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="42dp"
+                android:layout_marginTop="30dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_type"
+                    android:textColor="@color/txt666"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/a_register_tvAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:background="@drawable/account_sp"
+                    android:gravity="center"
+                    android:hint="请选择地址"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:textSize="14sp" />
+                <!--<Spinner
+                    android:layout_gravity="center"
+                    android:id="@+id/a_register_spType"
+                    android:entries="@array/register_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>-->
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/a_register_etPhone"
+                style="@style/account_et"
+                android:hint="@string/phoneHint"
+                android:inputType="phone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:layout_marginLeft="42dp"
+                android:layout_marginRight="42dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/account_ll"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/a_register_etCode"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/codeHint"
+                    android:inputType="number"
+                    android:textColorHint="@color/txt999"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/a_register_btGetCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/get_code_bt"
+                    android:gravity="center"
+                    android:text="@string/getCode"
+                    android:textColor="@color/toolbar_white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+            <EditText
+                android:id="@+id/a_register_etName"
+                style="@style/account_et"
+                android:hint="@string/nameHint"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/a_register_etPassword"
+                style="@style/account_et"
+                android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="@string/passwordHint"
+                android:inputType="textPassword"
+                android:maxLength="16" />
+
+            <EditText
+                android:id="@+id/a_register_etInvitationCode"
+                style="@style/account_et"
+                android:hint="@string/invitationCodeHint"
+                android:maxLength="16" />
+
+
+            <TextView
+                android:padding="8dp"
+                android:layout_gravity="center"
+                android:id="@+id/a_register_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_phone"
+                android:textColor="@color/txt_black"
+                android:autoLink="all"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/register_sure"
+                    android:textColor="@color/txt666"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/a_register_tvAgree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:text="@string/register_sureRed"
+                    android:textColor="@color/bt_red"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/a_register_ivQQ"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="50dp"
+                    android:layout_marginRight="50dp"
+                    android:src="@drawable/register_qq" />
+
+                <ImageView
+                    android:id="@+id/a_register_ivWx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/register_wx" />
+            </LinearLayout>-->
+
+            <Button
+                android:id="@+id/a_register_btRegister"
+                style="@style/account_bt"
+                android:layout_marginBottom="30dp"
+                android:text="@string/register_toolbar" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

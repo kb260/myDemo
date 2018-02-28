@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.kb260.bxjy.ui.mine.ReflectActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <include layout="@layout/divider10"/>
+
+    <LinearLayout
+        style="@style/set_ll"
+        >
+        <TextView
+            android:text="@string/reflect_bank"
+            android:textSize="14sp"
+            android:textColor="@color/text_content"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_reflect_tvBank"
+            android:text="工商银行(8899)"
+            android:textSize="14sp"
+            android:textColor="@color/price_red"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+    <LinearLayout
+        style="@style/set_ll"
+        >
+        <TextView
+            android:text="@string/reflect_money"
+            android:textSize="14sp"
+            android:textColor="@color/text_content"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/money_unit"
+            android:textSize="20sp"
+            android:textColor="@color/text_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/a_reflect_etMoney"
+            android:background="@null"
+            android:text="20000.00"
+            android:textSize="20sp"
+            android:textColor="@color/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <include layout="@layout/divider6"/>
+
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/text_content"
+            android:text="@string/reflect_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_reflect_tvBalanceAll"
+            android:textSize="14sp"
+            android:textColor="@color/text_content"
+            android:text="30000.00"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_reflect_balanceAll"
+            android:padding="8dp"
+            android:textSize="14sp"
+            android:textColor="@color/price_red"
+            android:text="@string/reflect_balanceAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:id="@+id/a_reflect_reflect"
+        android:textSize="17sp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:text="@string/wallet_reflect"
+        android:layout_marginLeft="55dp"
+        android:layout_marginRight="55dp"
+        android:background="@drawable/wallet_bt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kb260.gxdk">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="com.kb260.gxdk.permission.JPUSH_MESSAGE" />
+
+    <!-- Optional. Required for location feature -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:name=".app.KBApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.kb260.gxdk.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths_public" />
+        </provider>
+
+        <activity
+            android:name=".view.main.MainActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".view.home.BorrowingTipsActivity" />
+        <activity android:name=".view.home.FirstApplicationLoanActivity" />
+        <activity android:name=".view.home.SecondApplicationLoanActivity" />
+        <activity android:name=".view.home.InformationDetailActivity" />
+        <activity android:name=".view.home.InformationPerfectActivity" />
+        <activity android:name=".view.home.UploadDocumentsActivity" />
+        <activity android:name=".view.home.CarApplicationFirstActivity" />
+        <activity android:name=".view.home.CarApplicationSecondActivity" />
+        <activity android:name=".view.home.CreditApplicationFirstActivity" />
+        <activity android:name=".view.home.CreditApplicationSecondActivity" />
+        <activity android:name=".view.me.MeDetailActivity" />
+        <activity android:name=".view.me.ChangePhoneFirstActivity" />
+        <activity android:name=".view.me.ChangePhoneSecondActivity" />
+        <activity android:name=".view.me.CardActivity" />
+        <activity android:name=".view.me.AddCardActivity" />
+        <activity android:name=".view.me.PayPasswordActivity" />
+        <activity android:name=".view.me.ChangePasswordFirstActivity" />
+        <activity android:name=".view.me.ChangePasswordSecondActivity" />
+        <activity android:name=".view.me.ChangeNicknameActivity" />
+        <activity android:name=".view.me.PasswordSetActivity" />
+        <activity android:name=".view.me.ChangeLoginPasswordActivity" />
+        <activity android:name=".view.me.MyApplicationActivity" />
+        <activity android:name=".view.me.AboutMeActivity" />
+        <activity android:name=".view.me.FeedbackActivity" />
+        <activity android:name=".view.me.SetActivity" />
+        <activity android:name=".view.me.AboutAppActivity" />
+        <activity
+            android:name=".view.account.LoginActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".view.account.RegisterActivity" />
+        <activity android:name=".view.me.CharacterApplicationActivity" />
+        <activity android:name=".view.me.InviteFriendActivity" />
+        <activity android:name=".view.me.FriendRegisterActivity" />
+        <activity android:name=".view.me.AgentsActivity" />
+        <activity android:name=".view.me.BankManagerActivity" />
+        <activity android:name=".view.me.InviteRegisterActivity" />
+        <activity android:name=".view.me.MyProductActivity" />
+        <activity android:name=".view.me.ProductDetailActivity" />
+        <activity android:name=".view.me.IntegralActivity" />
+        <activity android:name=".view.me.IntegralRuleActivity" />
+        <activity android:name=".view.me.RewordDetailsActivity" />
+        <activity android:name=".view.me.MyTeamActivity" />
+        <activity android:name=".view.me.RechargeActivity" />
+        <activity android:name=".view.me.WithdrawActivity" />
+        <activity android:name=".view.me.IntegralLogActivity" />
+        <activity android:name=".view.me.RechargePayActivity" />
+        <activity android:name=".view.me.WithdrawLogActivity" />
+        <activity android:name=".view.me.MyApplicationDetailActivity" />
+        <activity android:name=".view.me.PayIntegralActivity" />
+        <activity android:name=".view.home.EvaluationActivity" />
+        <activity android:name=".view.me.SetPayPasswordActivity" />
+        <activity android:name=".view.gradmonad.OrderDetailActivity" />
+        <activity android:name=".view.gradmonad.FirstDraftProgramActivity" />
+        <activity android:name=".view.base.SelectActivity" />
+        <activity android:name=".view.base.SelectNewActivity" />
+        <activity android:name=".view.home.NewsActivity" />
+        <activity android:name=".view.me.SelectCommonAddressActivity" />
+        <activity android:name=".view.me.AddAddressActivity" />
+        <activity android:name=".view.base.WebViewActivity" />
+        <activity android:name=".view.base.WebViewDataActivity" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!-- 友盟 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59fac4fe8f4a9d7f9f000090" />
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity
+            android:name="com.alipay.sdk.app.H5AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".view.me.InformationActivity" />
+        <activity android:name=".view.account.ProtocolActivity" />
+        <activity android:name=".view.me.MyApplicationDetailNewActivity" />
+        <activity android:name=".view.main.StartActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.main.GuideActivity" />
+        <activity android:name=".view.me.ProductDetailNewActivity" />
+        <activity android:name=".view.me.CharacterApplicationLogActivity" />
+        <activity android:name=".view.me.CharacterApplicationLogLogActivity" />
+        <activity android:name=".view.me.CharacterApplicationNextActivity" />
+        <activity android:name=".view.me.PayPasswordFirstActivity" />
+        <activity android:name=".view.me.SetNewPayPasswordActivity" />
+        <activity android:name=".view.me.MyCreditActivity" />
+
+        <!-- 友盟QQ -->
+        <activity
+            android:name="com.umeng.qq.tencent.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent100424468" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.umeng.qq.tencent.AssistActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".view.me.MyCreditDetailActivity" />
+
+        <!-- 极光推送 -->
+        <receiver
+            android:name=".receiver.MyNotificationReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_CLICK_ACTION" />
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+
+                <category android:name="com.kb260.gxdk" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".view.account.ThreeLoginActivity" />
+        <activity android:name=".view.gradmonad.OrderErrorActivity" />
+        <activity android:name=".view.base.FindHouseActivity"/>
+    </application>
+
+</manifest>

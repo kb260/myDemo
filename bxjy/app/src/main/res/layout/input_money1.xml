@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/white_round_corner_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:inputType="number"
+        android:id="@+id/inputMoney_et"
+        android:textSize="20sp"
+        android:background="@null"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:hint="请输入金额"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/inputMoney_cancel"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="取消"
+            android:background="@drawable/input_money"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/inputMoney_ok"
+            android:layout_margin="20dp"
+            android:gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/white"
+            android:text="确认"
+            android:background="@drawable/input_money"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

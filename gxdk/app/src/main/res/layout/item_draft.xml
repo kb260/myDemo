@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:padding="15dp"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:background="@drawable/feedback"
+        android:gravity="center"
+        android:id="@+id/item_draft_bg"
+        android:layout_height="80dp">
+        <TextView
+            android:id="@+id/item_draft_tv"
+            android:layout_centerInParent="true"
+            android:textSize="12sp"
+            android:text="请提交批复文件"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_centerInParent="true"
+            android:id="@+id/item_draft_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/item_draft_add"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:src="@drawable/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

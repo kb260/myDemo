@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.MyApplicationDetailActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/toolbar_white"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/a_myApplicationDetail_ivUser"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:src="@drawable/user"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp" />
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvNickname"
+                        android:text="KB260"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvTime"
+                        android:text="2017-09-14 11:27:28"
+                        android:textSize="12sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvStatus"
+                    android:layout_gravity="center_vertical"
+                    android:text="处理中"
+                    android:textSize="14sp"
+                    android:textColor="@color/bt_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_type"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvType"
+                    android:gravity="end"
+                    android:text="房贷"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_expect"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvExpect"
+                    android:gravity="end"
+                    android:text="10万"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_faith"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvFaith"
+                    android:gravity="end"
+                    android:text="5.0"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_term"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvTerm"
+                    android:gravity="end"
+                    android:text="20个月"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                style="@style/item_llTheme">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_idCard"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvIdCard"
+                    android:gravity="end"
+                    android:text="330821199604011235"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_age"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvAge"
+                    android:gravity="end"
+                    android:text="24"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_phone"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvPhone"
+                    android:gravity="end"
+                    android:text="14726002600"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_address"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvAddress"
+                    android:gravity="end"
+                    android:text="浙江省杭州市"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_marriage"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvMarriage"
+                    android:gravity="end"
+                    android:text="未婚"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_houseAddress"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvHouseAddress"
+                    android:gravity="end"
+                    android:text="浙江省杭州市滨江区"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_houseArea"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvHouseArea"
+                    android:gravity="end"
+                    android:text="111平方米"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_houseNature"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvHouseNature"
+                    android:gravity="end"
+                    android:text="住宅"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_houseStatus"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvHouseStatus"
+                    android:gravity="end"
+                    android:text="全款"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_rate"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvRate"
+                    android:gravity="end"
+                    android:text="4.7厘至8厘"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                style="@style/item_llTheme">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_company"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvCompany"
+                    android:gravity="end"
+                    android:text="是"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_identity"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvIdentity"
+                    android:gravity="end"
+                    android:text="股东 占股比例30%"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_site"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvSite"
+                    android:gravity="end"
+                    android:text="是"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_overdue"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvOverdue"
+                    android:gravity="end"
+                    android:text="否"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_overdueType"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvOverdueType"
+                    android:gravity="end"
+                    android:text="信用卡"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_overdueTime"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvOverdueTime"
+                    android:gravity="end"
+                    android:text="30天"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_money"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvMoney"
+                    android:gravity="end"
+                    android:text="3333元"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:text="@string/a_myApplicationDetail_other"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvOther"
+                    android:gravity="end"
+                    android:text="无"
+                    android:textSize="14sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_myApplicationDetail_llResult"
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/a_myApplicationDetail_tvResult"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/bt_red"
+                    android:textSize="14sp"
+                    android:textColor="@color/toolbar_white"
+                    android:text="终审结果"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp" />
+
+                <LinearLayout
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_quota"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvQuota"
+                        android:gravity="end"
+                        android:text="60万"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_resultRate"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvResultRate"
+                        android:gravity="end"
+                        android:text="6厘"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_loanType"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvLoanType"
+                        android:gravity="end"
+                        android:text="10年"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_repaymentType"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvRepaymentType"
+                        android:gravity="end"
+                        android:text="分期"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_repaymentTime"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvRepaymentTime"
+                        android:gravity="end"
+                        android:text="2年"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/a_myApplicationDetail_llExpectedTime"
+                    style="@style/item_llTheme2">
+
+                    <TextView
+                        android:text="@string/a_myApplicationDetail_expectedTime"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_myApplicationDetail_tvExpectedTime"
+                        android:gravity="end"
+                        android:text="3天"
+                        android:textSize="14sp"
+                        android:textColor="@color/txt333"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_myApplicationDetail_llCancelAndPay"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/a_myApplicationDetail_btCancel1"
+                    android:layout_margin="15dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/txt333"
+                    android:background="@drawable/bt_cancel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    />
+
+                <Button
+                    android:id="@+id/a_myApplicationDetail_btPay1"
+                    android:layout_margin="15dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/toolbar_white"
+                    android:background="@drawable/bt_red"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pay"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_myApplicationDetail_llCancelAndGet"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/a_myApplicationDetail_btCancel2"
+                    android:layout_margin="15dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/txt333"
+                    android:background="@drawable/bt_cancel"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cancel"
+                    />
+
+                <Button
+                    android:id="@+id/a_myApplicationDetail_btGet2"
+                    android:layout_margin="15dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/toolbar_white"
+                    android:background="@drawable/bt_red"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="@string/a_myApplicationDetail_unlockedDeposit"
+                    />
+            </LinearLayout>
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginRight="63dp"
+                android:id="@+id/a_myApplicationDetail_btConfirmLoan"
+                android:textSize="17sp"
+                android:textColor="@color/toolbar_white"
+                android:background="@drawable/bt_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/a_myApplicationDetail_confirmLoan"
+                />
+
+            <Button
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="63dp"
+                android:layout_marginRight="63dp"
+                android:id="@+id/a_myApplicationDetail_btPay"
+                android:textSize="17sp"
+                android:textColor="@color/toolbar_white"
+                android:background="@drawable/bt_red"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pay"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

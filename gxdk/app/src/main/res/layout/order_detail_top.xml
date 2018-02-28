@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:background="@color/order_top"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:scaleType="centerCrop"
+                android:id="@+id/order_detailTop_ivUser"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_width="68dp"
+                android:layout_height="68dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/order_detailTop_tvName"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="赵先生"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/order_detailTop_tvStatus"
+                        android:textSize="14sp"
+                        android:textColor="@color/order_red"
+                        android:text="已提供初审"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/order_detailTop_tvTime"
+                        android:textSize="12sp"
+                        android:textColor="@color/txt656565"
+                        android:text="2017-09-01 10:10:10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="12sp"
+                        android:textColor="@color/txt656565"
+                        android:text="评估值："
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/order_detailTop_tvEvaluationAmount"
+                        android:textSize="16sp"
+                        android:textColor="@color/order_red"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:text="50万"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/divider"/>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/a_main_pg_end"
+                android:text="@string/f_grabMonad_applicationType"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/a_main_pg_end"
+                android:text="@string/f_grabMonad_interestRate"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/a_main_pg_end"
+                android:text="@string/f_grabMonad_expect"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/a_main_pg_end"
+                android:text="@string/f_grabMonad_reliability"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/a_main_pg_end"
+                android:text="@string/f_grabMonad_term"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/order_detailTop_tvType"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/txt4d4d4d"
+                android:text="房贷"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/order_detailTop_tvRate"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/txt4d4d4d"
+                android:text="2.22%"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/order_detailTop_tvAmount"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/txt4d4d4d"
+                android:text="10万"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/order_detailTop_tvCredit"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/txt4d4d4d"
+                android:text="5.0"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/order_detailTop_tvTerm"
+                android:gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/txt4d4d4d"
+                android:text="20个月"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/a_main_bg"/>
+
+</LinearLayout>

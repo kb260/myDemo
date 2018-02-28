@@ -1,0 +1,503 @@
+<resources>
+    <string name="app_name">盈口袋</string>
+
+    <string name="f_home_pg">个人评估，三步攻略</string>
+    <string name="f_home_pg_bt">立即评估</string>
+    <string name="f_home_jkxqm_tv">小窍门</string>
+    <string name="f_home_xwzx_tv">新闻资讯</string>
+    <string name="f_home_fdsq_toolbarTitle">房屋服务</string>
+    <string name="f_home_fdsq_toast">提示：请如实填写个人信息，以便我们为您挑选最合适的客户经理。虚假信息，会影响您的个人信用评分以及匹配结果</string>
+    <string name="f_home_fdsq_name">姓名</string>
+    <string name="f_home_fdsq_nameHint">请输入姓名</string>
+    <string name="f_home_fdsq_age">年龄</string>
+    <string name="f_home_fdsq_sfz">身份证号码</string>
+    <string name="f_home_fdsq_sfzHint">请输入身份证号码</string>
+    <string name="f_home_fdsq_phone">联系方式</string>
+    <string name="f_home_fdsq_phoneHint">请输入联系方式</string>
+    <string name="f_home_fdsq_marriage">婚姻状况</string>
+    <string name="f_home_fdsq_spouseName">配偶姓名</string>
+    <string name="f_home_fdsq_spouseNameHint">请输入配偶姓名</string>
+    <string name="f_home_fdsq_spousePhone">配偶联系方式</string>
+    <string name="f_home_fdsq_spousePhoneHint">请输入配偶联系方式</string>
+    <string name="f_home_fdsq_address">常住地址</string>
+    <string name="f_home_fdsq_isHaveCar">是否有车</string>
+    <string name="f_home_fdsq_isHaveHouse">是否有房</string>
+    <string name="f_home_fdsq_house">房子所在地</string>
+    <string name="f_home_fdsq_houseArea">房屋面积</string>
+    <string name="f_home_fdsq_houseNature">房屋性质</string>
+    <string name="f_home_fdsq_houseStatus">房屋现状</string>
+    <string name="f_home_fdsq_bank">按揭银行</string>
+    <string name="f_home_fdsq_sywk">剩余尾款</string>
+    <string name="f_home_fdsq_sywkHint">请选择剩余尾款</string>
+    <string name="f_home_fdsq_next">下一步</string>
+    <string name="f_home_fdsq_million">万</string>
+    <string name="f_home_fdsq_mouth">月</string>
+    <string name="f_home_fdsq_day">天</string>
+    <string name="f_home_fdsq_yuan">元</string>
+    <string name="f_home_fdsq_percent">%</string>
+    <string name="f_home_fdsq_applicationMoney">申请额度</string>
+    <string name="f_home_fdsq_interestRate">月利率范围</string>
+    <string name="f_home_fdsq_term">申请期限</string>
+    <string name="f_home_fdsq_company">是否有公司</string>
+    <string name="f_home_fdsq_identity">身份</string>
+    <string name="f_home_fdsq_zgbl">股东占股比例(以上)</string>
+    <string name="f_home_fdsq_site">是否有场地</string>
+    <string name="f_home_fdsq_expectation">逾期项</string>
+    <string name="f_home_fdsq_time">逾期时间</string>
+    <string name="f_home_fdsq_money">金额</string>
+    <string name="f_home_fdsq_description">其他资产说明</string>
+    <string name="f_home_fdsq_hint">请输入</string>
+    <string name="f_home_fdsq_btSubmit">确认提交</string>
+    <string name="f_home_fdsq_zhi">至</string>
+    <string name="f_home_informationPerfect_toolbarTitle">信息完善</string>
+    <string name="f_home_informationPerfect_toast">提示：请如实填写申请贷款以及个人信息，以便我们为您挑选最合适的客户经理。虚假信息，会影响您的个人信用评分以及贷款审批结果</string>
+    <string name="a_home_informationPerfect_identity">身份证</string>
+    <string name="a_home_informationPerfect_marriage">结婚证/离婚证</string>
+    <string name="a_home_informationPerfect_cldjz">车辆登记证</string>
+    <string name="a_home_informationPerfect_gcfp">购车发票</string>
+    <string name="a_home_informationPerfect_xsz">行驶证</string>
+    <string name="a_home_informationPerfect_jsz">驾驶证</string>
+    <string name="a_home_informationPerfect_account">户口本</string>
+    <string name="a_home_informationPerfect_deed">房产证或不动产证</string>
+    <string name="a_home_informationPerfect_businessLicense">公司营业执照</string>
+    <string name="a_home_informationPerfect_credit">征信</string>
+    <string name="a_home_informationPerfect_charter">章程</string>
+    <string name="a_home_informationPerfect_informationSupplement">信息补充</string>
+    <string name="a_home_informationPerfect_optional">选填</string>
+    <string name="a_home_informationPerfect_submit">确认提交</string>
+
+    <string name="a_home_uploadDocuments_sfz">请拍摄身份证正反面，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_jhz">请拍摄结婚证/离婚证，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_hkb">请拍摄户口本，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_fcz">请拍摄房产三证或不动产证，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_yyzz">请拍摄营业执照，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_zx">请拍摄征信，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_zc">请拍摄章程，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_xxbc">请拍摄剩余信息补充，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_cldjz">请拍摄车辆登记证，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_gcfp">请拍摄购车发票，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_xsz">请拍摄行驶证，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_jsz">请拍摄驾驶证，信息仅用于盈口袋认证</string>
+    <string name="a_home_uploadDocuments_toolbarTitle">上传证件</string>
+    <string name="a_home_uploadDocuments_tv">点此拍摄证件</string>
+    <string name="a_home_uploadDocuments_tvSzf">点此拍摄身份证</string>
+
+    <string name="a_home_cdsqFirst_toolbarTitle">车辆服务</string>
+    <string name="a_home_cdsqFirst_cjh">车架号</string>
+    <string name="a_home_cdsqFirst_cpp">车品牌</string>
+    <string name="a_home_cdsqFirst_cp">车牌</string>
+    <string name="a_home_cdsqFirst_cl">车龄</string>
+    <string name="a_home_cdsqFirst_xsjl">行驶距离</string>
+
+    <string name="a_home_cdsqSecond_cxz">车现状</string>
+    <string name="a_home_cdsqSecond_ajyh">按揭银行</string>
+    <string name="a_home_cdsqSecond_sywk">剩余尾款</string>
+    <string name="a_home_cdsqSecond_xydz">需要垫资</string>
+    <string name="a_home_cdsqSecond_sqje">申请额度</string>
+    <string name="a_home_cdsqSecond_sfyyq">是否有逾期</string>
+
+    <string name="a_home_xdsqSecond_toolbarTitle">信用咨询</string>
+    <string name="a_home_xdsqSecond_workAddress">工作所在地</string>
+    <string name="a_home_xdsqSecond_industry">行业</string>
+    <string name="a_home_xdsqSecond_career">职业</string>
+
+    <string name="a_home_xdsqSecond_workTime">当前单位工作时间</string>
+    <string name="a_home_xdsqSecond_wage">目前工资</string>
+    <string name="a_home_xdsqSecond_wageType">工资发放形式</string>
+    <string name="a_home_xdsqSecond_providentFund">公积金</string>
+    <string name="a_home_xdsqSecond_dbjc">单边缴存</string>
+    <string name="a_home_xdsqSecond_jccs">缴存城市</string>
+    <string name="a_home_xdsqSecond_yjqx">已缴期限</string>
+    <string name="a_home_xdsqSecond_bd">保单</string>
+    <string name="a_home_xdsqSecond_tbgs">投保公司</string>
+    <string name="a_home_xdsqSecond_yj">月缴</string>
+    <string name="a_home_xdsqSecond_nj">年缴</string>
+
+
+    <string name="a_me_meDetail_toolbar">个人资料</string>
+    <string name="a_me_meDetail_header">头像</string>
+    <string name="a_me_meDetail_nickname">昵称</string>
+    <string name="a_me_meDetail_phone">绑定手机号码</string>
+    <string name="a_me_meDetail_card">银行卡</string>
+    <string name="a_me_meDetail_commonAddress">常用地址</string>
+    <string name="a_me_meDetail_payPassword">支付密码</string>
+    <string name="a_me_meDetail_passwordSet">密码管理</string>
+    <string name="a_me_meDetail_exit">退出登录</string>
+
+    <string name="a_me_meDetail_changePhone_toolbar">绑定手机号</string>
+    <string name="a_me_meDetail_changePhone_old">原绑定手机号</string>
+    <string name="a_me_meDetail_changePhone_oldHint">请输入原绑定手机号码</string>
+    <string name="a_me_meDetail_changePhone_new">新绑定手机号</string>
+    <string name="a_me_meDetail_changePhone_newHint">请输入新绑定手机号码</string>
+    <string name="a_me_meDetail_changePhone_code">验证码</string>
+    <string name="a_me_meDetail_changePhone_codeHint">请输入验证码</string>
+    <string name="a_me_meDetail_changePhone_getCode">获取验证码</string>
+    <string name="a_me_meDetail_changePhone_next">下一步</string>
+    <string name="a_me_meDetail_changePhone_save">保存</string>
+
+    <string name="a_me_meDetail_card_toolbar">银行卡</string>
+    <string name="a_me_meDetail_card_name">持卡人</string>
+    <string name="a_me_meDetail_card_nameHint">请输入持卡人姓名</string>
+    <string name="a_me_meDetail_card_idCard">身份证</string>
+    <string name="a_me_meDetail_card_idCardHint">请输入持卡人身份证</string>
+    <string name="a_me_meDetail_card_cardNum">银行卡号</string>
+    <string name="a_me_meDetail_card_cardNumHint">请输入银行卡号</string>
+    <string name="a_me_meDetail_card_bank">银行</string>
+    <string name="a_me_meDetail_card_bankHint">请输入银行卡所在银行</string>
+    <string name="a_me_meDetail_card_branch">银行卡支行</string>
+    <string name="a_me_meDetail_card_branchHint">请输入银行卡所在支行</string>
+    <string name="a_me_meDetail_card_phone">手机号</string>
+    <string name="a_me_meDetail_card_phoneHint">请输入银行预留手机号</string>
+    <string name="a_me_meDetail_card_code">验证码</string>
+    <string name="a_me_meDetail_card_codeHint">请输入验证码</string>
+    <string name="a_me_meDetail_card_getCode">获取验证码</string>
+    <string name="a_me_meDetail_card_save">保存</string>
+
+    <string name="a_me_meDetail_addCard_toolbar">添加银行卡</string>
+
+    <string name="a_me_meDetail_payPassword_toolbar">支付密码</string>
+    <string name="a_me_meDetail_payPassword_change">修改支付密码</string>
+    <string name="a_me_meDetail_payPassword_change_phone">手机号</string>
+    <string name="a_me_meDetail_payPassword_change_phoneHint">请输入手机号码</string>
+    <string name="a_me_meDetail_payPassword_forget">忘记支付密码</string>
+    <string name="a_me_meDetail_payPassword_change_old">原支付密码</string>
+    <string name="a_me_meDetail_payPassword_change_oldHint">请输入原支付密码</string>
+    <string name="a_me_meDetail_payPassword_change_new">设置新密码</string>
+    <string name="a_me_meDetail_payPassword_change_newHint">请输入新支付密码</string>
+    <string name="a_me_meDetail_payPassword_change_newAgain">确认新密码</string>
+    <string name="a_me_meDetail_payPassword_change_newAgainHint">请再次输入新支付密码</string>
+
+    <string name="a_me_meDetail_payPassword_forget_toolbar">忘记支付密码</string>
+
+    <string name="a_me_meDetail_nickname_toolbar">昵称</string>
+    <string name="a_me_meDetail_nickname_hint">请输入昵称</string>
+    <string name="a_me_meDetail_nickname_description">支持英文字母及汉字，限4~16位字符，一个汉字为2个字节</string>
+
+    <string name="a_me_meDetail_passwordSet_toolbar">密码管理</string>
+    <string name="a_me_meDetail_passwordSet_change">修改登录密码</string>
+    <string name="a_me_meDetail_passwordSet_forget">忘记登录密码</string>
+    <string name="a_me_meDetail_passwordSet_change_old">原登录密码</string>
+    <string name="a_me_meDetail_passwordSet_change_oldHint">请输入原登录密码</string>
+    <string name="a_me_meDetail_passwordSet_change_new">设置新密码</string>
+    <string name="a_me_meDetail_passwordSet_change_newHint">请输入新登录密码</string>
+    <string name="a_me_meDetail_passwordSet_change_newAgain">确认新密码</string>
+    <string name="a_me_meDetail_passwordSet_change_newAgainHint">请再次输入新登录密码</string>
+
+    <string name="a_me_meDetail_myApplication_toolbar">我的申请</string>
+
+    <string name="a_me_aboutMe_toolbar">关于我们</string>
+    <string name="a_me_aboutMe_phone">电话咨询</string>
+    <string name="a_me_aboutMe_qq">QQ账号</string>
+    <string name="a_me_aboutMe_wx">微信账号</string>
+
+    <string name="a_me_feedback_toolbar">意见反馈</string>
+    <string name="a_me_feedback_hint">亲爱的用户，如果您在使用过程中有任何的问题或者建议，可以留言给我反馈哦</string>
+    <string name="a_me_error_hint">亲爱的客户经理，如果您在处理订单中出现异常问题，请立即反馈原因给平台，以免给您和客户带来不便！</string>
+    <string name="a_me_feedback_txt">限1000字</string>
+    <string name="a_me_feedback_bt">提交评价</string>
+
+    <string name="a_me_set_share">分享好友</string>
+    <string name="a_me_set_about">关于盈口袋</string>
+    <string name="a_me_set_version">版本号</string>
+
+    <string name="login_toolbar">登录</string>
+    <string name="login_phoneHint">请输入手机号码</string>
+    <string name="login_passwordHint">请输入密码</string>
+    <string name="login_other">注册</string>
+    <string name="login_forgot">忘记密码？</string>
+
+    <string name="register_toolbar">注册</string>
+    <string name="register_type">地址</string>
+    <string name="register_sure">点击注册，即表示同意</string>
+    <string name="register_sureRed">《用户注册协议》</string>
+    <string name="register_phone"><u>如无邀请码，请联系客服</u></string>
+
+    <string name="a_character_application_toolbar">角色升级</string>
+    <string name="a_character_application_type">申请角色</string>
+
+
+    <string name="a_inviteFriend_inviteRegister">邀请注册</string>
+    <string name="a_inviteFriend_friendRegister">帮好友注册</string>
+    <string name="a_inviteFriend_Agents">代理商</string>
+    <string name="a_inviteFriend_bankManager">客户经理</string>
+    <string name="a_inviteFriend_QRCode">二维码邀请</string>
+    <string name="a_inviteFriend_registerDetail">邀请明细</string>
+
+    <string name="a_agents_toolbar">代理商注册</string>
+
+    <string name="a_bankManager_toolbar">客户经理注册</string>
+    <string name="a_bankManager_bank">所属银行</string>
+    <string name="a_bankManager_bankHint">请输入所属银行名称</string>
+    <string name="a_bankManager_branch">支行名称</string>
+    <string name="a_bankManager_branchHint">请输入支行名称</string>
+    <string name="a_bankManager_bankAddress">银行地址</string>
+    <string name="a_bankManager_bankAddressHint">请输入银行地址</string>
+
+    <string name="application_character">申请角色</string>
+
+    <string name="a_myProduct_toolbar">我的产品</string>
+
+    <string name="f_newProduct_type">产品类型</string>
+    <string name="f_newProduct_bank">所属银行</string>
+    <string name="f_newProduct_branch">支行</string>
+    <string name="f_newProduct_branchHint">请输入支行</string>
+    <string name="f_newProduct_time">预计办理完成时间</string>
+    <string name="f_newProduct_timeHint">请输入天数</string>
+    <string name="f_newProduct_age">申请人年龄</string>
+    <string name="f_newProduct_ageHint">请输入年龄</string>
+    <string name="f_newProduct_distance">车公里数</string>
+    <string name="f_newProduct_year">车年限</string>
+    <string name="f_newProduct_maxMoney">最高额度</string>
+    <string name="f_newProduct_rate">月利率范围</string>
+    <string name="f_newProduct_rateHint">请填写内容</string>
+    <string name="f_newProduct_repaymentType">还款方式(可多选)</string>
+    <string name="f_newProduct_repaymentTime">还款周期</string>
+    <string name="f_newProduct_areaCar">可做车牌</string>
+    <string name="f_newProduct_area">可做区域</string>
+    <string name="f_newProduct_material">所需材料</string>
+    <string name="f_newProduct_application">确认提交</string>
+    <string name="f_newProduct_houseAge">可做房龄</string>
+    <string name="f_newProduct_houseTLoanType">房贷类型</string>
+    <string name="f_newProduct_userType">用户类型</string>
+    <string name="f_newProduct_zhaGu">股东占股比例</string>
+    <string name="f_newProduct_businessPremises">是否有经营场地</string>
+    <string name="f_newProduct_houseArea">房屋面积要求</string>
+    <string name="f_newProduct_nature">可做性质</string>
+
+    <string name="a_productDetail_toolbar">产品详情</string>
+    <string name="a_productDetail_house">房贷</string>
+    <string name="a_productDetail_car">车贷</string>
+    <string name="a_productDetail_bank">所属银行</string>
+    <string name="a_productDetail_branch">支行</string>
+    <string name="a_productDetail_day">预计放款天数</string>
+    <string name="a_productDetail_houseAge">可做房龄</string>
+    <string name="a_productDetail_manAge">借款人年龄</string>
+    <string name="a_productDetail_houseType">房贷类型</string>
+    <string name="a_productDetail_manType">用户类型</string>
+    <string name="a_productDetail_area">经营场地</string>
+    <string name="a_productDetail_areaClaim">房屋面积要求</string>
+    <string name="a_productDetail_maxMoney">可做额度</string>
+    <string name="a_productDetail_rate">月利率</string>
+    <string name="a_productDetail_daTheNature">可做性质</string>
+    <string name="a_productDetail_repaymentType">还款方式</string>
+    <string name="a_productDetail_repaymentTime">还款周期</string>
+    <string name="a_productDetail_canDoArea">可做区域</string>
+    <string name="a_productDetail_material">所需材料</string>
+    <string name="a_productDetail_carYear">车年限</string>
+
+
+    <string name="a_integral_toolbar">积分</string>
+    <string name="a_integral_toolbarRight">积分规则</string>
+    <string name="a_integral_integral_1">充值积分：</string>
+    <string name="a_integral_integral_2">提现积分：</string>
+    <string name="a_integral_integral_3">商城积分：</string>
+    <string name="a_integral_integral_log">奖励明细</string>
+    <string name="a_integral_integral_put">充值</string>
+    <string name="a_integral_integral_get">提现</string>
+    <string name="a_integral_detail">明细</string>
+
+    <string name="f_me_wddd">商城订单</string>
+    <string name="f_me_ckqbdd">查看全部订单</string>
+    <string name="f_me_wdsq">我的申请</string>
+    <string name="f_me_wdcp">我的产品</string>
+    <string name="f_me_sqjs">申请角色</string>
+    <string name="f_me_xxzx">消息中心</string>
+    <string name="f_me_gywm">关于我们</string>
+    <string name="f_me_yjfk">意见反馈</string>
+    <string name="f_me_sz">设置</string>
+    <string name="f_me_yqhy">邀请注册</string>
+    <string name="f_me_toolbarTitle">我的账户</string>
+
+    <string name="f_grabMonad_toolbarTitle">单子</string>
+    <string name="f_grabMonad_order">抢单</string>
+    <string name="f_grabMonad_first">初审</string>
+    <string name="f_grabMonad_last">终审</string>
+    <string name="f_grabMonad_confirmed">确认放贷</string>
+    <string name="f_grabMonad_handled">已成功</string>
+    <string name="f_grabMonad_applicationType">申请类型</string>
+    <string name="f_grabMonad_interestRate">月利率</string>
+    <string name="f_grabMonad_expect">期望</string>
+    <string name="f_grabMonad_reliability">好信度</string>
+    <string name="f_grabMonad_term">期限</string>
+
+    <string name="v_noCard">暂无银行卡\n点击右上角添加</string>
+
+    <string name="code">验证码</string>
+
+    <string name="codeHint">请输入验证码</string>
+    <string name="phone">手机号</string>
+    <string name="phoneHint">请输入手机号码</string>
+    <string name="name">姓名</string>
+    <string name="nameHint">请输入姓名</string>
+    <string name="password">密码</string>
+    <string name="passwordHint">请输入密码</string>
+    <string name="invitationCodeHint">请输入邀请码</string>
+    <string name="getCode">获取验证码</string>
+
+    <string name="next">下一步</string>
+
+    <string name="save">保存</string>
+    <string name="confirm">确认</string>
+    <string name="cancel">取消</string>
+    <string name="change">修改</string>
+    <string name="pay">支付</string>
+    <string name="companyName">公司名称</string>
+    <string name="companyNameHint">请输入公司名称</string>
+    <string name="companyAddress">公司地址</string>
+    <string name="companyAddressHint">请输入公司地址</string>
+    <string name="application">申请</string>
+    <string name="register">注册</string>
+    <string name="idcard">身份证号码</string>
+    <string name="idcardHint">请输入身份证号码</string>
+    <string name="btSubmit">确认提交</string>
+    <string name="rct">厘</string>
+
+    <string name="a_integralRule_toolbar">积分规则</string>
+
+
+    <string name="a_myTeam_toolbar">我的团队积分明细</string>
+
+    <string name="a_recharge_toolbar">我的积分</string>
+    <string name="a_recharge_toolbarRight">历史记录</string>
+    <string name="a_recharge_integral">支付积分：</string>
+    <string name="a_recharge_integralSy">剩余积分：</string>
+    <string name="a_recharge_rechargeMoney">充值金额</string>
+    <string name="a_recharge_Money">￥</string>
+    <string name="a_recharge_toast">提示：1元=100积分</string>
+
+    <string name="a_rechargeLog_toolbar">历史记录</string>
+    <string name="a_rechargeLog_top">积分明细</string>
+
+
+    <string name="a_rechargePay_toolbar">支付</string>
+    <string name="a_rechargePay_buyWhat">购买内容：</string>
+    <string name="a_rechargePay_needPay">需支付</string>
+    <string name="a_rechargePay_zfb">支付宝支付</string>
+    <string name="a_rechargePay_wx">微信支付</string>
+    <string name="a_rechargePay_yhk">银行卡</string>
+
+    <string name="a_rechargeWithdraw_toolbarRight">提现记录</string>
+    <string name="a_rechargeWithdraw_toolbar">提现</string>
+    <string name="a_rechargeWithdraw_type">积分类型</string>
+    <string name="a_rechargeWithdraw_can">可提现积分</string>
+    <string name="a_rechargeWithdraw_count">提现数量</string>
+    <string name="a_rechargeWithdraw_countHint">请输入提现数量</string>
+    <string name="a_rechargeWithdraw_toast">提现须知：\n1.单笔积分必须满10000积分才可提现;\n2.100积分=1元;\n3.提现时间只允许本月20号之前提现，20号之后提现，打款到下个月20号</string>
+
+
+    <string name="a_myApplicationDetail_toolbar">订单详情</string>
+    <string name="a_myApplicationDetail_type">申请类型</string>
+    <string name="a_myApplicationDetail_expect">期望</string>
+    <string name="a_myApplicationDetail_faith">好信度</string>
+    <string name="a_myApplicationDetail_term">期限</string>
+    <string name="a_myApplicationDetail_idCard">身份证</string>
+    <string name="a_myApplicationDetail_age">年龄</string>
+    <string name="a_myApplicationDetail_phone">联系方式</string>
+    <string name="a_myApplicationDetail_address">常住地址</string>
+    <string name="a_myApplicationDetail_marriage">婚姻状况</string>
+    <string name="a_myApplicationDetail_houseAddress">房屋所在地</string>
+    <string name="a_myApplicationDetail_houseArea">房屋面积</string>
+    <string name="a_myApplicationDetail_houseNature">房屋性质</string>
+    <string name="a_myApplicationDetail_houseStatus">房屋现状</string>
+    <string name="a_myApplicationDetail_rate">接受月利率</string>
+    <string name="a_myApplicationDetail_company">是否有公司</string>
+    <string name="a_myApplicationDetail_identity">身份</string>
+    <string name="a_myApplicationDetail_site">是否有场地</string>
+    <string name="a_myApplicationDetail_overdue">是否有逾期</string>
+    <string name="a_myApplicationDetail_overdueType">逾期项</string>
+    <string name="a_myApplicationDetail_overdueTime">逾期时间</string>
+    <string name="a_myApplicationDetail_money">金额</string>
+    <string name="a_myApplicationDetail_other">其他资产说明</string>
+
+    <string name="a_myApplicationDetail_quota">额度</string>
+    <string name="a_myApplicationDetail_resultRate">月利率</string>
+    <string name="a_myApplicationDetail_loanType">贷款方式</string>
+    <string name="a_myApplicationDetail_repaymentType">还款方式</string>
+    <string name="a_myApplicationDetail_repaymentTime">还款周期</string>
+    <string name="a_myApplicationDetail_expectedTime">预计初审结果时间</string>
+    <string name="a_myApplicationDetail_expectedTime1">预计终审结果时间</string>
+
+    <string name="a_myApplicationDetail_unlockedDeposit">申请解锁押金</string>
+    <string name="a_myApplicationDetail_confirmLoan">确认放款</string>
+
+
+    <string name="a_payIntegral_toolbar">请输入支付密码</string>
+
+    <string name="a_evaluation_toolbar">立即评估</string>
+
+    <string name="a_setPayPassword_toolbar">设置支付密码</string>
+
+    <string name="a_orderDetail_toolbar">订单详情</string>
+
+    <string name="a_firstDraftProgram_toolbar1">初审方案</string>
+    <string name="a_firstDraftProgram_toolbar2">终审方案</string>
+    <string name="a_firstDraftProgram_programDetail">方案详情</string>
+    <string name="a_firstDraftProgram_repaymentPeriod">可办理期限</string>
+    <string name="a_firstDraftProgram_repaymentType">还款方式</string>
+    <string name="a_firstDraftProgram_repaymentCycle">还款周期</string>
+    <string name="a_firstDraftProgram_auditResult">预计终审结果</string>
+
+
+    <string name="a_select_toolbar">选品牌</string>
+
+    <string name="dialog_please_wait">正在加载..</string>
+    <string name="addAddress">添加地址</string>
+    <string name="empty_noAddress">您还没有添加常用地址</string>
+
+    <string name="a_selectCommonAddress_toolbar">添加常用地址</string>
+
+    <string name="a_addAddress_toolbar">添加常用地址</string>
+    <string name="a_addAddress_receiver">收货人</string>
+    <string name="a_addAddress_phone">手机号</string>
+    <string name="a_addAddress_whiteAddress">填写地址</string>
+    <string name="a_addAddress_defaultsAddress">设置默认地址</string>
+    <string name="a_addAddress_ok">完成</string>
+
+    <string name="error_gif">长宽不小于 %1$dpx，且大小不超过 %2$sM。</string>
+    <string name="network_error">网络异常</string>
+    <string name="request_failure">请求失败</string>
+    <string name="wait_dialog_title">正在加载</string>
+    <string name="please_wait">请稍后再试</string>
+
+    <string name="approve_upload_succeed">上次成功</string>
+    <string name="approve_upload_failed">上次失败</string>
+
+
+    <string name="address">所处位置</string>
+    <string name="load_failure">加载失败</string>
+
+
+    <string name="a_payIntegral_toolbarTitle">支付</string>
+    <string name="pay_atOnce">立即支付</string>
+    <string name="verify_code">验证手机号</string>
+    <string name="set_password">设置支付密码</string>
+
+    <string name="day">天</string>
+    <string name="age">岁</string>
+    <string name="year">年</string>
+    <string name="million">万</string>
+    <string name="month">月</string>
+    <string name="yuan">元</string>
+    <string name="square_meter">平方米</string>
+
+    <string name="character_application_log">我的角色</string>
+    <string name="character_my_application_log">申请记录</string>
+    <string name="a_carFirstApplicationLoan_cpHint">请输入车牌前缀</string>
+    <string name="a_carFirstApplicationLoan_cjhHint">请输入车架号</string>
+
+    <string name="address_detail_1">街道/镇</string>
+    <string name="address_detail_2">小区</string>
+    <string name="address_detail_3">幢</string>
+    <string name="address_detail_4">室</string>
+
+
+    <string name="home_jqqd">垫资咨询</string>
+    <string name="home_jqqd1">敬请期待</string>
+    <string name="submit">提交</string>
+
+
+    <string name="findHouse_etHint">请输入小区</string>
+    <string name="findHouse_toolbar">选择房子</string>
+
+
+</resources>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textStyle="bold"
+            android:textColor="@color/text_title"
+            android:textSize="17sp"
+            android:text="恭喜你成功修完佛系课程，遁入空门"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="6dp"
+            android:textColor="@color/text_content"
+            android:textSize="14sp"
+            android:text="恭喜你成功修完佛系课程，遁入空门恭喜你成功修完佛系课程，遁入空门恭喜你成功修完佛系课程."
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="end"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/text_content_999"
+            android:textSize="14sp"
+            android:text="2018.01.03 15:01:02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+</LinearLayout>

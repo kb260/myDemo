@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/a_main_bg"
+    android:orientation="vertical"
+    tools:context="com.kb260.gxdk.view.account.ThreeLoginActivity">
+
+    <include layout="@layout/toolbar_account"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/login_top" />
+
+    <EditText
+        android:maxLength="11"
+        android:id="@+id/a_threeLogin_etPhone"
+        android:hint="@string/login_phoneHint"
+        android:inputType="phone"
+        style="@style/account_et" />
+
+    <EditText
+        android:maxLength="16"
+        android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:id="@+id/a_threeLogin_etPassword"
+        android:hint="@string/login_passwordHint"
+        android:inputType="textPassword"
+        style="@style/account_et" />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/a_threeLogin_btLogin"
+        style="@style/account_bt"
+        android:text="绑定"
+        />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+    <TextView
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="如无注册的帐号，请返回登录页面进行注册！"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

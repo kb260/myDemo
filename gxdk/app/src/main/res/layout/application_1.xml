@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/red_toast"
+            android:textSize="11sp"
+            android:text="@string/f_home_fdsq_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_name"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:hint="@string/f_home_fdsq_nameHint"
+            android:textSize="16sp"
+            android:textColorHint="@color/txt999"
+            android:lines="1"
+            android:maxLength="20"
+            android:id="@+id/a_firstApplicationLoan_etName"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llAge"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_age"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvAge"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="@string/age"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+
+    <LinearLayout
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_sfz"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:hint="@string/f_home_fdsq_sfzHint"
+            android:textSize="16sp"
+            android:textColorHint="@color/txt999"
+            android:maxLength="18"
+            android:lines="1"
+            android:id="@+id/a_firstApplicationLoan_etSfz"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_phone"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:maxLength="11"
+            android:hint="@string/f_home_fdsq_phoneHint"
+            android:textSize="16sp"
+            android:textColorHint="@color/txt999"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:lines="1"
+            android:id="@+id/a_firstApplicationLoan_etPhone"
+            android:inputType="phone"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llMarriage"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_marriage"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvMarriage"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/a_firstApplicationLoan_llIsMarriage"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <View
+            android:id="@+id/a_firstApplicationLoan_vSpouseName"
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llSpouseName"
+            style="@style/item_llTheme">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_spouseName"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:hint="@string/f_home_fdsq_spouseNameHint"
+                android:textSize="16sp"
+                android:textColorHint="@color/txt999"
+                android:lines="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:id="@+id/a_firstApplicationLoan_etSpouseName"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/a_firstApplicationLoan_vSpousePhone"
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llSpousePhone"
+            style="@style/item_llTheme">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_spousePhone"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:maxLength="11"
+                android:hint="@string/f_home_fdsq_spousePhoneHint"
+                android:textSize="16sp"
+                android:textColorHint="@color/txt999"
+                android:lines="1"
+                android:id="@+id/a_firstApplicationLoan_etSpousePhone"
+                android:inputType="phone"
+                android:background="@null"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llIsHaveCarAndHouse"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/a_firstApplicationLoan_vIsHaveCar"
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llIsHaveCar"
+            style="@style/item_llTheme">
+            <TextView
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_isHaveCar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvIsHaveCar"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/a_firstApplicationLoan_vIsHaveHouse"
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llIsHaveHouse"
+            style="@style/item_llTheme">
+            <TextView
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_isHaveHouse"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvIsHaveHouse"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llAddress"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvAddress"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/a_firstApplicationLoan_llAddressDetail"
+        style="@style/item_llTheme">
+
+        <EditText
+            android:gravity="end"
+            android:singleLine="true"
+            android:id="@+id/a_firstApplicationLoan_etAddress1"
+            android:textSize="16sp"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/address_detail_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llAddressPicker"
+            android:gravity="center"
+            android:visibility="visible"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvAddressHouseDetail"
+                android:gravity="end"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:hint="请选择小区"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llAddressWrite"
+            android:visibility="gone"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:layout_height="match_parent">
+            <EditText
+                android:gravity="end"
+                android:singleLine="true"
+                android:id="@+id/a_firstApplicationLoan_etAddress2"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/address_detail_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:gravity="end"
+                android:singleLine="true"
+                android:id="@+id/a_firstApplicationLoan_etAddress3"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/address_detail_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <EditText
+                android:gravity="end"
+                android:singleLine="true"
+                android:id="@+id/a_firstApplicationLoan_etAddress4"
+                android:textSize="16sp"
+                android:inputType="number"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/address_detail_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

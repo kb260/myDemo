@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/toolbar_white"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/b_rv_topbar"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/pickerview_bg_topbar">
+
+        <Button
+            android:id="@+id/b_checked_btnCancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="start|center_vertical"
+            android:paddingLeft="@dimen/pickerview_topbar_padding"
+            android:text="@string/pickerview_cancel"
+            android:textColor="@color/txt_black"
+            android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="请选择"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/b_checked_btnSubmit"
+            android:layout_toRightOf="@+id/b_checked_btnCancel"
+            android:textColor="@color/pickerview_topbar_title"
+            android:textSize="@dimen/pickerview_topbar_title_textsize" />
+
+        <Button
+            android:id="@+id/b_checked_btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:gravity="end|center_vertical"
+            android:paddingRight="@dimen/pickerview_topbar_padding"
+            android:text="@string/pickerview_submit"
+            android:textColor="@color/bt_red"
+            android:textSize="@dimen/pickerview_topbar_btn_textsize" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/b_checked_rv"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"/>
+
+</LinearLayout>

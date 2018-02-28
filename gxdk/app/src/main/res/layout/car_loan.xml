@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/carLoan_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llCjh"
+        android:layout_marginTop="10dp"
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_cjh"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:gravity="end"
+            android:lines="1"
+            android:id="@+id/a_carFirstApplication_etCjh"
+            android:maxLength="17"
+            android:hint="@string/a_carFirstApplicationLoan_cjhHint"
+            android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--<TextView
+            android:id="@+id/a_carFirstApplication_tvCjh"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llCpp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        style="@style/item_llTheme4">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_cpp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:id="@+id/a_carFirstApplication_tvCpp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:visibility="visible"
+        android:id="@+id/a_carFirstApplication_llCp"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_cp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvCp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_cp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:gravity="end"
+            android:hint="@string/a_carFirstApplicationLoan_cpHint"
+            android:textSize="16sp"
+            android:textColorHint="@color/txt999"
+            android:lines="1"
+            android:maxLength="20"
+            android:id="@+id/a_carFirstApplication_etCp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llCl"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_cl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvCl"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="@string/year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llXsjl"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_home_cdsqFirst_xsjl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvXsjl"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="万公里"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llCk"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="车况"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvCk"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llGcsj"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="购车时间"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvGcsj"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white"/>
+
+    <LinearLayout
+        android:id="@+id/a_carFirstApplication_llGcyj"
+        style="@style/item_llTheme">
+        <TextView
+            android:layout_weight="1"
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="购车原价"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_carFirstApplication_tvGcyj"
+            android:textColor="@color/txt333"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="万元"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:src="@drawable/me_arraw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.RechargePayActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/toolbar_white"
+        android:layout_width="match_parent"
+        android:layout_height="49dp">
+
+        <TextView
+            android:text="@string/a_rechargePay_buyWhat"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_rechargePay_tvIntegral"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="积分"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="@string/a_rechargePay_needPay"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="￥"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_rechargePay_tvMoney"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="15dp"
+        android:background="@color/toolbar_white"
+        android:layout_marginTop="21dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/a_rechargePay_ll1"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_zfb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_rechargePay_zfb"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/a_rechargePay_ll2"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_wx"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_rechargePay_wx"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_rechargePay_ll3"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:src="@drawable/pay_yhk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:text="@string/a_rechargePay_yhk"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/a_rechargePay_rg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <RadioButton
+                android:id="@+id/a_rechargePay_rb1"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                />
+            <RadioButton
+                android:visibility="gone"
+                android:id="@+id/a_rechargePay_rb2"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                 />
+            <RadioButton
+                android:id="@+id/a_rechargePay_rb3"
+                android:layout_margin="15dp"
+                android:button="@null"
+                android:background="@drawable/pay_rb"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                 />
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/a_rechargePay_btConfirm"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/confirm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kb260.gxdk.view.base.WebViewActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--<include layout="@layout/toolbar"/>-->
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/webView_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <TextView
+                android:id="@+id/webView_toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/a_main_pg"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/webView_toolbarTitleRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:padding="10dp"
+                android:text="分享"
+                android:textColor="@color/a_main_pg"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </android.support.v7.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/a_main_bg" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/a_webView_pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <WebView
+        android:id="@+id/a_webView_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:progressDrawable="@drawable/custom_progress" />
+
+</LinearLayout>

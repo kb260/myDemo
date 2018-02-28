@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kb260.bxjy.ui.account.RegisterFirstActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/registe_logr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textColor="@color/text_title"
+        android:textSize="17sp"
+        android:hint="@string/account_phoneHint"
+        android:inputType="phone"
+        android:id="@+id/a_registerFirst_etPhone"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/account_et"
+        android:drawableLeft="@drawable/account_phone"
+        android:drawableStart="@drawable/account_phone"
+        android:drawablePadding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/account_ll">
+        <EditText
+            android:maxLength="6"
+            android:textColor="@color/text_title"
+            android:textSize="17sp"
+            android:hint="@string/account_getCodeHint"
+            android:id="@+id/a_registerFirst_etCode"
+            android:background="@null"
+            android:drawableLeft="@drawable/account_pw"
+            android:drawableStart="@drawable/account_pw"
+            android:drawablePadding="15dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/a_registerFirst_getCode"
+            android:textSize="12sp"
+            android:textColor="@color/select_red"
+            android:text="@string/account_getCode"
+            android:background="@drawable/get_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/a_registerFirst_next"
+        android:textSize="17sp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:text="@string/account_next"
+        android:background="@drawable/account_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

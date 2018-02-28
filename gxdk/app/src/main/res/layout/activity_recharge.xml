@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.RechargeActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/a_recharge_toolbar"
+        android:layout_marginBottom="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:text="@string/a_recharge_toolbar"
+            android:layout_gravity="center"
+            android:textSize="17sp"
+            android:textColor="@color/a_main_pg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:padding="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:text="@string/a_recharge_toolbarRight"
+            android:id="@+id/a_recharge_toolbarRight"
+            android:layout_gravity="end"
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </android.support.v7.widget.Toolbar>
+    
+    <LinearLayout
+        android:background="@color/toolbar_white"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="76dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/a_recharge_ivUser"
+            android:src="@drawable/user"
+            android:layout_width="59dp"
+            android:layout_height="59dp" />
+
+        <TextView
+            android:layout_marginStart="26dp"
+            android:layout_marginLeft="26dp"
+            android:text="@string/a_recharge_integral"
+            android:textSize="18sp"
+            android:textColor="@color/txt_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_recharge_integral"
+            android:textSize="18sp"
+            android:textColor="@color/txt_black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+    <LinearLayout
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:orientation="vertical"
+        android:background="@color/toolbar_white"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:text="@string/a_recharge_rechargeMoney"
+            android:textColor="@color/txt_black"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_marginTop="14dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="@string/a_recharge_Money"
+                android:textColor="@color/txt_black"
+                android:textSize="30sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:inputType="numberDecimal"
+                android:id="@+id/a_recharge_etMoney"
+                android:textSize="30sp"
+                android:background="@null"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_marginBottom="14dp"
+            android:text="@string/a_recharge_toast"
+            android:textSize="14sp"
+            android:textColor="@color/bt_red"
+            android:layout_marginTop="21dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/a_recharge_btConfirm"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/confirm"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+
+</LinearLayout>

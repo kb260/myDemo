@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.InformationActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:background="@color/toolbar_white"
+        android:id="@+id/a_information_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.kb260.gxdk.view.home.UploadDocumentsActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/a_home_uploadDocuments_tvTop"
+        android:textColor="@color/red_toast"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:background="@color/a_main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="28dp" />
+    
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/a_home_uploadDocuments_rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/a_home_uploadDocuments_btSubmit"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/f_home_fdsq_btSubmit"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+
+</LinearLayout>

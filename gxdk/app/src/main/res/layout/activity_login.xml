@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    android:gravity="center_horizontal"
+    tools:context="com.kb260.gxdk.view.account.LoginActivity">
+
+    <include layout="@layout/toolbar_account"/>
+
+    <ImageView
+        android:layout_marginTop="30dp"
+        android:src="@drawable/login_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:maxLength="11"
+        android:id="@+id/a_login_etPhone"
+        android:hint="@string/login_phoneHint"
+        android:inputType="phone"
+        style="@style/account_et" />
+
+    <EditText
+        android:maxLength="16"
+        android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        android:id="@+id/a_login_etPassword"
+        android:hint="@string/login_passwordHint"
+        android:inputType="textPassword"
+        style="@style/account_et" />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/a_login_btLogin"
+        style="@style/account_bt"
+        android:text="@string/login_toolbar"
+         />
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_marginTop="11dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/a_login_ivQQ"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/register_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:padding="5dp"
+            android:id="@+id/a_login_ivWx"
+            android:src="@drawable/register_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="11dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="42dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/a_login_tvOther"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textSize="13sp"
+            android:textColor="@color/txt666"
+            android:text="@string/login_other"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:padding="5dp"
+            android:id="@+id/a_login_tvForget"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="13sp"
+            android:textColor="@color/txt666"
+            android:text="@string/login_forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+
+</LinearLayout>

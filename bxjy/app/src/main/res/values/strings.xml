@@ -1,0 +1,175 @@
+<resources>
+    <string name="app_name">博学教育</string>
+
+
+    <string name="account_phoneHint">请输入手机号</string>
+    <string name="account_getCodeHint">请输入验证码</string>
+    <string name="account_pwHint">请输入密码</string>
+    <string name="account_pwSureHint">请确认密码</string>
+    <string name="account_getCode">获取验证码</string>
+    <string name="account_next">下一步</string>
+    <string name="account_toolbar">注册</string>
+    <string name="account_toolbar_login">登录</string>
+    <string name="account_sure">确定</string>
+    <string name="account_pwForget">忘记密码</string>
+    <string name="account_loginByCode">验证码登录</string>
+    <string name="account_loginByPw">密码登录</string>
+
+    <string name="account_forgetPwToolbar">忘记密码</string>
+
+
+    <!--首页-->
+    <string name="home_toolbarLeft">首页</string>
+    <string name="home_toolbarRight">课程分类</string>
+    <string name="home_liveTitle">直播推荐</string>
+    <string name="home_hitTitle">热播榜</string>
+    <string name="home_teacherTitle">教师榜</string>
+    <string name="home_mare">更多</string>
+
+
+    <string name="home_courseSorts_toolbar">课程分类</string>
+    <string name="home_courseSorts_topSubject">科目</string>
+    <string name="home_courseSorts_topTeacher">老师</string>
+    <string name="home_courseSorts_topSort">排序</string>
+    <string name="home_courseSorts_topFree">免费</string>
+    <string name="home_courseSorts_topPay">付费</string>
+
+    <string name="home_classDetail_toolbar">课程详情</string>
+    <string name="home_classDetail_introduction">课程介绍</string>
+    <string name="home_classDetail_classSchedule">课程表</string>
+    <string name="home_classDetail_teacher">老师介绍</string>
+
+    <string name="home_teacherDetail_toolbar">教师介绍</string>
+    <string name="home_teacherDetail_evaluation">学生评价</string>
+    <string name="home_teacherDetail_onlineClass">在线课程</string>
+
+    <string name="home_orderSure_toolbar">订单确认</string>
+
+    <string name="teacherClass_title">历史课程</string>
+    <string name="teacherClass_toolbar">教师课程</string>
+
+    <string name="classList_toolbar">课程列表</string>
+
+
+    <!--公开课-->
+    <string name="publicClass_toolbarLeft">公开课</string>
+
+    <string name="publicClass_noClassTitle">即将开课</string>
+    <string name="publicClass_ClassingTitle">正在开课</string>
+    <string name="publicClass_ClassedTitle">已开课程</string>
+
+
+    <!--小组课-->
+    <string name="groupClass_toolbarLeft">小组课</string>
+    <string name="groupClass_livingList_toolbar">直播</string>
+    <string name="search_hint">搜索老师或热门视频</string>
+
+
+    <!--咨询-->
+    <string name="advisory_toolbarLeft">咨询</string>
+
+
+    <!--个人中心-->
+    <string name="mine_toolbarLeft">个人中心</string>
+    <string name="mine_nc">昵称</string>
+    <string name="mine_wdsc">我的收藏</string>
+    <string name="mine_qbgl">钱包管理</string>
+    <string name="mine_wdkc">我的课程</string>
+    <string name="mine_kbtx">开播提醒</string>
+
+    <string name="mine_head">头像</string>
+    <string name="mine_gender">性别</string>
+    <string name="mine_notebookClass">笔试课程</string>
+    <string name="mine_personalIfm_toolbar">个人信息</string>
+    <string name="bottom_camera">拍照</string>
+    <string name="bottom_album">我的相册</string>
+    <string name="cancel">取消</string>
+
+    <string name="changeNickname_toolbar">修改昵称</string>
+    <string name="changeNickname_hint">请输入昵称</string>
+    <string name="changeGender_toolbar">修改性别</string>
+    <string name="changeGender_boy">男</string>
+    <string name="changeGender_girl">女</string>
+
+    <string name="notebookClass_toolbarRight">添加</string>
+    <string name="save">保存</string>
+
+    <string name="addNotebookClass_titleHint">请输入课程名称</string>
+    <string name="addNotebookClass_timeHint">请输入时间</string>
+    <string name="addNotebookClass_toolbarTitle">添加笔试课程</string>
+
+
+    <string name="set_accountSafe">账户安全</string>
+    <string name="set_show">一键分享</string>
+    <string name="set_clear">清理缓存</string>
+    <string name="set_help">帮助中心</string>
+    <string name="set_device">意见反馈</string>
+    <string name="set_aboutMe">关于我们</string>
+    <string name="set_exit">退出登录</string>
+    <string name="set">设置</string>
+
+    <string name="set_accountSafe_changePw">重置登录密码</string>
+
+    <string name="set_setNewPw_toolbar">修改密码</string>
+    <string name="set_setNewPw_oldPwHint">请输入原密码</string>
+    <string name="set_setNewPw_newPwHint">请输入新密码</string>
+    <string name="set_setNewPw_newPwHintComfit">请确认新密码</string>
+
+
+    <string name="message_toolbar">消息</string>
+
+    <string name="myCollect_toolbar">我的收藏</string>
+
+
+    <string name="wallet_balance">余额</string>
+    <string name="wallet_bank">银行卡管理</string>
+    <string name="wallet_recharge">充值</string>
+    <string name="wallet_reflect">提现</string>
+
+    <string name="money_10">10元</string>
+    <string name="money_50">50元</string>
+    <string name="money_100">100元</string>
+    <string name="money_500">500元</string>
+    <string name="money_1000">1000元</string>
+    <string name="money_2000">2000元</string>
+    <string name="money_3000">3000元</string>
+    <string name="money_5000">5000元</string>
+    <string name="money_other">其他</string>
+
+
+    <string name="reflect_bank">银行卡</string>
+    <string name="reflect_money">提现金额</string>
+    <string name="reflect_balance">余额</string>
+    <string name="reflect_balanceAll">全部提现</string>
+    <string name="money_unit">￥</string>
+
+    <string name="add">添加</string>
+
+    <string name="default_bank">默认银行卡</string>
+    <string name="del">删除</string>
+
+    <string name="add_bankCard">添加银行卡</string>
+
+
+    <string name="add_bankCard_man">持卡人</string>
+    <string name="add_bankCard_manHint">请输入持卡人</string>
+    <string name="add_bankCard_idCard">身份证</string>
+    <string name="add_bankCard_idCardHint">请输入身份证</string>
+    <string name="add_bankCard_cardNum">银行卡号</string>
+    <string name="add_bankCard_cardNumHint">请输入银行卡号</string>
+    <string name="add_bankCard_bank">所属银行</string>
+    <string name="add_bankCard_bankHint">请输入所属银行</string>
+    <string name="add_bankCard_branch">所属支行</string>
+    <string name="add_bankCard_branchHint">请输入支行所在地</string>
+    <string name="add_bankCard_phone">手机号</string>
+    <string name="add_bankCard_phoneHint">请输入银行预留手机号</string>
+    <string name="add_bankCard_code">验证码</string>
+    <string name="add_bankCard_codeHint">请输入验证码</string>
+    <string name="add_bankCard_default_bank">设为默认银行卡</string>
+
+
+    <string name="please_wait">正在加载..</string>
+    <string name="network_error">网络未连接</string>
+    <string name="request_failure">加载失败</string>
+
+</resources>

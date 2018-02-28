@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarWithSearch"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    app:titleTextColor="@color/black"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_title"
+            style="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+            />
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:maxLines="1"
+                android:visibility="gone"
+                android:id="@+id/toolbarEt"
+                android:textColor="@color/text_title"
+                android:textColorHint="#BBBBBB"
+                android:hint="@string/search_hint"
+                android:textSize="12sp"
+                android:layout_marginLeft="14dp"
+                android:layout_marginRight="14dp"
+                android:background="@drawable/search_bg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:src="@drawable/search"
+            android:id="@+id/toolbarSearch"
+            android:layout_marginRight="19dp"
+            android:layout_marginEnd="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/filter"
+            android:id="@+id/toolbarFilter"
+            android:layout_marginRight="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.v7.widget.Toolbar>
+

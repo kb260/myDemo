@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kb260.bxjy.ui.account.RegisterActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ImageView
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="65dp"
+        android:src="@drawable/registe_logr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textSize="17sp"
+        android:textColor="@color/text_title"
+        android:hint="@string/account_pwHint"
+        android:id="@+id/a_register_etPw"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/account_et"
+        android:drawableLeft="@drawable/account_pw"
+        android:drawableStart="@drawable/account_pw"
+        android:drawablePadding="15dp"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textSize="17sp"
+        android:textColor="@color/text_title"
+        android:hint="@string/account_pwSureHint"
+        android:id="@+id/a_register_etPw2"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/account_et"
+        android:drawableLeft="@drawable/account_pw"
+        android:drawableStart="@drawable/account_pw"
+        android:drawablePadding="15dp"
+        android:inputType="textPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <TextView
+        android:id="@+id/a_register_sure"
+        android:textSize="17sp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/white"
+        android:text="@string/account_sure"
+        android:background="@drawable/account_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

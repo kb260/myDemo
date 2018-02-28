@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@android:color/transparent"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/bottom_change_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/bottom_changeHead_camera"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/bottom_blue"
+            android:text="@string/bottom_camera"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/bottom_line"/>
+
+        <TextView
+            android:id="@+id/bottom_changeHead_album"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/bottom_blue"
+            android:text="@string/bottom_album"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/bottom_changeHead_cancel"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@color/bottom_blue"
+        android:text="@string/cancel"
+        android:background="@drawable/bottom_change_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

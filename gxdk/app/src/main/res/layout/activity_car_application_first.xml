@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.home.CarApplicationFirstActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/application_1"/>
+
+            <include layout="@layout/car_loan" />
+
+            <Button
+                android:id="@+id/a_carFirstApplication_btNext"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/f_home_fdsq_next"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

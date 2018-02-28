@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/f_service_statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_view_height"
+        android:background="@color/toolbar_white" />
+
+    <include layout="@layout/toolbar"/>
+
+    <ProgressBar
+        android:id="@+id/f_shop_pb"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp" />
+
+    <WebView
+        android:progressDrawable="@drawable/custom_progress"
+        android:id="@+id/f_shop_webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

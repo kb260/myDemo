@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.AboutMeActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/toolbar_white"
+        android:layout_width="match_parent"
+        android:layout_height="155dp">
+        
+        <ImageView
+            android:src="@drawable/app_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="6dp"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:text="@string/app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="2dp"
+            android:textSize="12sp"
+            android:textColor="@color/txt666"
+            android:text="V1.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+
+        <ImageView
+            android:src="@drawable/about_me_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_me_aboutMe_phone"
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_aboutMe_tvPhone"
+            android:gravity="end"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:text="免费热线：400-178-888"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+
+        <ImageView
+            android:src="@drawable/about_me_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_me_aboutMe_qq"
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_aboutMe_tvQQ"
+            android:gravity="end"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:text="229888670"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+
+        <ImageView
+            android:src="@drawable/about_me_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_me_aboutMe_wx"
+            android:padding="6dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_aboutMe_tvWx"
+            android:gravity="end"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:text="229888670"
+            android:padding="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/a_set_about"
+        style="@style/item_llTheme2"
+        >
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_me_set_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/a_set_llVersion"
+        style="@style/item_llTheme2"
+        >
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/a_me_set_version"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/a_set_version"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

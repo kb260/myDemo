@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.kb260.bxjy.weight.mzbanner.MZBannerView
+        android:id="@+id/item_publicClass_noClassMbv"
+        app:open_mz_mode="true"
+        app:middle_page_cover="false"
+        app:canLoop="false"
+        app:indicatorAlign="center"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        />
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:id="@+id/item_publicClass_noClassLl"
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </LinearLayout>
+</LinearLayout>
+
+

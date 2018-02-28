@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/a_main_bg"
+    android:layout_width="match_parent"
+    android:id="@+id/a_evaluation_sc"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/item_llTheme"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_fdsq_name"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/a_evaluation_etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="end"
+                android:lines="1"
+                android:maxLength="20" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+
+        <LinearLayout style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_fdsq_sfz"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/a_evaluation_etSfz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="end"
+                android:lines="1"
+                android:maxLength="19" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_fdsq_phone"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/a_evaluation_etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="end"
+                android:inputType="phone"
+                android:lines="1" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluation_llAddress"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/f_home_fdsq_address"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluation_tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/a_evaluation_llAddressDetail"
+            style="@style/item_llTheme">
+
+            <EditText
+                android:gravity="end"
+                android:singleLine="true"
+                android:id="@+id/a_evaluation_etAddress1"
+                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/address_detail_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/a_evaluation_llAddressPicker"
+                android:gravity="center"
+                android:visibility="visible"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/a_evaluation_tvAddressHouseDetail"
+                    android:gravity="end"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:hint="请选择小区"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_evaluation_llAddressWrite"
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_weight="6"
+                android:layout_height="match_parent">
+                <EditText
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:id="@+id/a_evaluation_etAddress2"
+                    android:textSize="16sp"
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/address_detail_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:id="@+id/a_evaluation_etAddress3"
+                    android:textSize="16sp"
+                    android:inputType="number"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/address_detail_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <EditText
+                    android:gravity="end"
+                    android:singleLine="true"
+                    android:id="@+id/a_evaluation_etAddress4"
+                    android:textSize="16sp"
+                    android:inputType="number"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/address_detail_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluation_llMarriage"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/f_home_fdsq_marriage"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluation_tvMarriage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llHouseArea"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/f_home_fdsq_houseArea"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluation_tvHouseArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="平方米"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/a_evaluation_btEvaluation"
+            android:layout_width="250dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bt_1"
+            android:text="@string/a_evaluation_toolbar"
+            android:textColor="@color/toolbar_white"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluation_llResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@color/bt_red"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="查询结果"
+                android:textColor="@color/toolbar_white"
+                android:textSize="14sp" />
+
+            <LinearLayout style="@style/item_llTheme">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="单价"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluation_tvUnitPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="12345元/平方米"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="面积"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluation_tvArea"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="88.86平方米"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总价"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluation_tvTotalPrice"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:text="888888元"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

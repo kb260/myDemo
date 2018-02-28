@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/toolbar_white"
+    android:layout_width="match_parent"
+    android:layout_height="86dp">
+
+    <com.daimajia.swipe.SwipeLayout
+        xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/item_card_swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        swipe:leftEdgeSwipeOffset="0dp"
+        swipe:rightEdgeSwipeOffset="0dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/item_cardDel"
+            android:layout_width="76dp"
+            android:layout_height="86dp"
+            android:background="@color/bt_red">
+
+            <LinearLayout
+                android:layout_centerInParent="true"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/card_del" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="解绑"
+                    android:textColor="@color/toolbar_white"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?android:attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp">
+
+            <TextView
+                android:maxLines="1"
+                android:lines="1"
+                android:id="@+id/item_card_tvBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="中国工商银行"
+                android:textColor="@color/txt333"
+                android:textSize="14sp" />
+
+            <TextView
+                android:maxLines="1"
+                android:lines="1"
+                android:id="@+id/item_card_tvBranch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="2567 **** **** 5677"
+                android:textColor="@color/txt666"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+
+        <!-- 以下都是侧滑菜单的内容依序排列 -->
+
+
+    </com.daimajia.swipe.SwipeLayout>
+</LinearLayout>
+
+

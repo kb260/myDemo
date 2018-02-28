@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.kb260.bxjy.ui.mine.SetActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/a_set_llSafe"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_accountSafe"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    
+   <include layout="@layout/dividi"/>
+    <LinearLayout
+        android:id="@+id/a_set_llShow"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_show"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+    <LinearLayout
+        android:id="@+id/a_set_llClear"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_clear"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/a_set_tvClear"
+            android:textColor="@color/text_content"
+            android:textSize="14sp"
+            android:text="16.8M"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/divider10"/>
+
+    <LinearLayout
+        android:id="@+id/a_set_llHelp"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_help"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+    <LinearLayout
+        android:id="@+id/a_set_llDevice"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_device"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+    <LinearLayout
+        android:id="@+id/a_set_llAboutMe"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_aboutMe"
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/divider10"/>
+
+    <LinearLayout
+        android:id="@+id/a_set_llExit"
+        style="@style/set_ll"
+        >
+
+        <TextView
+            android:text="@string/set_exit"
+            android:textSize="14sp"
+            android:textColor="@color/select_red"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+</LinearLayout>

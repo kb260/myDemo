@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    android:id="@+id/top_classDetail_rg"
+    android:paddingLeft="7dp"
+    android:paddingRight="7dp"
+    android:layout_marginBottom="3dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioButton
+        android:layout_margin="7dp"
+        android:maxLines="1"
+        android:id="@+id/top_classDetail_rbIntroduction"
+        android:text="@string/home_classDetail_introduction"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:button="@null"
+        android:background="@drawable/coursesorts_button"
+        android:textColor="@color/text_content_999"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    <RadioButton
+        android:layout_margin="7dp"
+        android:maxLines="1"
+        android:id="@+id/top_classDetail_rbClassSchedule"
+        android:text="@string/home_classDetail_classSchedule"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:button="@null"
+        android:background="@drawable/coursesorts_button"
+        android:textColor="@color/text_content_999"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+    <RadioButton
+        android:layout_margin="7dp"
+        android:maxLines="1"
+        android:id="@+id/top_classDetail_rbTeacher"
+        android:text="@string/home_classDetail_teacher"
+        android:gravity="center"
+        android:textSize="14sp"
+        android:button="@null"
+        android:background="@drawable/coursesorts_button"
+        android:textColor="@color/text_content_999"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+</RadioGroup>

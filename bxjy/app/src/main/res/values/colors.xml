@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#ffffff</color>
+    <color name="colorAccent">#000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#F5F5F5</color>
+
+    <color name="text_title">#333333</color>
+    <color name="text_content">#666666</color>
+    <color name="text_content_999">#999999</color>
+    <color name="price_color">#FF9E09</color>
+    <color name="score_red">#FF0000</color>
+
+    <color name="select_red">#EC5858</color>
+    <color name="select_red_register">#FFB2B2</color>
+    <color name="unSelect_gray">#EFEFEF</color>
+
+    <color name="card_bg">#F5F5F5</color>
+    <color name="price_red">#EC5858</color>
+
+    <color name="account_et">#FFF1F1</color>
+    <color name="live_blue">#325db3</color>
+
+    <color name="bottom_blue">#0076FF</color>
+    <color name="bottom_line">#c74d4d4d</color>
+</resources>

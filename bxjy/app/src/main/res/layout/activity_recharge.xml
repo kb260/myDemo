@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.kb260.bxjy.ui.mine.RechargeActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <include layout="@layout/divider10" />
+
+    <me.shihao.library.XRadioGroup
+        android:id="@+id/a_recharge_xrg"
+        android:padding="15dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/a_recharge_rb10"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_10"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rb50"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_50"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rb100"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_100"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/a_recharge_rb500"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_500"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rb1000"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_1000"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rb2000"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_2000"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/a_recharge_rb3000"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_3000"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rb5000"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginRight="24dp"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_5000"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <RadioButton
+                    android:id="@+id/a_recharge_rbOther"
+                    android:gravity="center"
+                    android:textSize="17sp"
+                    android:text="@string/money_other"
+                    android:textColor="@color/price_red"
+                    android:button="@null"
+                    android:background="@drawable/recharge_number_bg"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </me.shihao.library.XRadioGroup>
+
+    <include layout="@layout/pay_type"/>
+
+</LinearLayout>

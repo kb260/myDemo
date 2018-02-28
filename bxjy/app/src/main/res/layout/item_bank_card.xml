@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:padding="15dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/text_title"
+            android:textSize="14sp"
+            android:text="中国工商银行"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_title"
+            android:textSize="17sp"
+            android:text="6237 **** **** 7799"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <include layout="@layout/dividi"/>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:button="@null"
+            android:background="@drawable/rb_render"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="4dp"
+            android:layout_marginStart="4dp"
+            android:textSize="12sp"
+            android:textColor="@color/text_content"
+            android:text="@string/default_bank"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/card_del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_marginLeft="4dp"
+                android:layout_marginStart="4dp"
+                android:text="@string/del"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <include layout="@layout/divider4"/>
+
+</LinearLayout>

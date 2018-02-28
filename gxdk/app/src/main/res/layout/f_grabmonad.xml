@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/statusBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_view_height"
+        android:background="@color/toolbar_white" />
+
+    <include layout="@layout/toolbar" />
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/f_grabMonad_stl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/toolbar_white"
+        tl:tl_indicator_color="#EA4C51"
+        tl:tl_indicator_height="1.5dp"
+        tl:tl_indicator_width_equal_title="true"
+        tl:tl_tab_space_equal="true"
+        tl:tl_textSelectColor="#EA4C51"
+        tl:tl_textUnselectColor="#2A2A2A"
+        tl:tl_underline_color="#1A000000"
+        tl:tl_underline_height="1dp"/>
+
+    <android.support.v4.view.ViewPager
+        android:background="@color/a_main_bg"
+        android:id="@+id/f_grabMonad_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

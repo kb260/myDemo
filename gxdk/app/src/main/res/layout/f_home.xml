@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/a_main_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.youth.banner.Banner
+            android:id="@+id/f_home_banner"
+            android:layout_width="match_parent"
+            android:layout_height="160dp" />
+        <!--<ImageView
+            android:id="@+id/f_home_ivTop"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/home_top" />-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+            <android.support.v7.widget.CardView
+                android:id="@+id/f_home_ivFdsq"
+                android:layout_marginRight="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="80dp">
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_fd1" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/f_home_fdsq_toolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/f_home_ivCdsq"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="80dp">
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_cd1" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/a_home_cdsqFirst_toolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/f_home_ivXdsq"
+                android:layout_marginRight="6dp"
+                android:layout_marginEnd="6dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="80dp">
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_xd1" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/a_home_xdsqSecond_toolbarTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/f_home_ivJqqd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="80dp">
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/home_jqqd1" />
+                    <TextView
+                        android:layout_gravity="center"
+                        android:text="@string/home_jqqd1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/toolbar_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/f_home_pg"
+                android:textColor="@color/a_main_pg"
+                android:textSize="14sp" />
+
+
+            <LinearLayout
+                android:layout_marginTop="19dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:id="@+id/a"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/home_pg_1" />
+
+                        <View
+                            android:background="@color/line_ccc"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:textColor="@color/txt999"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp"
+                        android:text="填写资料\n了解申请额度"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:background="@color/line_ccc"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+                        <ImageView
+                            android:paddingLeft="5dp"
+                            android:src="@drawable/home_pg_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:background="@color/line_ccc"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:textColor="@color/txt999"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp"
+                        android:text="系统进行匹配"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <View
+                            android:background="@color/line_ccc"
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_weight="1"/>
+
+
+                        <ImageView
+                            android:paddingLeft="5dp"
+                            android:src="@drawable/home_pg_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"/>
+                    </LinearLayout>
+
+                    <TextView
+                        android:textColor="@color/txt999"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:textSize="13sp"
+                        android:text="车辆、房屋申\n请评估结果"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <!--<LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:gravity="center"
+                    android:text="填写资料"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="center"
+                    android:text="系统"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="center"
+                    android:text="填写资料"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>-->
+
+            <Button
+                android:id="@+id/f_home_btPg"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="28dp"
+                android:layout_marginRight="28dp"
+                android:layout_marginTop="19dp"
+                android:background="@drawable/home_bt_pg"
+                android:text="@string/f_home_pg_bt"
+                android:textColor="@color/toolbar_white" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/f_home_llJgxqm"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/toolbar_white"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/home_jkxqm" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_jkxqm_tv" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="44dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/f_home_llXwzx"
+            android:layout_marginBottom="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/toolbar_white"
+            android:gravity="center_vertical">
+
+            <RelativeLayout
+                android:layout_width="50dp"
+                android:layout_height="50dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/home_xwzx" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_xwzx_tv" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

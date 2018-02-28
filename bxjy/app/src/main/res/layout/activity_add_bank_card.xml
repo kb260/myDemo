@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.kb260.bxjy.ui.mine.AddBankCardActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/divider10"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_man"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etName"
+                    android:hint="@string/add_bankCard_manHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_left"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_idCard"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etIdCard"
+                    android:hint="@string/add_bankCard_idCardHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider6"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_cardNum"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etCardNum"
+                    android:hint="@string/add_bankCard_cardNumHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_left"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_bank"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etBank"
+                    android:hint="@string/add_bankCard_bankHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_left"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_branch"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etBranch"
+                    android:hint="@string/add_bankCard_branchHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider6"/>
+
+            <LinearLayout
+                style="@style/set_ll"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_phone"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etPhone"
+                    android:inputType="phone"
+                    android:hint="@string/add_bankCard_phoneHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider_left"/>
+
+            <LinearLayout
+                style="@style/set_ll_noPadding"
+                >
+                <TextView
+                    android:text="@string/add_bankCard_code"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_content"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_addBankCard_etCode"
+                    android:hint="@string/add_bankCard_codeHint"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/a_addBankCard_tvGetCode"
+                    android:text="@string/account_getCode"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:background="@drawable/get_code_red"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <include layout="@layout/divider6"/>
+
+            <LinearLayout
+                android:padding="15dp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <CheckBox
+                    android:id="@+id/a_addBankCard_rbDefault"
+                    android:button="@null"
+                    android:background="@drawable/rb_red"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp" />
+
+                <TextView
+                    android:layout_marginStart="6dp"
+                    android:layout_marginLeft="6dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_title"
+                    android:text="@string/add_bankCard_default_bank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"
+                android:id="@+id/a_addBankCard_tvAdd"
+                android:textSize="17sp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/add"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="55dp"
+                android:background="@drawable/wallet_bt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

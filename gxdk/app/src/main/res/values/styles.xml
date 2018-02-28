@@ -1,0 +1,98 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="item_llTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">49dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/toolbar_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+    <style name="item_llTheme2">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">49dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/toolbar_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+    <style name="item_llTheme3">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/toolbar_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+        <item name="android:layout_marginTop">1dp</item>
+    </style>
+
+    <style name="item_llTheme4">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">@color/toolbar_white</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
+
+    <style name="NiceDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowSoftInputMode">adjustPan</item>
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="DefaultAnimation" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/exit_anim</item>
+    </style>
+
+    <style name="account_et">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">49dp</item>
+        <item name="android:background">@drawable/account_et</item>
+        <item name="android:layout_marginLeft">42dp</item>
+        <item name="android:layout_marginRight">42dp</item>
+        <item name="android:textColorHint">@color/txt999</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="account_bt">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">49dp</item>
+        <item name="android:background">@drawable/account_bt</item>
+        <item name="android:layout_marginLeft">42dp</item>
+        <item name="android:layout_marginRight">42dp</item>
+        <item name="android:textColor">@color/toolbar_white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <!-- 对话框样式 -->
+    <style name="StyleDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

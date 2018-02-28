@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.RewordDetailsActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:background="@drawable/my_team_bg"
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <ImageView
+            android:layout_above="@+id/my_team_bg2"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/my_reward2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/my_team_bg2"
+            android:layout_centerInParent="true"
+            android:src="@drawable/my_reward1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/my_team_jljf"
+                android:textColor="@color/toolbar_white"
+                android:textSize="12sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/toolbar_white"
+                android:textSize="12sp"
+                android:text="积分"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_marginBottom="1dp"
+        android:background="@color/toolbar_white"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:text="我的团队("
+            android:textColor="@color/txt333"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/my_team_myTeamSize"
+            android:gravity="center_vertical"
+            android:text="0"
+            android:textColor="@color/txt333"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center_vertical"
+            android:text=")"
+            android:textColor="@color/txt333"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent" />
+        <TextView
+            android:gravity="center"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:id="@+id/a_rewordDetail_see"
+            android:text="查看"
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/a_rewordDetail_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>

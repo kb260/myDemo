@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/a_main_bg"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="申请时间"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvTime"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="申请角色"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvType"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="姓名"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvName"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="手机号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvPhone"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="所属银行"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvBank"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="支行"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvBranch"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="银行地址"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvBankAddress"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="审核状态"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvStatus"
+            android:textSize="16sp"
+            android:textColor="@color/bt_red"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="理由"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myCharacterLogYhjl_tvReason"
+            android:textSize="16sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

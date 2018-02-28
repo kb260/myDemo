@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.home.InformationPerfectActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/f_home_informationPerfect_toast"
+                    android:textColor="@color/red_toast"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_informationPerfect_llIdentity"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@color/toolbar_white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:text="@string/a_home_informationPerfect_identity"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_home_informationPerfect_tvIdentity"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/a_informationPerfect_llHouse"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llMarriage"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_marriage"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvMarriage"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llAccount"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_account"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvAccount"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llDeed"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_deed"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvDeed"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llBusinessLicense"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_businessLicense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvBusinessLicense"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/a_informationPerfect_llCar"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llCldjz"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_cldjz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvCldjz"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llGcfp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_gcfp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvGcfp"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llXsz"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_xsz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvXsz"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="15dp"
+                    android:layout_height="1dp"
+                    android:background="@color/toolbar_white"/>
+
+                <LinearLayout
+                    android:id="@+id/a_informationPerfect_llJsz"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:gravity="center_vertical"
+                    android:background="@color/toolbar_white"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+                    <TextView
+                        android:layout_weight="1"
+                        android:textSize="16sp"
+                        android:textColor="@color/txt333"
+                        android:text="@string/a_home_informationPerfect_jsz"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/a_home_informationPerfect_tvJsz"
+                        android:textColor="@color/txt333"
+                        android:textSize="16sp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:src="@drawable/me_arraw"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_informationPerfect_llCredit"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@color/toolbar_white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:text="@string/a_home_informationPerfect_credit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_home_informationPerfect_tvCredit"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:hint="选填"
+                    android:textColorHint="@color/txt999"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/a_informationPerfect_vCharter"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_informationPerfect_llCharter"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@color/toolbar_white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:text="@string/a_home_informationPerfect_charter"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_home_informationPerfect_tvCharter"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:hint="选填"
+                    android:textColorHint="@color/txt999"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_informationPerfect_llInformationSupplement"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center_vertical"
+                android:background="@color/toolbar_white"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:text="@string/a_home_informationPerfect_informationSupplement"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_home_informationPerfect_tvInformationSupplement"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:hint="选填"
+                    android:textColorHint="@color/txt999"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/a_home_informationPerfect_btSubmit"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/f_home_fdsq_btSubmit"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

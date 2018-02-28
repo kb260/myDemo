@@ -1,0 +1,1194 @@
+[
+  {
+    "name": "京",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      }
+    ]
+  },
+  {
+    "name": "津",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "E"
+      }
+    ]
+  },
+  {
+    "name": "沪",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      }
+    ]
+  },
+  {
+    "name": "渝",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      }
+    ]
+  },
+  {
+    "name": "冀",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "T"
+      }
+    ]
+  },
+  {
+    "name": "豫",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "S"
+      },
+      {
+        "name": "U"
+      }
+    ]
+  },
+  {
+    "name": "云",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "S"
+      }
+    ]
+  },
+  {
+    "name": "辽",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "V"
+      }
+    ]
+  },
+  {
+    "name": "黑",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      }
+    ]
+  },
+  {
+    "name": "湘",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      }
+    ]
+  },
+  {
+    "name": "皖",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      }
+    ]
+  },
+  {
+    "name": "鲁",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "U"
+      },
+      {
+        "name": "R"
+      }
+    ]
+  },
+  {
+    "name": "新",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      }
+    ]
+  },
+  {
+    "name": "苏",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      }
+    ]
+  },
+  {
+    "name": "浙",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      }
+    ]
+  },
+  {
+    "name": "赣",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      }
+    ]
+  },
+  {
+    "name": "鄂",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      }
+    ]
+  },
+  {
+    "name": "桂",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      }
+    ]
+  },
+  {
+    "name": "甘",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      }
+    ]
+  },
+  {
+    "name": "晋",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      }
+    ]
+  },
+  {
+    "name": "蒙",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      }
+    ]
+  },
+  {
+    "name": "吉",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      }
+    ]
+  },
+  {
+    "name": "闽",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      }
+    ]
+  },
+  {
+    "name": "贵",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      }
+    ]
+  },
+  {
+    "name": "粤",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "M"
+      },
+      {
+        "name": "N"
+      },
+      {
+        "name": "P"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "S"
+      },
+      {
+        "name": "T"
+      },
+      {
+        "name": "U"
+      },
+      {
+        "name": "V"
+      },
+      {
+        "name": "W"
+      },
+      {
+        "name": "X"
+      },
+      {
+        "name": "Y"
+      },
+      {
+        "name": "Z"
+      }
+
+    ]
+  },
+  {
+    "name": "青",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      },
+      {
+        "name": "H"
+      }
+    ]
+  },
+  {
+    "name": "藏",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "G"
+      }
+    ]
+  },
+  {
+    "name": "川",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      },
+      {
+        "name": "E"
+      },
+      {
+        "name": "F"
+      },
+      {
+        "name": "H"
+      },
+      {
+        "name": "J"
+      },
+      {
+        "name": "K"
+      },
+      {
+        "name": "L"
+      },
+      {
+        "name": "Q"
+      },
+      {
+        "name": "R"
+      },
+      {
+        "name": "S"
+      },
+      {
+        "name": "T"
+      },
+      {
+        "name": "U"
+      },
+      {
+        "name": "V"
+      },
+      {
+        "name": "W"
+      }
+    ]
+  },
+  {
+    "name": "宁",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      },
+      {
+        "name": "D"
+      }
+    ]
+  },
+  {
+    "name": "琼",
+    "city": [
+      {
+        "name": "A"
+      },
+      {
+        "name": "B"
+      },
+      {
+        "name": "C"
+      }
+    ]
+  }
+]

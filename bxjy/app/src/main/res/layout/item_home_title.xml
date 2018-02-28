@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/item_title_img"
+        android:src="@drawable/home_ing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:textStyle="bold"
+        android:id="@+id/item_title_tv"
+        android:textSize="17sp"
+        android:textColor="@color/text_title"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:text="@string/home_liveTitle"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:background="?android:attr/selectableItemBackground"
+        android:id="@+id/item_title_llMare"
+        android:padding="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="14sp"
+            android:text="@string/home_mare"
+            android:textColor="@color/text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</LinearLayout>

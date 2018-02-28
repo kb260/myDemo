@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbarCollect"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:minHeight="?attr/actionBarSize"
+    app:titleTextColor="@color/black"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+    <CheckBox
+        android:id="@+id/toolbarCollect_cb"
+        android:layout_marginRight="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_gravity="end"
+        android:button="@null"
+        android:background="@drawable/collect_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</android.support.v7.widget.Toolbar>
+

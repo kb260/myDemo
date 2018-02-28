@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/toolbar_white"
+    tools:context="com.kb260.gxdk.view.me.IntegralRuleActivity">
+
+    <include layout="@layout/toolbar"/>
+    
+    <TextView
+        android:text="\t\t盈口袋会员积分是由盈口袋平台赋予会员的权利，会员可通过多种途径获得积分。盈口袋积分分为：充值积分、提现积分、商城积分。充值积分由会员通过充值方式获取，提现积分和商城积分由盈口袋平台赠送的会员福利。充值积分及提现积分可进行提现操作，换算比例：100积分=1元人民币。提现中产生的手续费根据银行或第三方支付实际费用从提现积分中扣除。商城积分可在商城里进行商品兑换，兑换规则按照商城积分兑换规则进行兑换。"
+        android:textColor="@color/txt666"
+        android:textSize="14sp"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

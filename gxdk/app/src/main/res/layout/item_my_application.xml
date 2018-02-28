@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/toolbar_white"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="36dp">
+
+        <TextView
+            android:textColor="@color/txt333"
+            android:textSize="14sp"
+            android:text="车贷"
+            android:id="@+id/item_myApplication_tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+
+        <TextView
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="申请中"
+            android:id="@+id/item_myApplication_tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/a_main_bg"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="88dp">
+
+        <TextView
+            android:gravity="center_vertical"
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="贷款金额：80万"
+            android:id="@+id/item_myApplication_tvMoney"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+
+        <TextView
+            android:gravity="center_vertical"
+            android:textColor="@color/txt666"
+            android:textSize="14sp"
+            android:text="结算利率：5厘~15厘"
+            android:id="@+id/item_myApplication_tvRate"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+            <TextView
+                android:gravity="center_vertical"
+                android:textColor="@color/txt666"
+                android:textSize="14sp"
+                android:text="贷款期限：12月"
+                android:id="@+id/item_myApplication_tvMouth"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/item_myApplication_tvCancel"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/my_application_bt1"
+                android:text="@string/cancel"
+                android:gravity="center"
+                android:textColor="@color/txt999"
+                android:textSize="12sp"
+                android:layout_width="56dp"
+                android:layout_height="20dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/item_myApplication_tvPay"
+                android:background="@drawable/my_application_bt2"
+                android:gravity="center"
+                android:textColor="@color/bt_red"
+                android:textSize="12sp"
+                android:text="@string/pay"
+                android:layout_width="56dp"
+                android:layout_height="20dp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

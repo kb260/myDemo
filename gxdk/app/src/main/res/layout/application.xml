@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/a_secondApplicationLoan_llIsSfyyq"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/a_secondApplicationLoan_llExpectation"
+            android:layout_marginTop="10dp"
+            style="@style/item_llTheme">
+            <TextView
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_expectation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/a_secondApplicationLoan_tvExpectation"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_secondApplicationLoan_llTime"
+            style="@style/item_llTheme">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="end"
+                android:id="@+id/a_secondApplicationLoan_tvTime"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:src="@drawable/me_arraw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white"/>
+
+        <LinearLayout
+            android:id="@+id/a_secondApplicationLoan_llOutMoney"
+            style="@style/item_llTheme">
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="end"
+                android:id="@+id/a_secondApplicationLoan_tvOutMoney"
+                android:textColor="@color/txt333"
+                android:textSize="16sp"
+                android:layout_marginRight="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="16sp"
+                android:textColor="@color/txt666"
+                android:text="@string/f_home_fdsq_yuan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_marginTop="10dp"
+        style="@style/item_llTheme4">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/txt666"
+            android:text="@string/f_home_fdsq_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/a_secondApplicationLoan_etDescription"
+            android:hint="@string/f_home_fdsq_hint"
+            android:textSize="15sp"
+            android:textColorHint="@color/txt999"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/a_secondApplicationLoan_btSubmit"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/f_home_fdsq_btSubmit"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+</LinearLayout>

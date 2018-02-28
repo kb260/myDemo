@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/a_evaluationCar_sc"
+    android:background="@color/a_main_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llCk"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="车况"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvCk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llClyt"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="车辆用途"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvClyt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llSs"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="省市"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvSs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:id="@+id/a_evaluationCar_llCpp"
+            style="@style/item_llTheme4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="车品牌"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvCpp1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llGcsj"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="购车时间"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvGcsj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llXsjl"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="行驶距离"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvXsjl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:text="万公里"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llGcyj"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="购车原价"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_evaluationCar_tvGcyj"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+            <TextView
+                android:text="万元"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/a_evaluationCar_btEvaluation"
+            android:layout_width="250dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="25dp"
+            android:background="@drawable/bt_1"
+            android:text="@string/a_evaluation_toolbar"
+            android:textColor="@color/toolbar_white"
+            android:textSize="17sp" />
+
+        <LinearLayout
+            android:id="@+id/a_evaluationCar_llResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:background="@color/bt_red"
+                android:gravity="center_vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="查询结果"
+                android:textColor="@color/toolbar_white"
+                android:textSize="14sp" />
+
+            <LinearLayout style="@style/item_llTheme4"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车品牌"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluationCar_tvCpp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="行驶距离"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluationCar_tvXsjl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="总价"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/a_evaluationCar_tvZj"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

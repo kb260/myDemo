@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.kb260.bxjy.ui.mine.PersonalIfmActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+    <LinearLayout
+        android:id="@+id/a_personalIfm_llHead"
+        android:padding="15dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/text_title"
+            android:textSize="14sp"
+            android:text="@string/mine_head"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/a_personalIfm_civHeader"
+            android:src="@drawable/header"
+            android:layout_width="60dp"
+            android:layout_height="60dp" />
+
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/a_personalIfm_llNickname"
+        style="@style/set_ll"
+        >
+        <TextView
+            style="@style/set_text"
+            android:text="@string/mine_nc"
+            />
+        <TextView
+            android:id="@+id/a_personalIfm_tvNickname"
+            style="@style/set_text1"
+            android:text="KB260"
+            />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/a_personalIfm_llGender"
+        style="@style/set_ll"
+        >
+        <TextView
+            style="@style/set_text"
+            android:text="@string/mine_gender"
+            />
+        <TextView
+            android:id="@+id/a_personalIfm_tvGender"
+            style="@style/set_text1"
+            android:text="男"
+            />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:id="@+id/a_personalIfm_llNotebookClass"
+        style="@style/set_ll"
+        >
+        <TextView
+            style="@style/set_text"
+            android:text="@string/mine_notebookClass"
+            />
+        <TextView
+            android:id="@+id/a_personalIfm_tvNotebookClass"
+            style="@style/set_text1"
+            />
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.AgentsActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <LinearLayout
+        style="@style/item_llTheme">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/name"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:inputType="textPersonName"
+            android:hint="@string/nameHint"
+            android:id="@+id/a_agents_etName"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/phone"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:hint="@string/phoneHint"
+            android:inputType="phone"
+            android:id="@+id/a_agents_etPhone"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/code"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:hint="@string/codeHint"
+            android:id="@+id/a_agents_etCode"
+            android:background="@null"
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/a_agents_btGetCode"
+            android:textSize="12sp"
+            android:text="@string/getCode"
+            android:textColor="@color/toolbar_white"
+            android:background="@drawable/get_code_bt"
+            android:layout_width="wrap_content"
+            android:layout_height="26dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/idcard"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="19"
+            android:hint="@string/idcardHint"
+            android:inputType="text"
+            android:id="@+id/a_agents_etIdCard"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/password"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:hint="@string/passwordHint"
+            android:inputType="textPassword"
+            android:id="@+id/a_agents_etPassword"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/companyName"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:hint="@string/companyNameHint"
+            android:inputType="textPassword"
+            android:id="@+id/a_agents_etCompanyName"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/item_llTheme2">
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:text="@string/companyAddress"
+            android:layout_width="86dp"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:textSize="14sp"
+            android:lines="1"
+            android:textColorHint="@color/txt999"
+            android:maxLength="20"
+            android:hint="@string/companyAddressHint"
+            android:inputType="textPassword"
+            android:id="@+id/a_agents_etCompanyAddress"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/a_agents_btRegister"
+        android:background="@drawable/bt_1"
+        android:textColor="@color/toolbar_white"
+        android:textSize="17sp"
+        android:text="@string/register"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="25dp"
+        android:layout_width="250dp"
+        android:layout_height="49dp" />
+
+</LinearLayout>

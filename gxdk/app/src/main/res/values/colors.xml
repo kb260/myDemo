@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="txt_black">#000000</color>
+
+    <color name="toolbar_white">#FFFFFF</color>
+    <color name="a_main_bg">#80EAEAEA</color>
+    <color name="a_main_bottom0">#999999</color>
+    <color name="a_main_bottom1">#EA4752</color>
+    <color name="a_main_pg">#333333</color>
+    <color name="a_main_pg_start">#EA4752</color>
+    <color name="a_main_pg_end">#EA8947</color>
+    <color name="txt666">#666666</color>
+    <color name="txt333">#333333</color>
+    <color name="txt34">#343434</color>
+    <color name="txt45">#454F54</color>
+    <color name="txt4A">#4A4A4A</color>
+    <color name="txt999">#999999</color>
+    <color name="txt656565">#656565</color>
+    <color name="divider">#E6E6E6</color>
+    <color name="divider_1">#DDDDDD</color>
+    <color name="txt4d4d4d">#4D4D4D</color>
+    <color name="red_toast">#E52532</color>
+    <color name="txt_blue">#FF539CED</color>
+    <color name="bt_red">#EB4653</color>
+    <color name="txt_red">#D70000</color>
+    <color name="txt_green">#568649</color>
+    <color name="order_red">#E26365</color>
+    <color name="order_top">#FFF7F3</color>
+
+
+    <color name="integral_1">#EB4653</color>
+    <color name="integral_2">#EB8C46</color>
+    <color name="integral_3">#EBC546</color>
+    <color name="integral_get">#EB7946</color>
+
+    <color name="a_select_bg">#EAEAEA</color>
+
+    <color name="a_select_0">#EEEEEE</color>
+    <color name="a_select_1">#F27E49</color>
+    <color name="a_select_2">#EB4653</color>
+
+    <color name="picker_cancel">#1A1A1A</color>
+    <color name="picker_ok">#CC1C00</color>
+    <color name="txt_noAddress">#9F9F9F</color>
+    <color name="line_ccc">#cccccc</color>
+
+
+
+</resources>

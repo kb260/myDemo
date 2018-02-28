@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RadioGroup
+        android:id="@+id/item_groupClass_rg"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:maxLines="1"
+            android:id="@+id/item_groupClass_rbInternal"
+            android:layout_marginLeft="14dp"
+            android:layout_marginRight="10dp"
+            android:text="内部课程(直播互动)"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:button="@null"
+            android:background="@drawable/internal_public_button"
+            android:textColor="@color/text_content_999"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:maxLines="1"
+            android:id="@+id/item_groupClass_rbPublic"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="14dp"
+            android:text="公开课程(直播互动)"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:button="@null"
+            android:background="@drawable/internal_public_button"
+            android:textColor="@color/text_content_999"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/item_groupClass_point0"
+            android:background="@drawable/point_group0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="4dp"
+            android:layout_height="0dp"/>
+        <ImageView
+            android:id="@+id/item_groupClass_point1"
+            android:background="@drawable/point_group1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+</LinearLayout>

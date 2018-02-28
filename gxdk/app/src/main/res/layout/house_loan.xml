@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/houseLoan_ll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseAddress"
+        style="@style/item_llTheme"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/f_home_fdsq_house"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvHouseAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/me_arraw" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseAddressDetail"
+        style="@style/item_llTheme"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/a_firstApplicationLoan_etHouseAddress1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:singleLine="true"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/address_detail_1"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llHouseAddressPicker"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvHouseAddressHouseDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:hint="请选择小区"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginStart="15dp"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llHouseAddressWrite"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/a_firstApplicationLoan_etHouseAddress2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_detail_2"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/a_firstApplicationLoan_etHouseAddress3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_detail_3"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/a_firstApplicationLoan_etHouseAddress4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="number"
+                android:singleLine="true"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/address_detail_4"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white" />
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseArea"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/f_home_fdsq_houseArea"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvHouseArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/square_meter"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/me_arraw" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white" />
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseNature"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/f_home_fdsq_houseNature"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvHouseNature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/me_arraw" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white" />
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseStatus"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/f_home_fdsq_houseStatus"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvHouseStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/me_arraw" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseStatusType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llBank"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/f_home_fdsq_bank"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+
+        <LinearLayout
+            android:id="@+id/a_firstApplicationLoan_llSywk"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="@string/f_home_fdsq_sywk"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_firstApplicationLoan_tvSywk"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:text="@string/f_home_fdsq_million"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="15dp"
+            android:layout_height="1dp"
+            android:background="@color/toolbar_white" />
+
+        <LinearLayout
+            android:id="@+id/a_secondApplicationLoan_llSfdz"
+            style="@style/item_llTheme">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/a_home_cdsqSecond_xydz"
+                android:textColor="@color/txt666"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/a_secondApplicationLoan_tvSfdz"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:textColor="@color/txt333"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/me_arraw" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="15dp"
+        android:layout_height="1dp"
+        android:background="@color/toolbar_white" />
+
+    <LinearLayout
+        android:id="@+id/a_firstApplicationLoan_llHouseAge"
+        style="@style/item_llTheme">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="房龄"
+            android:textColor="@color/txt666"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/a_firstApplicationLoan_tvHouseAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:text="@string/year"
+            android:textColor="@color/txt333"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/me_arraw" />
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.home.CreditApplicationFirstActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/application_1"/>
+
+            <include
+                android:visibility="gone"
+                layout="@layout/car_loan"/>
+
+            <include
+                android:visibility="gone"
+                layout="@layout/house_loan"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:id="@+id/a_creditFirst_llSqje"
+                style="@style/item_llTheme">
+                <TextView
+                    android:id="@+id/a_creditFirst_tvSqjeKey"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_home_cdsqSecond_sqje"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_creditFirst_tvSqje"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="@string/million"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/a_creditFirst_vType"
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_creditFirst_llType"
+                style="@style/item_llTheme">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="类型"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_creditFirst_tvType"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_creditFirst_llWorkAddress"
+                style="@style/item_llTheme">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_home_xdsqSecond_workAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_creditFirst_tvWorkAddress"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                style="@style/item_llTheme">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_home_xdsqSecond_industry"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:gravity="end"
+                    android:lines="1"
+                    android:maxLength="20"
+                    android:id="@+id/a_creditFirst_etIndustry"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="15dp"
+                android:layout_height="1dp"
+                android:background="@color/toolbar_white"/>
+
+            <LinearLayout
+                android:id="@+id/a_creditFirst_llCareer"
+                style="@style/item_llTheme">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_home_xdsqSecond_career"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:gravity="end"
+                    android:lines="1"
+                    android:maxLength="20"
+                    android:id="@+id/a_creditFirst_etCareer"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/a_creditFirst_btNext"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/f_home_fdsq_next"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

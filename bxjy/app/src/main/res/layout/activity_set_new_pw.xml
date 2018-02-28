@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.kb260.bxjy.ui.mine.SetNewPwActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <include layout="@layout/divider10"/>
+
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/a_setNewPw_etOld"
+        android:padding="15dp"
+        android:background="@null"
+        android:textSize="14sp"
+        android:textColor="@color/text_title"
+        android:hint="@string/set_setNewPw_oldPwHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/dividi"/>
+
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/a_setNewPw_etNew"
+        android:padding="15dp"
+        android:background="@null"
+        android:textSize="14sp"
+        android:textColor="@color/text_title"
+        android:hint="@string/set_setNewPw_newPwHint"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/dividi"/>
+
+    <EditText
+        android:inputType="textPassword"
+        android:id="@+id/a_setNewPw_etNewComfit"
+        android:padding="15dp"
+        android:background="@null"
+        android:textSize="14sp"
+        android:textColor="@color/text_title"
+        android:hint="@string/set_setNewPw_newPwHintComfit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <include layout="@layout/dividi"/>
+
+    <TextView
+        android:id="@+id/a_setNewPw_tvOk"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="17sp"
+        android:textColor="@color/white"
+        android:text="@string/account_sure"
+        android:background="@drawable/bt_change_pw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

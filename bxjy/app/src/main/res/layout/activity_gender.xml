@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.kb260.bxjy.ui.mine.GenderActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/a_changeGender_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@color/black"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <TextView
+            android:background="?android:attr/selectableItemBackground"
+            android:id="@+id/a_changeGender_toolbarRight"
+            android:layout_gravity="end"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/text_title"
+            android:textSize="17sp"
+            android:text="@string/account_sure"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:background="@color/card_bg"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"/>
+
+
+    <LinearLayout
+        android:id="@+id/a_changeGender_llBoy"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:text="@string/changeGender_boy"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:checked="true"
+            android:id="@+id/a_changeGender_rbBoy"
+            android:background="@drawable/rb_render"
+            android:button="@null"
+            android:gravity="center_vertical|start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/card_bg"/>
+
+    <LinearLayout
+        android:id="@+id/a_changeGender_llGirl"
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="14sp"
+            android:textColor="@color/text_title"
+            android:text="@string/changeGender_girl"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+
+        <RadioButton
+            android:id="@+id/a_changeGender_rbGirl"
+            android:background="@drawable/rb_render"
+            android:button="@null"
+            android:gravity="center_vertical|start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/card_bg"/>
+
+</LinearLayout>

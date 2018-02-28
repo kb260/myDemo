@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.gradmonad.FirstDraftProgramActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:background="@color/toolbar_white"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <View
+                    android:layout_width="3dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/bt_red"/>
+                <TextView
+                    android:paddingLeft="7dp"
+                    android:paddingRight="7dp"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:textColor="@color/bt_red"
+                    android:text="@string/a_firstDraftProgram_programDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_firstDraftProgram_llQuota"
+                android:layout_marginTop="20dp"
+                style="@style/item_llTheme">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_myApplicationDetail_quota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/a_firstDraftProgram_tvQuota"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="@string/f_home_fdsq_million"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+
+                <!--<EditText
+                    android:maxLength="10"
+                    android:lines="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:gravity="end"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/f_home_fdsq_million"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />-->
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/item_llTheme2">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/f_home_fdsq_interestRate"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:text="4.7"
+                    android:gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/a_firstDraftProgram_tvMinInterestRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+                <TextView
+                    android:textColor="@color/txt666"
+                    android:text="@string/rct"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/f_home_fdsq_zhi"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/a_firstDraftProgram_tvRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/f_home_fdsq_hint"
+                    android:textColor="@color/txt666"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:textColor="@color/txt666"
+                    android:text="@string/rct"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/me_arraw" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/a_firstDraftProgram_llTerm"
+                style="@style/item_llTheme2">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_firstDraftProgram_repaymentPeriod"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:gravity="end"
+                    android:id="@+id/a_firstDraftProgram_tvTerm"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:text="月"
+                    android:textColor="@color/txt666"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!--<EditText
+                    android:maxLength="3"
+                    android:lines="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:inputType="number"
+                    android:gravity="end"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/f_home_fdsq_mouth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />-->
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/a_firstDraftProgram_llRepaymentType"
+                style="@style/item_llTheme2">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_firstDraftProgram_repaymentType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_firstDraftProgram_RepaymentType"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/a_firstDraftProgram_llRepaymentCycle"
+                style="@style/item_llTheme2">
+                <TextView
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_firstDraftProgram_repaymentCycle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_firstDraftProgram_RepaymentCycle"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/a_firstDraftProgram_llResult"
+                style="@style/item_llTheme2">
+                <TextView
+                    android:id="@+id/a_firstDraftProgram_tvResultKey"
+                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="@string/a_firstDraftProgram_auditResult"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/a_firstDraftProgram_auditResult"
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:textColor="@color/txt333"
+                    android:textSize="16sp"
+                    android:text="@string/day"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:id="@+id/a_firstDraftProgram_llMaterial"
+                style="@style/item_llTheme3"
+                >
+                <TextView
+                    android:lines="1"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="所需材料(可多选)"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:gravity="end"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:id="@+id/a_firstDraftProgram_tvMaterial"
+                    android:textSize="16sp"
+                    android:textColor="@color/txt333"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:src="@drawable/me_arraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_marginTop="10dp"
+                style="@style/item_llTheme4">
+                <TextView
+                    android:textSize="16sp"
+                    android:textColor="@color/txt666"
+                    android:text="备注"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/a_firstDraftProgram_etBz"
+                    android:hint="@string/f_home_fdsq_hint"
+                    android:textSize="15sp"
+                    android:textColorHint="@color/txt999"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@null"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.RecyclerView
+                android:visibility="gone"
+                android:layout_marginTop="10dp"
+                android:id="@+id/a_firstDraftProgram_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+
+            <Button
+                android:id="@+id/a_firstDraftProgram_btSubmit"
+                android:background="@drawable/bt_1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="17sp"
+                android:text="@string/btSubmit"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:layout_width="250dp"
+                android:layout_height="49dp" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

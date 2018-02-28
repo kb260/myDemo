@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:paddingLeft="15dp"
+    android:paddingRight="15dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_withdrawLog_type"
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/item_withdrawLog_no"
+            android:textSize="14sp"
+            android:textColor="@color/txt666"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_withdrawLog_money"
+            android:textSize="14sp"
+            android:textColor="@color/txt333"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_withdrawLog_time"
+            android:textSize="12sp"
+            android:textColor="@color/txt999"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/item_withdrawLog_status"
+            android:textSize="12sp"
+            android:textColor="@color/bt_red"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>

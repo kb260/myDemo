@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/a_main_bg"
+    tools:context="com.kb260.gxdk.view.me.MyTeamActivity">
+
+    <include layout="@layout/toolbar"/>
+
+    <TextView
+        android:id="@+id/a_myTeam_tvNickname"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="1dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@color/toolbar_white"
+        android:textColor="@color/txt333"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="36dp" />
+
+
+    <RelativeLayout
+        android:background="@drawable/my_team_bg"
+        android:layout_width="match_parent"
+        android:layout_height="154dp">
+
+        <LinearLayout
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <View
+                android:id="@+id/a_myTeam_vSelect1"
+                android:background="@color/a_select_1"
+                android:layout_width="1dp"
+                android:layout_height="60dp"/>
+            <TextView
+                android:id="@+id/a_myTeam_tvSelect1"
+                android:textColor="@color/toolbar_white"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/my_team_select1"
+                android:layout_width="76dp"
+                android:layout_height="76dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/a_myTeam_vSelect2"
+                android:background="@color/a_select_0"
+                android:layout_width="1dp"
+                android:layout_height="60dp"/>
+            <TextView
+                android:id="@+id/a_myTeam_tvSelect2"
+                android:textColor="@color/txt999"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/my_team_select0"
+                android:layout_width="76dp"
+                android:layout_height="76dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_horizontal"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/a_myTeam_vSelect3"
+                android:background="@color/a_select_0"
+                android:layout_width="1dp"
+                android:layout_height="60dp"/>
+            <TextView
+                android:id="@+id/a_myTeam_tvSelect3"
+                android:textColor="@color/txt999"
+                android:textSize="12sp"
+                android:gravity="center"
+                android:background="@drawable/my_team_select0"
+                android:layout_width="76dp"
+                android:layout_height="76dp" />
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:background="@color/toolbar_white"
+        android:layout_marginTop="6dp"
+        android:id="@+id/a_myTeam_rv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

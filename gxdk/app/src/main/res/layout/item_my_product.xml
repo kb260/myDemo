@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@color/toolbar_white"
+    android:layout_height="wrap_content">
+
+    <View
+        android:background="@color/a_main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"/>
+
+    <TextView
+        android:id="@+id/item_myProduct_type"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:text="房贷"
+        android:textSize="16sp"
+        android:textColor="@color/txt34"
+        android:layout_width="match_parent"
+        android:layout_height="50dp" />
+
+    <View
+        android:background="@color/a_main_bg"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"/>
+
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_myProduct_max"
+            android:textColor="@color/txt34"
+            android:textSize="14sp"
+            android:text="放款最高金额"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myProduct_money"
+            android:textColor="@color/txt_red"
+            android:textSize="14sp"
+            android:text="20万"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myProduct_proportion"
+            android:textColor="@color/txt34"
+            android:textSize="14sp"
+            android:text="4%~8%"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="13dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/item_myProduct_time"
+            android:textColor="@color/txt34"
+            android:textSize="14sp"
+            android:text="期限20个月"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/item_myProduct_type2"
+            android:textColor="@color/txt34"
+            android:textSize="14sp"
+            android:text="先息后本"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@color/txt34"
+            android:textSize="14sp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</LinearLayout>
