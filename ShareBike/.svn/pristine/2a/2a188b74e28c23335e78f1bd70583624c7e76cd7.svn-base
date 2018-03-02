@@ -1,0 +1,21 @@
+package com.panda.sharebike.util;
+
+import static com.blankj.utilcode.util.RegexUtils.isMatch;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/18
+ * desc   :
+ * version: 1.0
+ */
+public class RegexUtil {
+    /**
+     * 最少10位数字+字母
+     */
+    public static String regex1 = "^[a-zA-Z0-9]{10,}$";
+
+    public static boolean isStringNumTen(CharSequence input) {
+        return isMatch(regex1, input);
+    }
+}

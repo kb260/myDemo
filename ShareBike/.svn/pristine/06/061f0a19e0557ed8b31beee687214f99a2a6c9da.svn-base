@@ -1,0 +1,136 @@
+package com.panda.sharebike.ui.loading;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.LogUtils;
+import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.N;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.TouristsBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.MainActivity;
+import com.panda.sharebike.ui.guidepage.GuideActivity;
+
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class LoadingActivity extends AppCompatActivity {
+
+    // private SSocketService myService;
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
+        setContentView(R.layout.activity_loading);
+        SPUtils.getInstance("dialog").put("first_dialog", true);
+        getToken(Config.TOKEN);
+        initDate();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+    /**
+     * @param mContext 在应用初始，启动Activity里获取本地保存的登录配置和用户信息
+     */
+    public static void init(Context mContext) {
+        Config.USER_ID = SPUtils.getInstance("USER_INFO").getString("USER_ID");
+        if (EmptyUtils.isNotEmpty(Config.USER_ID)) {
+            // getUserInfo();
+        }
+    }
+
+    @SuppressLint("ApplySharedPref")
+    private void initDate() {
+        SharedPreferences sp = getSharedPreferences("is", MODE_PRIVATE);
+        boolean first = sp.getBoolean("first", true);
+        SharedPreferences.Editor editor = sp.edit();
+        if (first) {
+            //第一次进入跳转
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(LoadingActivity.this, GuideActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+            }, 2000);
+            editor.putBoolean("first", false);//debug模式下传true进入引导页，上线前记得修改
+            editor.commit();
+        } else {
+            //第二次进入跳转
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(LoadingActivity.this, MainActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+            }, 2000);
+        }
+    }
+
+    /**
+     * 游客接口实现
+     */
+    private void getToken(String token) {
+        LogUtils.e(token + "<------------");
+        String url;
+        if (TextUtils.isEmpty(token)) {
+            url = N.KEY_GUESTLOGIN;
+        } else {
+            url = N.KEY_GUESTLOGIN + "?token=" + token;
+        }
+
+        Api.getInstance().getDefault().getToken(url)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<TouristsBean>>(new SubscriberListener<HttpResult<TouristsBean>>() {
+
+                    @Override
+                    public void onSuccess(HttpResult<TouristsBean> model) {
+                        Logger.e(model.getData().getSession().getToken() + "-----------------");
+
+                        SharedPreferences sp = getSharedPreferences(N.SHARE_TOKEN, MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putString(N.SHARE_TOKEN_KEY, model.getData().getSession().getToken());
+                        editor.commit();//提交token，全局需要，这里是
+
+//                        if (model.getData().getSession().getToken().equals(SPUtils.getInstance(N.SHARE_TOKEN).getString(N.SHARE_TOKEN_KEY))) {
+//                            //token一样不用登录
+//
+//                        } else {
+//                            Intent intent = new Intent(LoadingActivity.this, LoginByPhoneActivity.class);
+//                            startActivity(intent);
+//                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtils.showShort(msg);
+                    }
+                }, this, false));
+
+    }
+
+}

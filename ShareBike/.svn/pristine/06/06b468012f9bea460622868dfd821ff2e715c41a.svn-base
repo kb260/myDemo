@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.panda.sharebike.ui.selfinfo.UserChangeNickNameActivity">
+
+    <EditText
+        android:id="@+id/et_change_name_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/space_dimens_12"
+        android:paddingTop="@dimen/space_dimens_12"
+        android:paddingBottom="@dimen/space_dimens_12"
+        android:layout_marginTop="@dimen/space_dimens_20"
+        tools:text="@string/app_name" />
+</LinearLayout>

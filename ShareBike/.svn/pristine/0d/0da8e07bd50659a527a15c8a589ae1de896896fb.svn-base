@@ -1,0 +1,64 @@
+package com.panda.sharebike.ui.maintenance;
+
+import android.view.View;
+
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.widget.ClearEditText;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 故障报修
+ */
+public class FaultRepairActivity extends BaseActivity {
+
+
+    @BindView(R.id.cet_cycle_number)
+    ClearEditText cetCycleNumber;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_fault_repair;
+    }
+
+    @OnClick({R.id.cet_cycle_number})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.cet_cycle_number:
+
+                break;
+
+        }
+    }
+
+    /**
+     * 故障报修
+     *
+     * @param bikeId
+     */
+    private void getHttpMalfunction(String bikeId, String malfunctionType, String pics, String remark) {
+        Api.getInstance().getDefault().getMalfunction(Config.TOKEN, bikeId, malfunctionType, pics, remark)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult>(new SubscriberListener<HttpResult>() {
+                    @Override
+                    public void onSuccess(HttpResult model) {
+
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+}

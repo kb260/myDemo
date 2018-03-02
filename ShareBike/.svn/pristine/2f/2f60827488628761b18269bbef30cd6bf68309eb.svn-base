@@ -1,0 +1,49 @@
+package com.panda.sharebike.ui.login;
+
+import android.support.annotation.IdRes;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+import com.panda.sharebike.R;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.widget.XRadioGroup;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+
+/**
+ * 押金充值
+ */
+public class RechargeActivity extends BaseActivity implements XRadioGroup.OnCheckedChangeListener {
+    @BindView(R.id.tv_deposit)
+    TextView tvDeposit;
+    @BindView(R.id.rb_alipay)
+    RadioButton rbAlipay;
+    @BindView(R.id.rb_wechat)
+    RadioButton rbWechat;
+    @BindView(R.id.btn_recharge)
+    Button btnRecharge;
+    @BindView(R.id.radio_group)
+    XRadioGroup radioGroup;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_recharge;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        radioGroup.setOnCheckedChangeListener(this);
+    }
+
+    @OnClick(R.id.btn_recharge)
+    public void onViewClicked() {
+    }
+
+    @Override
+    public void onCheckedChanged(XRadioGroup group, @IdRes int checkedId) {
+    }
+
+}

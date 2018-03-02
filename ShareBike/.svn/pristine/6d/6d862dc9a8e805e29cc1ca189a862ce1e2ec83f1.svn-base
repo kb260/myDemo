@@ -1,0 +1,447 @@
+package com.panda.sharebike.ui.maintenance;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioGroup;
+
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.jph.takephoto.app.TakePhotoActivity;
+import com.jph.takephoto.model.TResult;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.MessageEvent;
+import com.panda.sharebike.model.entity.FaultRepairPicBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.login.LoginByPhoneActivity;
+import com.panda.sharebike.ui.unlock.ScanUnlockActivity;
+import com.panda.sharebike.ui.widget.ClearEditText;
+import com.panda.sharebike.util.ImageLoaderUtils;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 故障报修
+ */
+public class FaultRepairActivity extends TakePhotoActivity {
+
+    @BindView(R.id.et_remark)
+    EditText etRemark;
+    private AlertDialog take_photo_dlg;//拍照dialog
+    private Uri imageUri;
+
+    @BindView(R.id.cet_cycle_number)
+    ClearEditText cetCycleNumber;
+    @BindView(R.id.rg_one)
+    RadioGroup rgOne;
+    @BindView(R.id.rg_two)
+    RadioGroup rgTwo;
+    @BindView(R.id.iv_photo_one)
+    ImageView ivPhotoOne;
+    @BindView(R.id.iv_photo_two)
+    ImageView ivPhotoTwo;
+    @BindView(R.id.iv_photo_there)
+    ImageView ivPhotoThere;
+    @BindView(R.id.iv_photo)
+    ImageView ivPhoto;
+    @BindView(R.id.btn_register)
+    Button btnRegister;
+    private String question;
+    private int mType = 0;
+    List<String> pathList;//图片列表
+    private String mPics;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_fault_repair);
+        //  setColor(this, R.color.tv_number_color);
+        ButterKnife.bind(this);
+        EventBus.getDefault().register(this);
+        pathList = new ArrayList<>();
+        take_photo_dlg = new AlertDialog.Builder(this).create();
+    }
+
+    /**
+     * 设置状态栏颜色
+     *
+     * @param activity 需要设置的activity
+     * @param color    状态栏颜色值
+     */
+    public static void setColor(Activity activity, int color) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            // 设置状态栏透明
+            activity.getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 生成一个状态栏大小的矩形
+            View statusView = createStatusView(activity, color);
+            // 添加 statusView 到布局中
+            ViewGroup decorView = (ViewGroup) activity.getWindow().getDecorView();
+            decorView.addView(statusView);
+            // 设置根布局的参数
+            ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+            rootView.setFitsSystemWindows(true);
+            rootView.setClipToPadding(true);
+        }
+    }
+
+    /**
+     * 生成一个和状态栏大小相同的矩形条
+     *
+     * @param activity 需要设置的activity
+     * @param color    状态栏颜色值
+     * @return 状态栏矩形条
+     */
+    private static View createStatusView(Activity activity, int color) {
+        // 获得状态栏高度
+        int resourceId = activity.getResources().getIdentifier("status_bar_height", "dimen", "android");
+        int statusBarHeight = activity.getResources().getDimensionPixelSize(resourceId);
+
+        // 绘制一个和状态栏一样高的矩形
+        View statusView = new View(activity);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+                statusBarHeight);
+        statusView.setLayoutParams(params);
+        statusView.setBackgroundColor(color);
+        return statusView;
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onBusEvent(MessageEvent messageEvent) {
+        cetCycleNumber.setText(messageEvent.getMessage());
+        Logger.e(messageEvent.getMessage());
+    }
+
+    /**
+     * 判断车牌号是否为空
+     */
+    private void etTextIsEmpty() {
+        if (EmptyUtils.isEmpty(cetCycleNumber.getText().toString())) {
+            ToastUtils.showShort("请输入车牌号");
+            return;
+        }
+        if (EmptyUtils.isEmpty(question)) {
+            ToastUtils.showShort("请选择问题类型");
+            return;
+        }
+        if (EmptyUtils.isEmpty(etRemark.getText().toString())) {
+            String remark = "";
+        }
+        getHttpMalfunction(cetCycleNumber.getText().toString(), question, EmptyUtils.isEmpty(mPics) ? "" : mPics, EmptyUtils.isEmpty(etRemark.getText().toString()) ? "" : etRemark.getText().toString());
+    }
+
+    @OnClick({R.id.iv_left, R.id.layout_scan, R.id.rb_question01, R.id.rb_question02, R.id.rb_question03, R.id.rb_question04, R.id.rb_question05, R.id.rb_question06, R.id.iv_photo, R.id.btn_register})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_left:
+                FaultRepairActivity.this.finish();
+                break;
+            case R.id.layout_scan:
+//                Intent intent = new Intent(this, ScanUnlockActivity.class);
+//                startActivity(intent);
+                startActivityForResultSingle(ScanUnlockActivity.class, 3, 1003);
+                break;
+            case R.id.rb_question01:
+                question = "无法开锁";
+                rgTwo.clearCheck();
+                break;
+            case R.id.rb_question02:
+                question = "二维码损坏";
+                rgTwo.clearCheck();
+                break;
+            case R.id.rb_question03:
+                question = "举报违停";
+                rgTwo.clearCheck();
+                break;
+            case R.id.rb_question04:
+                question = "零件损坏";
+                rgOne.clearCheck();
+                break;
+            case R.id.rb_question05:
+                question = "车辆异响";
+                rgOne.clearCheck();
+                break;
+            case R.id.rb_question06:
+                question = "其他问题";
+                rgOne.clearCheck();
+                break;
+            case R.id.iv_photo://图片
+                showTakePhotoDlg();
+                break;
+            case R.id.btn_register:
+                etTextIsEmpty();
+                //   getHttpMalfunction()
+                break;
+        }
+    }
+
+    public void startActivityForResultSingle(Class<?> clz, int tag, int requestCode) {
+        Intent intent = new Intent(this, clz);
+        intent.putExtra(Config.SCANUNLOCK_KEY, tag);
+
+        startActivityForResult(intent, requestCode);
+    }
+    /**
+     * 设置文件存储路径，imageUri
+     *
+     * @return
+     */
+    private Uri getImgFile() {
+        File file = new File(Environment.getExternalStorageDirectory(), "/temp/" + System.currentTimeMillis() + ".jpg");
+        if (!file.getParentFile().exists()) file.getParentFile().mkdirs();
+        imageUri = Uri.fromFile(file);
+        return imageUri;
+
+    }
+
+    private void showTakePhotoDlg() {
+        take_photo_dlg.show();
+        take_photo_dlg.getWindow().setContentView(R.layout.dialog_photo_icon);
+        take_photo_dlg.getWindow().findViewById(R.id.photo_source_photo_graph).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getTakePhoto().onPickMultiple(3);
+                if (take_photo_dlg != null) {
+                    take_photo_dlg.dismiss();
+                }
+            }
+        });//画廊
+        take_photo_dlg.getWindow().findViewById(R.id.photo_source_taking_picture).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getTakePhoto().onPickFromCapture(getImgFile());
+                if (take_photo_dlg != null) {
+                    take_photo_dlg.dismiss();
+                }
+            }
+        });//相机
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+    }
+
+    @Override
+    public void takeSuccess(TResult result) {
+        super.takeSuccess(result);
+
+        if (mType % 3 + 1 == 1) {
+
+            if (result.getImages().size() == 3) {
+                ivPhotoThere.setVisibility(View.VISIBLE);
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoThere, result.getImages().get(2).getOriginalPath());
+                pathList.clear();
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+                pathList.add(result.getImages().get(2).getOriginalPath());
+            } else if (result.getImages().size() == 2) {
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+            } else {
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImage().getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImage().getOriginalPath());
+            }
+        }
+        if (mType % 3 + 1 == 2) {
+            if (result.getImages().size() == 3) {
+                ivPhotoThere.setVisibility(View.VISIBLE);
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoThere, result.getImages().get(2).getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+                pathList.add(result.getImages().get(2).getOriginalPath());
+            } else if (result.getImages().size() == 2) {
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+
+            } else {
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImage().getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImage().getOriginalPath());
+            }
+        }
+        if (mType % 3 + 1 == 3) {
+
+            if (result.getImages().size() == 3) {
+                ivPhotoThere.setVisibility(View.VISIBLE);
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoThere, result.getImages().get(2).getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+                pathList.add(result.getImages().get(2).getOriginalPath());
+
+            } else if (result.getImages().size() == 2) {
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoOne, result.getImages().get(0).getOriginalPath());
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoTwo, result.getImages().get(1).getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImages().get(0).getOriginalPath());
+                pathList.add(result.getImages().get(1).getOriginalPath());
+            } else {
+                ivPhotoThere.setVisibility(View.VISIBLE);
+                ivPhotoTwo.setVisibility(View.VISIBLE);
+                ivPhotoOne.setVisibility(View.VISIBLE);
+                ImageLoaderUtils.displaySmallPhoto(this, ivPhotoThere, result.getImage().getOriginalPath());
+                pathList.clear();
+
+                pathList.add(result.getImage().getOriginalPath());
+            }
+        }
+        mType += 1;
+        upLoad();//上传图片
+    }
+
+    @Override
+    public void takeFail(TResult result, String msg) {
+        super.takeFail(result, msg);
+        ToastUtils.showShort(msg);
+
+    }
+
+    @Override
+    public void takeCancel() {
+        super.takeCancel();
+
+    }
+
+    /**
+     * 故障报修
+     *
+     * @param bikeId
+     */
+    private void getHttpMalfunction(String bikeId, String malfunctionType, String pics, String remark) {
+        Api.getInstance().getDefault().getMalfunction(Config.TOKEN, bikeId, malfunctionType, pics, remark)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult>(new SubscriberListener<HttpResult>() {
+                    @Override
+                    public void onSuccess(HttpResult model) {
+                        if (401 == model.getCode()) {
+                            startActivity(new Intent(FaultRepairActivity.this, LoginByPhoneActivity.class));
+                            return;
+                        }
+                        if (501 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (model.isOk()) {
+                            ToastUtils.showShort("感谢你的反馈，我们会尽快解决!");
+                            FaultRepairActivity.this.finish();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 故障图片上传
+     */
+    private void upLoad() {
+        //   List<String> pathList = getPathList();//此处是伪代码，获取多张待上传图片的地址列表
+        MultipartBody.Builder builder = new MultipartBody.Builder()
+                .setType(MultipartBody.FORM)//表单类型
+                .addFormDataPart("token", Config.TOKEN);//ParamKey.TOKEN 自定义参数key常量类，即参数名
+        if (pathList.size() > 0) {
+            //多张图片
+            for (int i = 0; i < pathList.size(); i++) {
+                File file = new File(pathList.get(i));//filePath 图片地址
+                RequestBody imageBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+                builder.addFormDataPart("files", file.getName(), imageBody);//"imgfile"+i 后台接收图片流的参数名
+            }
+            List<MultipartBody.Part> parts = builder.build().parts();
+
+            Api.getInstance().getDefault().getImg(parts)
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(new Nsubscriber<HttpResult<FaultRepairPicBean>>(new SubscriberListener<HttpResult<FaultRepairPicBean>>() {
+                        @Override
+                        public void onSuccess(HttpResult<FaultRepairPicBean> model) {
+                            mPics = EmptyUtils.isEmpty(model.getData().getPics()) ? "" : model.getData().getPics();
+
+                        }
+
+                        @Override
+                        public void onFailure(String msg) {
+
+                        }
+                    }, this, true));
+
+        }
+    }
+}

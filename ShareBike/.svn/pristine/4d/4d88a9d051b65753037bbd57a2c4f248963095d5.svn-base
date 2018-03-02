@@ -1,0 +1,164 @@
+package com.panda.sharebike.ui.login;
+
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.RechargeBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.base.BaseActivity;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 充值
+ */
+public class RechargeMoneyActivity extends BaseActivity {
+
+
+    @BindView(R.id.tv_100)
+    TextView tv100;
+    @BindView(R.id.tv_50)
+    TextView tv50;
+    @BindView(R.id.tv_30)
+    TextView tv30;
+    @BindView(R.id.tv_10)
+    TextView tv10;
+    @BindView(R.id.btn_recharge)
+    Button btnRecharge;
+    private boolean isClick = true;//点击
+    private double mRecharge;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_recharge_money;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        initView();
+
+    }
+
+    private void initView() {
+    }
+
+
+    @OnClick({R.id.tv_100, R.id.tv_50, R.id.tv_30, R.id.tv_10, R.id.btn_recharge, R.id.rb_alipay, R.id.rb_wechat})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_100:
+                setTextView100();
+                mRecharge = 100;
+                break;
+            case R.id.tv_50:
+                setTextView50();
+                mRecharge = 50;
+                break;
+            case R.id.tv_30:
+                setTextView30();
+                mRecharge = 30;
+                break;
+            case R.id.tv_10:
+                setTextView10();
+                mRecharge = 10;
+                break;
+            case R.id.btn_recharge:
+                if (EmptyUtils.isNotEmpty(mRecharge)) {
+                    Logger.e(mRecharge + "");
+                    getRecharge(mRecharge);//获得网址进行支付宝或者微信支付
+                }
+                break;
+            case R.id.rb_alipay:
+                ToastUtils.showShort("选择支付宝支付");
+                break;
+            case R.id.rb_wechat:
+                ToastUtils.showShort("选择微信支付");
+                break;
+        }
+    }
+
+    /**
+     * 余额充值
+     *
+     * @param money
+     */
+    private void getRecharge(double money) {
+        Api.getInstance().getDefault().getRecharge(Config.TOKEN, money)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<RechargeBean>>(new SubscriberListener<HttpResult<RechargeBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<RechargeBean> model) {
+
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    private void setTextView10() {
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView30() {
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView50() {
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView100() {
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+
+}

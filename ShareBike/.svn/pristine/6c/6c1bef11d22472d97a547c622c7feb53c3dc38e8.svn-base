@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.panda.sharebike.ui.selfinfo.setUpActivity">
+
+    <RelativeLayout
+        android:id="@+id/rl_version"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_version"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_user"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_recharge"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_noLock"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_reporting"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/line_background" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:text="@string/setUp_description"
+            style="@style/guide_tv_style" />
+
+        <ImageView
+            android:src="@drawable/icon_right"
+            style="@style/icon_iv_right" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_log_off"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_dimens_25"
+        android:background="@drawable/bg_btn_selector"
+        android:clickable="false"
+        android:enabled="true"
+        android:text="@string/setup_log_off"
+        android:layout_marginLeft="@dimen/space_dimens_25"
+        android:layout_marginRight="@dimen/space_dimens_25"
+        android:textColor="@color/color_tv_selector"
+        android:textSize="@dimen/sub_title_size" />
+</LinearLayout>

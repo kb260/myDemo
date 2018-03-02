@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/RechargeMoneyActivity_bg"
+    tools:context="com.panda.sharebike.ui.login.RechargeMoneyActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/RechargeMoneyActivity_bg"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:text="充值金额"
+        android:textColor="@color/RechargeMoneyActivity_text"
+        android:textSize="@dimen/text_dimens_13" />
+
+    <LinearLayout
+        android:background="@color/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_dimens_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:textColor="@color/RechargeMoneyActivity_text"
+                android:id="@+id/tv_100"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/space_dimens_8"
+                android:layout_marginRight="@dimen/space_dimens_8"
+                android:layout_weight="1"
+                android:background="@drawable/normal_bg"
+                android:gravity="center"
+                android:text="100元" />
+
+            <TextView
+                android:textColor="@color/RechargeMoneyActivity_text"
+                android:id="@+id/tv_50"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/space_dimens_8"
+                android:layout_marginRight="@dimen/space_dimens_8"
+                android:layout_weight="1"
+                android:background="@drawable/normal_bg"
+                android:gravity="center"
+                android:text="50元" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/space_dimens_10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_30"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/space_dimens_8"
+                android:layout_marginRight="@dimen/space_dimens_8"
+                android:layout_weight="1"
+                android:background="@drawable/normal_bg"
+                android:gravity="center"
+                android:textSize="@dimen/text_dimens_16"
+                android:textColor="@drawable/text_color"
+                android:text="30元" />
+
+            <TextView
+                android:textColor="@color/RechargeMoneyActivity_text"
+                android:id="@+id/tv_10"
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/space_dimens_8"
+                android:layout_marginRight="@dimen/space_dimens_8"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/normal_bg"
+                android:text="10元" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_dimens_8"
+        android:background="@color/bg_white" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="付款方式"
+        android:padding="@dimen/space_dimens_8"
+        android:layout_gravity="center"
+        android:gravity="center_vertical"
+        android:background="@color/RechargeMoneyActivity_bg"
+        android:textColor="@color/title_foreground"
+        android:textSize="@dimen/sub_title_size" />
+
+    <com.panda.sharebike.ui.widget.XRadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal"
+        android:paddingTop="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_recharge_alipay" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="支付宝支付"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_alipay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_recharge_wechat" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="微信支付"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_wechat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null" />
+        </LinearLayout>
+
+        <View
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="12dp"
+            android:background="@color/line_background" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_horizontal"
+            android:layout_marginTop="@dimen/margin_horizontal"
+            android:gravity="center"
+            android:text="押金可原路退还"
+            android:textColor="@color/RechargeMoneyActivity_text"
+            android:textSize="@dimen/sub_title_size" />
+    </com.panda.sharebike.ui.widget.XRadioGroup>
+
+    <Button
+        android:id="@+id/btn_recharge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginLeft="@dimen/margin_horizontal"
+        android:layout_marginRight="@dimen/margin_horizontal"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_btn_enable"
+        android:text="立即充值"
+        android:textColor="@color/enable_color"
+        android:textSize="@dimen/sub_title_size" />
+</LinearLayout>

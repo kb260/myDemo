@@ -1,0 +1,955 @@
+package com.panda.sharebike.ui;
+
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.util.Log;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.CameraUpdate;
+import com.amap.api.maps.CameraUpdateFactory;
+import com.amap.api.maps.MapView;
+import com.amap.api.maps.model.BitmapDescriptor;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.amap.api.maps.model.CameraPosition;
+import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.Marker;
+import com.amap.api.maps.model.MarkerOptions;
+import com.amap.api.maps.model.animation.ScaleAnimation;
+import com.amap.api.services.core.AMapException;
+import com.amap.api.services.core.LatLonPoint;
+import com.amap.api.services.route.BusRouteResult;
+import com.amap.api.services.route.DriveRouteResult;
+import com.amap.api.services.route.RideRouteResult;
+import com.amap.api.services.route.RouteSearch;
+import com.amap.api.services.route.WalkPath;
+import com.amap.api.services.route.WalkRouteResult;
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.dialog.LoadDialog;
+import com.panda.sharebike.lib.LocationTask;
+import com.panda.sharebike.lib.OnLocationGetListener;
+import com.panda.sharebike.lib.PositionEntity;
+import com.panda.sharebike.lib.RegeocodeTask;
+import com.panda.sharebike.lib.RouteTask;
+import com.panda.sharebike.lib.Sha1;
+import com.panda.sharebike.lib.Utils;
+import com.panda.sharebike.model.entity.BikeLocationBean;
+import com.panda.sharebike.model.entity.CreateBean;
+import com.panda.sharebike.model.entity.IndexBean;
+import com.panda.sharebike.overlay.WalkRouteOverlay;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.login.RechargeActivity;
+import com.panda.sharebike.ui.maintenance.FaultRepairActivity;
+import com.panda.sharebike.ui.ride.RideEndActivity;
+import com.panda.sharebike.ui.search.DestinationActivity;
+import com.panda.sharebike.ui.selfinfo.PersonalActivity;
+import com.panda.sharebike.ui.unlock.ScanUnlockActivity;
+import com.panda.sharebike.ui.widget.CountDownProgress;
+import com.panda.sharebike.util.AMapUtil;
+import com.panda.sharebike.util.SpannableStringUtil;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class MainActivity extends BaseActivity implements AMap.OnCameraChangeListener, AMap.OnMapLoadedListener, OnLocationGetListener, RouteTask.OnRouteCalculateListener,
+        AMap.OnMapTouchListener, RouteSearch.OnRouteSearchListener, AMap.OnMapClickListener, AMap.InfoWindowAdapter {
+
+    public static final String STATE_NORMAL = "normal";//显示找车界面
+    public static final String STATE_SUBSCRIBING = "subscribing";//显示当前预约界面
+    public static final String STATE_RIDING = "riding";//显示当前骑行界面
+    public static final String STATE_AWAIT = "await";//点击后，显示当前骑行界面(未还车强行弹这个界面，点击market就弹，或者进入退押金就弹)
+
+    public static final int CODE_BIKE_RETURN = 1002;
+
+    @BindView(R.id.iv_main_self)
+    ImageView ivMainSelf;
+    @BindView(R.id.iv_main_search)
+    ImageView ivMainSearch;
+    @BindView(R.id.iv_location)
+    ImageView iv_scan_code;//刷新定位
+    @BindView(R.id.llayout_scan)
+    LinearLayout llayoutScan;
+    @BindView(R.id.iv_refresh)
+    ImageView iv_refresh;//刷新定位
+
+    @BindView(R.id.iv_repair)
+    ImageView ivRepair;
+    //
+    @BindView(R.id.tv_main_title)
+    TextView tvMainTitle;//标题栏--中间文字（可替换）
+    @BindView(R.id.iv_main_title)
+    ImageView ivMainTitle;//标题栏--中间图片---（可替换）
+    //预约用车文本
+    @BindView(R.id.tv_riding_order)
+    TextView tvRidingOrder;
+    @BindView(R.id.tv_time_order)
+    TextView tvTimeOrder;
+    @BindView(R.id.tv_distance_order)
+    TextView tvDistanceOrder;
+    @BindView(R.id.btn_order_sticker)
+    Button btnOrderSticker;//预约用车按钮
+    //    @BindView(R.id.btn_recharge)
+//    Button mBtnCancelSticker;
+    @BindView(R.id.tv_address)
+    TextView un_address;
+    //正在骑行文本
+    @BindView(R.id.tv_riding_ing)
+    TextView tvRidingIng;
+    @BindView(R.id.tv_time_ing)
+    TextView tvTimeIng;
+    @BindView(R.id.tv_distance_ing)
+    TextView tvDistanceIng;
+    @BindView(R.id.tv_info_bike)
+    TextView tvInfoBike;//正在骑行的车的单车编号
+    private AlertDialog mAlertDialog;
+    //tip
+    @BindView(R.id.order_sticker)
+    RelativeLayout rl_viewOrderSticker;//预约骑车tip
+    @BindView(R.id.riding_sticker)
+    RelativeLayout rl_viewRidingSticker;//正在骑行tip
+    @BindView(R.id.un_order_sticker)
+    RelativeLayout rl_UnOrderView;//取消用车tip
+    @BindView(R.id.countdownProgress)
+    CountDownProgress countdownProgress;//圆形倒计时器
+    @BindView(R.id.order_title)
+    TextView orderTitle;
+    @BindView(R.id.btn_cancelorder)
+    Button btn_cancel;
+    private AMap aMap;
+    @BindView(R.id.map_view)
+    MapView mMapView;  //地图view
+    public static final int REQUEST_CODE = 1;
+    public static final String TAG = "MainActivity";
+    private long lastTime;
+    //定位
+    private LocationTask mLocationTask;
+    //逆地理编码功能
+    private RegeocodeTask mRegeocodeTask;
+    //绘制点标记
+    private Marker mPositionMark, mInitialMark, tempMark;//可移动、圆点、点击
+    //初始坐标、移动记录坐标
+    private LatLng mStartPosition, mRecordPositon;
+    //默认添加一次
+    private boolean mIsFirst = true;
+    private boolean mIsFirstList = true;
+    //就第一次显示位置
+    private boolean mIsFirstShow = true;
+    //判断是否是进行倒计时还是切换页面
+    private boolean mIsCountDownShow = true;
+    //经纬度
+    private LatLng initLocation;
+    private ValueAnimator animator = null;//坐标动画
+    private BitmapDescriptor initBitmap, moveBitmap, smallIdentificationBitmap, bigIdentificationBitmap;//定位圆点、可移动、所有标识（车）
+    private RouteSearch mRouteSearch;
+    private WalkRouteResult mWalkRouteResult;
+    private LatLonPoint mStartPoint = null;//起点，116.335891,39.942295
+    private LatLonPoint mEndPoint = null;//终点，116.481288,39.995576
+    private final int ROUTE_TYPE_WALK = 3;
+    private boolean isClickIdentification = false;
+    WalkRouteOverlay walkRouteOverlay;//路线
+    private String[] time;
+    private String distance;
+    private String address = "当前位置";
+    private List<BikeLocationBean> locationList;
+    private BikeLocationBean locationBean;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mMapView = (MapView) findViewById(R.id.map_view);
+        mMapView.onCreate(savedInstanceState);
+        mAlertDialog = new AlertDialog.Builder(this).create();
+
+        initBitmap();
+        initAMap();
+        initLocation();
+        RouteTask.getInstance(getApplicationContext()).addRouteCalculateListener(this);
+        Logger.e("shal" + Sha1.sHA1(this));
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        hideTitleBar();
+
+    }
+
+    @OnClick({R.id.iv_main_self, R.id.iv_main_search, R.id.iv_location, R.id.llayout_scan, R.id.iv_refresh, R.id.iv_repair, R.id.btn_order_sticker, R.id.btn_cancelorder})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_main_self:
+                startActivity(new Intent(this, PersonalActivity.class));
+                break;
+            case R.id.iv_main_search:
+                Intent intent = new Intent(this, DestinationActivity.class);
+                intent.putExtra("ADDRESS", address);
+                startActivity(intent);
+                break;
+            case R.id.iv_location:
+                clickRefresh();
+                break;
+            case R.id.llayout_scan:
+                //  startActivity(new Intent(this, ScanUnlockActivity.class));
+                startActivityForResultSingle(ScanUnlockActivity.class, 2, 1002);
+                break;
+            case R.id.iv_refresh:
+                // startActivity(new Intent(this, RideEndActivity.class));
+                clickRefresh();
+                break;
+            case R.id.iv_repair:
+                startActivity(new Intent(this, FaultRepairActivity.class));
+                break;
+            case R.id.btn_order_sticker://预约用车按钮
+                Log.e("onViewClicked: ", "预约用车");
+                //点击预约按钮进行网络拉取，判断是否已经预约过了如果已经预约过则不进入取消页面，提示已预约
+                getOrderBike(locationBean.getId(), locationBean.getLongtitude(), locationBean.getLatitude(), 5000);
+//                if (mIsCountDownShow) {
+//                    setCancelOrderSticker(900 * 1000);
+//                    mIsCountDownShow = false;
+//                } else {
+//                    rl_UnOrderView.setVisibility(View.VISIBLE);
+//                }
+                break;
+            case R.id.btn_cancelorder:
+                setCancelBike();
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     * 每个都是独立的sticker
+     * state:1,2,3
+     * 1:正在骑行
+     * 2:预约用车
+     * 3:取消用车
+     */
+    private void showTipCard(int state, String money, String time, String distance, String title) {
+
+        switch (state) {
+            case AppConstants.MAIN_STICKER_RIDING_TYPE:
+                //   showTipRide(money, time, distance);
+                break;
+            case AppConstants.MAIN_STICKER_ORDER_TYPE:
+                //   showTipCardOrder(money, time, distance, title);
+                break;
+            case AppConstants.MAIN_STICKER_UN_ORDER_TYPE:
+                // setCancelOrderSticker(900 * 1000);
+                break;
+            default:
+                break;
+        }
+    }
+
+    //正在骑行
+    private void showTipRide(String money, String time, String distance, String number) {
+        rl_viewRidingSticker.setVisibility(View.VISIBLE);//正在骑行可见
+        rl_UnOrderView.setVisibility(View.GONE);
+        rl_viewOrderSticker.setVisibility(View.GONE);
+        ivMainTitle.setVisibility(View.GONE);//标题图片隐藏
+        tvMainTitle.setVisibility(View.VISIBLE);//标题文字显示
+        llayoutScan.setVisibility(View.GONE);//扫描控件隐藏
+        tvInfoBike.setText(number);
+        SpannableStringUtil.setMainTipString(money, time, distance, tvRidingIng, tvTimeIng, tvDistanceIng);//配置文字类型
+    }
+
+    //预约
+    private void showTipCardOrder(String money, String time, String distance, String address) {
+        rl_viewRidingSticker.setVisibility(View.GONE);
+        rl_UnOrderView.setVisibility(View.GONE);
+        rl_viewOrderSticker.setVisibility(View.VISIBLE);//预约骑车tip可见
+        llayoutScan.setVisibility(View.VISIBLE);//扫描控件可见
+        ivMainTitle.setVisibility(View.VISIBLE);//标题图片可见
+        tvMainTitle.setVisibility(View.GONE);//标题文字隐藏
+        orderTitle.setText(address);
+        SpannableStringUtil.setMainOrderTipString(money, time, distance, tvRidingOrder, tvTimeOrder, tvDistanceOrder);//配置文字类型
+    }
+
+    /**
+     * 取消预约
+     */
+    private void setCancelOrderSticker(long time, String address) {
+        // countdownProgress.setCountdownTimeCancel();//取消倒计时
+
+        bikeCancelBtn(address);
+        countdownProgress.setCountdownTime(time);//设定倒计时时长（应该是从网络拉取）
+        countdownProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                countdownProgress.startCountDownTime(new CountDownProgress.OnCountdownFinishListener() {
+                    @Override
+                    public void countdownFinished() {
+                        mIsCountDownShow = false;
+                        Toast.makeText(MainActivity.this, "倒计时结束了--->该UI处理界面逻辑了", Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
+        });
+        countdownProgress.performClick();//进入界面默认点击了倒计时事件，如果已经倒计时开始了，则不可再进行预约，通过接口判断
+    }
+
+    private void initBitmap() {
+        initBitmap = BitmapDescriptorFactory
+                .fromResource(R.mipmap.icon_location_marker);
+        moveBitmap = BitmapDescriptorFactory
+                .fromResource(R.drawable.icon_loaction_start);
+        smallIdentificationBitmap = BitmapDescriptorFactory
+                .fromResource(R.drawable.stable_cluster_marker_one_normal);
+        bigIdentificationBitmap = BitmapDescriptorFactory
+                .fromResource(R.drawable.stable_cluster_marker_one_normal);
+    }
+
+    /**
+     * 初始化地图控制器对象
+     */
+    private void initAMap() {
+        if (aMap == null) {
+            aMap = mMapView.getMap();
+            mRouteSearch = new RouteSearch(this);
+            mRouteSearch.setRouteSearchListener(this);
+            aMap.getUiSettings().setZoomControlsEnabled(false);
+            aMap.getUiSettings().setGestureScaleByMapCenter(true);
+//            aMap.getUiSettings().setScrollGesturesEnabled(false);
+            aMap.setOnMapTouchListener(this);
+            aMap.setOnMapLoadedListener(this);
+            aMap.setOnCameraChangeListener(this);
+            aMap.setOnMapClickListener(this);
+            // 绑定 Marker 被点击事件
+            aMap.setOnMarkerClickListener(markerClickListener);
+            aMap.setInfoWindowAdapter(this);// 设置自定义InfoWindow样式
+        }
+    }
+
+    /**
+     * 初始化定位
+     */
+    private void initLocation() {
+        mLocationTask = LocationTask.getInstance(getApplicationContext());
+        mLocationTask.setOnLocationGetListener(this);
+        mRegeocodeTask = new RegeocodeTask(getApplicationContext());
+    }
+
+    // 定义 Marker 点击事件监听
+    AMap.OnMarkerClickListener markerClickListener = new AMap.OnMarkerClickListener() {
+
+        // marker 对象被点击时回调的接口
+        // 返回 true 则表示接口已响应事件，否则返回false
+        @Override
+        public boolean onMarkerClick(final Marker marker) {
+            Log.e(TAG, "点击的Marker");
+            Log.e(TAG, marker.getPosition() + "");
+            isClickIdentification = true;
+            if (tempMark != null) {
+                tempMark.setIcon(smallIdentificationBitmap);
+                walkRouteOverlay.removeFromMap();
+                tempMark = null;
+            }
+            startAnim(marker);
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Thread.sleep(300);
+                        tempMark = marker;
+                        Log.e(TAG, mPositionMark.getPosition().latitude + "===" + mPositionMark.getPosition().longitude);
+                        mStartPoint = new LatLonPoint(mRecordPositon.latitude, mRecordPositon.longitude);
+                        mPositionMark.setPosition(mRecordPositon);
+                        mEndPoint = new LatLonPoint(marker.getPosition().latitude, marker.getPosition().longitude);
+                        marker.setIcon(bigIdentificationBitmap);
+                        marker.setPosition(marker.getPosition());
+                        marker.setTitle(marker.getTitle() == null ? "" : marker.getTitle());
+                        searchRouteResult(ROUTE_TYPE_WALK, RouteSearch.WalkDefault);
+
+//                        Intent intent = new Intent(MainActivity.this, RouteActivity.class);
+//                        intent.putExtra("start_lat", mPositionMark.getPosition().latitude);
+//                        intent.putExtra("start_lng", mPositionMark.getPosition().longitude);
+//                        intent.putExtra("end_lat", marker.getPosition().latitude);
+//                        intent.putExtra("end_lng", marker.getPosition().longitude);
+//                        startActivity(intent);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }).start();
+            return true;
+        }
+    };
+
+    private void startAnim(Marker marker) {
+        ScaleAnimation anim = new ScaleAnimation(1.0f, 1.3f, 1.0f, 1.3f);
+        anim.setDuration(300);
+        marker.setAnimation(anim);
+        marker.startAnimation();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //在activity执行onDestroy时执行mMapView.onDestroy()，销毁地图
+        Utils.removeMarkers();
+        mMapView.onDestroy();
+        mLocationTask.onDestroy();
+        RouteTask.getInstance(getApplicationContext()).removeRouteCalculateListener(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //在activity执行onResume时执行mMapView.onResume ()，重新绘制加载地图
+        mMapView.onResume();
+        if (mInitialMark != null) {
+            mInitialMark.setToTop();
+        }
+        if (mPositionMark != null) {
+            mPositionMark.setToTop();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //在activity执行onPause时执行mMapView.onPause ()，暂停地图的绘制
+        mMapView.onPause();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //在activity执行onSaveInstanceState时执行mMapView.onSaveInstanceState (outState)，保存地图当前的状态
+        mMapView.onSaveInstanceState(outState);
+    }
+
+
+    @Override
+    public void onCameraChange(CameraPosition cameraPosition) {
+    }
+
+    @Override
+    public void onCameraChangeFinish(CameraPosition cameraPosition) {
+        Log.e(TAG, "onCameraChangeFinish" + cameraPosition.target);
+        if (!isClickIdentification) {
+            mRecordPositon = cameraPosition.target;
+        }
+
+        mStartPosition = cameraPosition.target;
+        mRegeocodeTask.setOnLocationGetListener(this);
+        mRegeocodeTask
+                .search(mStartPosition.latitude, mStartPosition.longitude);
+        // Utils.removeMarkers();//定位完成清除所有marker
+        getIndex(cameraPosition.target.longitude, cameraPosition.target.latitude, 5000);//定位成功进行单车数据拉取
+        if (mIsFirst) {
+            createInitialPosition(cameraPosition.target.latitude, cameraPosition.target.longitude);
+            createMovingPosition();
+            mIsFirst = false;
+        }
+        if (mInitialMark != null) {
+            mInitialMark.setToTop();
+        }
+        if (mPositionMark != null) {
+            mPositionMark.setToTop();
+            if (!isClickIdentification) {
+                animMarker();
+            }
+        }
+    }
+
+
+    /**
+     * 地图加载完成
+     */
+    @Override
+    public void onMapLoaded() {
+        mLocationTask.startLocate();
+    }
+
+    /**
+     * 创建初始位置图标
+     */
+    private void createInitialPosition(double lat, double lng) {
+        MarkerOptions markerOptions = new MarkerOptions();
+//        markerOptions.setFlat(true);
+        markerOptions.anchor(0.5f, 0.5f);
+        markerOptions.position(new LatLng(lat, lng));
+        markerOptions.icon(initBitmap);
+        mInitialMark = aMap.addMarker(markerOptions);
+        mInitialMark.setClickable(false);
+    }
+
+    /**
+     * 创建移动位置图标
+     * 就是那个标杆
+     */
+    private void createMovingPosition() {
+        MarkerOptions markerOptions = new MarkerOptions();
+//        markerOptions.setFlat(true);
+//        markerOptions.anchor(0.5f, 0.5f);
+        markerOptions.position(new LatLng(0, 0));
+        markerOptions.icon(moveBitmap);
+        mPositionMark = aMap.addMarker(markerOptions);
+        mPositionMark.setPositionByPixels(mMapView.getWidth() / 2,
+                mMapView.getHeight() / 2);
+        mPositionMark.setClickable(false);
+    }
+
+    @Override
+    public void onLocationGet(PositionEntity entity) {
+        // todo 这里在网络定位时可以减少一个逆地理编码
+        Log.e("onLocationGet", "onLocationGet" + entity.address);
+        RouteTask.getInstance(getApplicationContext()).setStartPoint(entity);
+        mStartPosition = new LatLng(entity.latitue, entity.longitude);
+        if (mIsFirstShow) {
+            CameraUpdate cameraUpate = CameraUpdateFactory.newLatLngZoom(
+                    mStartPosition, 17);
+            aMap.animateCamera(cameraUpate);
+            mIsFirstShow = false;
+        }
+        mInitialMark.setPosition(mStartPosition);
+        initLocation = mStartPosition;
+        Log.e("onLocationGet", "onLocationGet" + mStartPosition);
+    }
+
+    /**
+     * 定位成功回调
+     */
+    @Override
+    public void onRegecodeGet(PositionEntity entity) {
+        Log.e(TAG, "onRegecodeGet" + entity.address);
+        entity.latitue = mStartPosition.latitude;
+        entity.longitude = mStartPosition.longitude;
+        address = entity.address;//获取地址
+
+        RouteTask.getInstance(getApplicationContext()).setStartPoint(entity);
+        RouteTask.getInstance(getApplicationContext()).search();
+        Log.e(TAG, "onRegecodeGet" + mStartPosition);
+    }
+
+    @Override
+    public void onRouteCalculate(float cost, float distance, int duration) {
+        Log.e(TAG, "cost" + cost + "---" + "distance" + distance + "---" + "duration" + duration);
+        PositionEntity endPoint = RouteTask.getInstance(getApplicationContext()).getEndPoint();
+        mRecordPositon = new LatLng(endPoint.latitue, endPoint.longitude);
+        clickMap();
+        RouteTask.getInstance(getApplicationContext()).setEndPoint(null);
+    }
+
+    @Override
+    public void onTouch(MotionEvent motionEvent) {
+
+        if (motionEvent.getPointerCount() >= 2) {
+            aMap.getUiSettings().setScrollGesturesEnabled(false);
+        } else {
+            //决定是否显示
+            rl_viewOrderSticker.setVisibility(View.GONE);
+            rl_viewRidingSticker.setVisibility(View.GONE);
+            rl_UnOrderView.setVisibility(View.GONE);
+            aMap.getUiSettings().setScrollGesturesEnabled(true);
+        }
+    }
+
+    private void animMarker() {
+        if (animator != null) {
+            animator.start();
+            return;
+        }
+        animator = ValueAnimator.ofFloat(mMapView.getHeight() / 2, mMapView.getHeight() / 2 - 30);
+        animator.setInterpolator(new DecelerateInterpolator());
+        animator.setDuration(150);
+        animator.setRepeatCount(1);
+        animator.setRepeatMode(ValueAnimator.REVERSE);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                Float value = (Float) animation.getAnimatedValue();
+                mPositionMark.setPositionByPixels(mMapView.getWidth() / 2, Math.round(value));
+            }
+        });
+        animator.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                mPositionMark.setIcon(moveBitmap);
+            }
+        });
+        animator.start();
+    }
+
+    private void endAnim() {
+        if (animator != null && animator.isRunning())
+            animator.end();
+    }
+
+
+    @Override
+    public void onBusRouteSearched(BusRouteResult busRouteResult, int i) {
+
+    }
+
+    @Override
+    public void onDriveRouteSearched(DriveRouteResult driveRouteResult, int i) {
+
+    }
+
+    @Override
+    public void onWalkRouteSearched(WalkRouteResult result, int errorCode) {
+        LoadDialog.getInstance().dismiss();
+
+        if (errorCode == AMapException.CODE_AMAP_SUCCESS) {
+            if (result != null && result.getPaths() != null) {
+                if (result.getPaths().size() > 0) {
+                    mWalkRouteResult = result;
+                    final WalkPath walkPath = mWalkRouteResult.getPaths()
+                            .get(0);
+                    walkRouteOverlay = new WalkRouteOverlay(
+                            this, aMap, walkPath,
+                            mWalkRouteResult.getStartPos(),
+                            mWalkRouteResult.getTargetPos());
+                    walkRouteOverlay.removeFromMap();
+                    walkRouteOverlay.addToMap();
+                    walkRouteOverlay.zoomToSpan();
+
+                    int dis = (int) walkPath.getDistance();
+                    int dur = (int) walkPath.getDuration();
+                    time = AMapUtil.getFriendlyTimeArray(dur);
+                    distance = AMapUtil.getFriendlyLength(dis);
+                    String des = AMapUtil.getFriendlyTime(dur) + "(" + AMapUtil.getFriendlyLength(dis) + ")";
+                    //tempMark.setTitle(des);
+                    tempMark.showInfoWindow();
+                    //  Logger.e(tempMark.getSnippet() + "<--我的id");
+                    //  getOrderBike(tempMark.getSnippet(), tempMark.getPosition().longitude, tempMark.getPosition().latitude, 5000);//预约按钮
+                    locationBean = new BikeLocationBean();
+                    locationBean.setId(tempMark.getSnippet());
+                    locationBean.setLongtitude(tempMark.getPosition().longitude);
+                    locationBean.setLatitude(tempMark.getPosition().latitude);
+                    locationBean.setMoney(Double.parseDouble(tempMark.getTitle()));
+
+                    //   showTipCard(2, tempMark.getTitle(), time[0], distance, address);//在这里回调显示预约的tip
+                    showTipCardOrder(tempMark.getTitle(), time[0], distance, address);//在这里回调显示准备预约的tip
+                    Log.e(TAG, des);
+                } else if (result != null && result.getPaths() == null) {
+                    ToastUtils.showShort(R.string.no_result);
+                }
+            } else {
+                ToastUtils.showShort(R.string.no_result);
+            }
+        } else {
+            ToastUtils.showShort(errorCode);
+        }
+    }
+
+    @Override
+    public void onRideRouteSearched(RideRouteResult rideRouteResult, int i) {
+    }
+
+    /**
+     * 开始搜索路径规划方案
+     */
+    public void searchRouteResult(int routeType, int mode) {
+        if (mStartPoint == null) {
+            ToastUtils.showShort("定位中，稍后再试...");
+            return;
+        }
+        if (mEndPoint == null) {
+            ToastUtils.showShort("终点未设置");
+        }
+        showDialog();
+
+        final RouteSearch.FromAndTo fromAndTo = new RouteSearch.FromAndTo(
+                mStartPoint, mEndPoint);
+        if (routeType == ROUTE_TYPE_WALK) {// 步行路径规划
+            RouteSearch.WalkRouteQuery query = new RouteSearch.WalkRouteQuery(fromAndTo, mode);
+            mRouteSearch.calculateWalkRouteAsyn(query);// 异步路径规划步行模式查询
+        }
+    }
+
+    private void showDialog() {
+        LoadDialog loadDialog = LoadDialog.getInstance();
+        loadDialog.setStyle(DialogFragment.STYLE_NORMAL, R.style.load_dialog);
+        LoadDialog.getInstance().show(getSupportFragmentManager(), "");
+    }
+
+    @Override
+    public void onMapClick(LatLng latLng) {
+        clickMap();
+    }
+
+    private void clickRefresh() {
+        clickInitInfo();
+        if (initLocation != null) {
+            CameraUpdate cameraUpate = CameraUpdateFactory.newLatLngZoom(
+                    initLocation, 17f);
+            aMap.animateCamera(cameraUpate);
+        }
+    }
+
+    private void clickMap() {
+        clickInitInfo();
+        if (mRecordPositon != null) {
+            CameraUpdate cameraUpate = CameraUpdateFactory.newLatLngZoom(
+                    mRecordPositon, 17f);
+            aMap.animateCamera(cameraUpate);
+        }
+    }
+
+    private void clickInitInfo() {
+        isClickIdentification = false;
+        if (null != tempMark) {
+            tempMark.setIcon(smallIdentificationBitmap);
+            tempMark.hideInfoWindow();
+            tempMark = null;
+        }
+        if (null != walkRouteOverlay) {
+            walkRouteOverlay.removeFromMap();
+        }
+    }
+
+    @Override
+    public View getInfoWindow(Marker marker) {
+        Log.e(TAG, "getInfoWindow====" + marker.getTitle());
+        View infoWindow = getLayoutInflater().inflate(
+                R.layout.info_window, null);
+        render(marker, infoWindow);
+
+        return infoWindow;
+    }
+
+    /**
+     * 自定义infowinfow窗口
+     */
+    public void render(Marker marker, View view) {
+        TextView tv_time = (TextView) view.findViewById(R.id.tv_time);
+        TextView tv_time_info = (TextView) view.findViewById(R.id.tv_time_info);
+        TextView tv_distance = (TextView) view.findViewById(R.id.tv_distance);
+        tv_time.setText(time[0]);
+        tv_time_info.setText(time[1]);
+        tv_distance.setText(distance);
+    }
+
+    @Override
+    public View getInfoContents(Marker marker) {
+        Log.e(TAG, "getInfoContents");
+        return null;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        long currentTime = System.currentTimeMillis();
+        if (currentTime - lastTime < 2 * 1000) {
+            super.onBackPressed();
+        } else {
+            if (rl_viewOrderSticker.getVisibility() == View.VISIBLE) {
+                rl_viewOrderSticker.setVisibility(View.GONE);
+            }
+            if (rl_viewRidingSticker.getVisibility() == View.VISIBLE) {
+                rl_viewRidingSticker.setVisibility(View.GONE);
+            }
+            if (rl_UnOrderView.getVisibility() == View.VISIBLE) {
+                rl_UnOrderView.setVisibility(View.GONE);
+            }
+        }
+
+    }
+
+    /**
+     * 预约事件
+     */
+    private void getOrderBike(String bikeID, double longtitude, double lattude, int maxDistance) {
+        setOrderBike(bikeID, longtitude, lattude, maxDistance);
+    }
+
+    /**
+     * 预约用车
+     */
+    private void setOrderBike(String bikeId, double longtitude, double lattude, int maxDistance) {
+        Api.getInstance().getDefault().getCreate(Config.TOKEN, bikeId, longtitude, lattude, maxDistance)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<CreateBean>>(new SubscriberListener<HttpResult<CreateBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<CreateBean> model) {
+                        if (501 == model.getCode() && model.getMsg().equals("无押金")) {
+                            Intent intent = new Intent(MainActivity.this, RechargeActivity.class);//无押金前往充值
+                            startActivity(intent);
+                        }
+                        if (401 == model.getCode()) {
+                            ToastUtils.showShort("请先登录");
+                        }
+                        if (model.isOk()) {//倒计时
+                            //  countdownProgress.setCountdownTimeCancel();
+                            setCancelOrderSticker(model.getData().getLeftTime(), address);
+
+                        } else if (EmptyUtils.isNotEmpty(model.getMsg())) {
+                            ToastUtils.showShort(model.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 取消预约显示未显示等等
+     */
+    private void bikeCancelBtn(String address) {
+        rl_viewRidingSticker.setVisibility(View.GONE);
+        rl_UnOrderView.setVisibility(View.VISIBLE);//取消预约tip可见
+        rl_viewOrderSticker.setVisibility(View.GONE);
+        llayoutScan.setVisibility(View.VISIBLE);//扫描控件可见
+        ivMainTitle.setVisibility(View.VISIBLE);//标题图片可见
+        tvMainTitle.setVisibility(View.GONE);//标题文字隐藏
+        un_address.setText(address);
+    }
+
+    /**
+     * 取消预约
+     */
+    private void setCancelBike() {
+        Api.getInstance().getDefault().getCancel(Config.TOKEN)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult>(new SubscriberListener<HttpResult>() {
+                    @Override
+                    public void onSuccess(HttpResult model) {
+                        if (model.isOk()) {
+                            //取消预约成功，倒计时结束
+                            countdownProgress.setCountdownTimeCancel();
+                            rl_UnOrderView.setVisibility(View.GONE);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, false));
+    }
+
+    /**
+     * 判断状态
+     */
+    private void getIndex(double longtitude, double latitude, final int maxDistance) {
+        Api.getInstance().getDefault().getIndex(Config.TOKEN, longtitude, latitude, maxDistance)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<IndexBean>>(new SubscriberListener<HttpResult<IndexBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<IndexBean> model) {
+
+                        //得到单车的地理位置的数组
+                        locationList = new ArrayList<BikeLocationBean>();
+                        for (int i = 0; i < model.getData().getNearBikes().size(); i++) {
+
+                            BikeLocationBean bikeLocationBean = new BikeLocationBean();
+                            bikeLocationBean.setId(model.getData().getNearBikes().get(i).getBikeLocation().getId());//ID
+                            bikeLocationBean.setLongtitude(model.getData().getNearBikes().get(i).getBikeLocation().getPosition().get(0));//第一个经度longtitude
+                            bikeLocationBean.setLatitude(model.getData().getNearBikes().get(i).getBikeLocation().getPosition().get(1));//第二个经度lattitude
+                            bikeLocationBean.setMoney(model.getData().getMemberRideConfig().getRental());//预计费用
+                            locationList.add(bikeLocationBean);
+
+                        }
+                        if (mIsFirstList) {
+                            Utils.addEmulateList(aMap, locationList);//添加marker
+                            mIsFirstList = false;
+                        }
+                        //通过state判断tip状态
+                        String state = model.getData().getState();
+                        Logger.e(model.getData().getLeftTime() + "倒计时时间");//获得倒计时时间
+                        if (STATE_NORMAL.equals(state)) {
+                        }
+                        if (STATE_SUBSCRIBING.equals(state)) {//预约
+                            if (EmptyUtils.isNotEmpty(model.getData().getLeftTime())) {
+
+                                setCancelOrderSticker(model.getData().getLeftTime(), address);
+                            }
+                        } else if (STATE_RIDING.equals(state)) {
+                            showTipRide(model.getData().getMemberRideConfig().getRental() + "", "1", "22", "2");
+                        } else if (STATE_AWAIT.equals(state)) {
+                            showTakePhotoDlg("您还有一辆待还车辆，请完成还车!", "取消", "去还车");
+                        }
+
+
+                    }
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, false));
+    }
+
+    /**
+     * @param title
+     * @param cancle
+     * @param ok     未还车提示dialog
+     */
+    private void showTakePhotoDlg(String title, String cancle, String ok) {
+        mAlertDialog.show();
+        mAlertDialog.getWindow().setContentView(R.layout.dialog_photo_source);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_info))).setText(title);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_taking_picture))).setText(cancle);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_photo_graph))).setText(ok);
+        mAlertDialog.getWindow().findViewById(R.id.photo_source_taking_picture).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAlertDialog.dismiss();
+            }
+        });//灰
+
+        mAlertDialog.getWindow().findViewById(R.id.photo_source_photo_graph).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAlertDialog.dismiss();
+                //执行去还车操作
+                startActivityForResultSingle(RideEndActivity.class, 1, REQUEST_CODE);
+            }
+        });
+    }//蓝
+
+    //单车待还之后返回重新定位
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (null != data) {
+            int result = data.getIntExtra("activity_scan", 0);
+            if (1002 == result) {
+
+                getIndex(mStartPosition.longitude, mStartPosition.latitude, 5000);
+
+            }
+        }
+
+
+    }
+}

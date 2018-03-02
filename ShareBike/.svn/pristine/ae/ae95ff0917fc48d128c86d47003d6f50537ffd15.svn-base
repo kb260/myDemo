@@ -1,0 +1,262 @@
+package com.panda.sharebike.ui.login;
+
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.RegexUtils;
+import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.LoginBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.MainActivity;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.widget.ClearEditText;
+import com.panda.sharebike.ui.widget.CountDownTV;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class LoginByPhoneActivity extends BaseActivity {
+    @BindView(R.id.et_phone)
+    ClearEditText etPhone;
+    @BindView(R.id.et_code)
+    ClearEditText etCode;
+    @BindView(R.id.tv_get_code)
+    CountDownTV tvGetCode;
+    @BindView(R.id.btn_login)
+    Button btnLogin;
+    @BindView(R.id.tv_login)
+    TextView tvLogin;
+
+    private SubscriberListener subscriberListener;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_login_by_phone;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        initView();
+    }
+
+    private void initView() {
+        textChange textChange = new textChange();
+        etPhone.addTextChangedListener(textChange);
+        etCode.addTextChangedListener(textChange);
+        tvGetCode.setListener(new CountDownTV.CountListener() {
+            @Override
+            public void onFinishListener() {
+                tvGetCode.setEnabled(true);
+            }
+        });
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        setTvRight("注册", new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(LoginByPhoneActivity.this, RegisterActivity.class));
+            }
+        });
+    }
+
+    private void initGetCode() {
+        //执行验证码
+        if (TextUtils.isEmpty(etPhone.getText().toString()) || !RegexUtils.isMobileSimple(etPhone.getText().toString())) {
+            ToastUtils.showShort("请输入正确的手机号码");
+        } else {
+
+//            tvGetCode.start(60);
+//            tvGetCode.setEnabled(false);
+            getHttpCode(etPhone.getText().toString());
+        }
+
+    }
+
+    private void initGetButton() {
+        if (TextUtils.isEmpty(etPhone.getText().toString()) || !RegexUtils.isMobileSimple(etPhone.getText().toString())) {
+            ToastUtils.showShort("请输入正确的手机号码");
+            return;
+        }
+        if (TextUtils.isEmpty(etCode.getText().toString())) {
+            ToastUtils.showShort("请输入验证码");
+            return;
+        }
+        //验证码登录
+        String RegistrationId = SPUtils.getInstance("RegistrationId").getString("RegistrationId");
+        if (!RegistrationId.equals("null")) {
+            getHttpByPhone(etPhone.getText().toString(), etCode.getText().toString(), RegistrationId);
+        }
+
+    }
+
+    @OnClick({R.id.btn_login, R.id.tv_login, R.id.tv_get_code})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.btn_login:
+
+                initGetButton();
+                //startActivity(RechargeActivity.class);
+                break;
+            case R.id.tv_get_code:
+                initGetCode();
+                break;
+            case R.id.tv_login:
+                startActivity(new Intent(this, LoginActivity.class));
+                break;
+        }
+    }
+
+    /**
+     * 获取验证码
+     */
+    private void getHttpCode(String phone) {
+        Api.getInstance().getDefault().getLoginCode(Config.TOKEN, phone)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult>(new SubscriberListener<HttpResult>() {
+                    @Override
+                    public void onSuccess(HttpResult model) {
+
+                        if (501 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (406 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (model.isOk()) {
+                            tvGetCode.start(60);
+                            tvGetCode.setEnabled(false);
+                            ToastUtils.showShort("验证码已发送");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+                        ToastUtils.showShort(msg);
+                    }
+                }, LoginByPhoneActivity.this, false));
+    }
+
+    /**
+     * 立即登录,验证码登录
+     */
+    private void getHttpByPhone(String phone, String code, String deviceld) {
+        Api.getInstance().getDefault().getLoginByPhoneCode(Config.TOKEN, phone, code, deviceld)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<LoginBean>>(new SubscriberListener<HttpResult<LoginBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<LoginBean> model) {
+                        SharedPreferences sp = getSharedPreferences("is_login", MODE_PRIVATE);
+                        boolean first = sp.getBoolean("first_login", true);
+
+                        if (501 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (406 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        //创建2个sp，用于存储值，判断是否实名，是否认证
+                        SharedPreferences sp_real = getSharedPreferences("is_real_recharge", MODE_PRIVATE);//判断是否充值过押金.是否实名
+                        SharedPreferences.Editor editor_real = sp_real.edit();
+                        editor_real.putBoolean("is_real", model.getData().isRealnameAuth());//
+                        editor_real.putBoolean("is_recharge", model.getData().isHasPayedDeposit());
+                        editor_real.putBoolean("is_login", true);
+                        editor_real.commit();
+                        if (first) {
+                            if (model.getCode() == 200) {//嵌套有点多
+                                setUserInfo(model.getData().getSession().getStatus());
+                                if (model.getData().isRealnameAuth()) {
+                                    if (!model.getData().isHasPayedDeposit()) {
+                                        startActivity(RechargeActivity.class);
+                                    } else {
+                                        startActivity(MainActivity.class);
+                                    }
+                                } else {
+                                    startActivity(CertificationActivity.class);
+                                }
+                            }
+                        } else {
+                            startActivity(MainActivity.class);
+                            LoginByPhoneActivity.this.finish();
+                        }
+                        SharedPreferences.Editor editor = sp.edit();
+                        editor.putBoolean("first_login", false);//debug模式下传true进入引导页，上线前记得修改
+                        editor.commit();
+                    }
+                    @Override
+                    public void onFailure(String msg) {
+                        // ToastUtils.showShort(msg);
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 在登录页面LoginActivity里的登录成功回调方法里进行全局登录凭证的赋值和本地持久化
+     */
+    private void setUserInfo(String status) {
+        //Config.USER_ID = obj.getString("memberId");
+        SPUtils.getInstance("USER_INFO").put("USER_ID", status);
+
+    }
+
+
+    //EditText监听器
+    class textChange implements TextWatcher {
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            boolean Sign1 = etPhone.getText().length() > 10;
+            boolean Sign2 = etCode.getText().length() > 3;
+            if (Sign1) {
+                tvGetCode.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_count_tv_enable));
+                tvGetCode.setEnabled(true);
+            } else {
+                tvGetCode.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_count_tv_un_enable));
+                tvGetCode.setEnabled(false);
+            }
+            if (Sign1 & Sign2) {
+                btnLogin.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_btn_enable));
+                btnLogin.setEnabled(true);
+            } else {
+                btnLogin.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg_btn_unenable));
+                btnLogin.setEnabled(false);
+            }
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    }
+}

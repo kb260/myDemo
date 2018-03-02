@@ -1,0 +1,226 @@
+package com.panda.sharebike.api;
+
+import com.panda.sharebike.model.entity.CreateBean;
+import com.panda.sharebike.model.entity.DetailBean;
+import com.panda.sharebike.model.entity.IndexBean;
+import com.panda.sharebike.model.entity.LoginBean;
+import com.panda.sharebike.model.entity.MemberInfo;
+import com.panda.sharebike.model.entity.RegisteredBean;
+import com.panda.sharebike.model.entity.RentBean;
+import com.panda.sharebike.model.entity.TouristsBean;
+import com.panda.sharebike.model.entity.UserInfo;
+
+import okhttp3.MultipartBody;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
+import retrofit2.http.Multipart;
+import retrofit2.http.POST;
+import retrofit2.http.Part;
+import retrofit2.http.Query;
+import retrofit2.http.Url;
+import rx.Observable;
+
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/13
+ * desc   :
+ * version: 1.0
+ */
+public interface ApiService {
+
+    //    @GET("0-10.html")
+//    Observable<WangYiBean> getWangYi(
+//            @Header("Cache-Control") String cacheControl
+//    );
+//
+//    @FormUrlEncoded
+//    @POST("suggestion?")
+//    Observable<WeatherBean> getWeather(@Header("Cache-Control") String cacheControl,
+//                                       @Field("city") String city,
+//                                       @Field("key") String key);
+
+    /**
+     * 测试
+     */
+//    @GET("http://gank.io/api/data/福利/10/1")
+    //  Observable<GankIo> getGankIO();
+
+    /**
+     * 登录注册
+     */
+    //游客
+    @GET
+    Observable<HttpResult<TouristsBean>> getToken(@Url String url);
+
+    //注册验证码
+    @FormUrlEncoded
+    @POST(N.KEY_REGCODE)
+    Observable<HttpResult> getRegCode(@Field("token") String token, @Field("account") String account);
+
+    //注册
+    @FormUrlEncoded
+    @POST(N.KEY_REG)
+    Observable<HttpResult<RegisteredBean>> getRegInfo(@Field("token") String token, @Field("account") String account, @Field("password") String password, @Field("code") String code, @Field("deviceld") String devicdld);
+
+    //登录
+    @FormUrlEncoded
+    @POST(N.KEY_LOGIN)
+    Observable<HttpResult<LoginBean>> getLoginInfo(@Field("token") String token, @Field("account") String account, @Field("password") String password, @Field("deviceld") String deviceld);
+
+    //登录验证码
+    @FormUrlEncoded
+    @POST(N.KEY_LOGINCODE)
+    Observable<HttpResult> getLoginCode(@Field("token") String token, @Field("account") String account);
+
+    //验证码登录byPhone
+    @FormUrlEncoded
+    @POST(N.KEY_LOGINBYCODE)
+    Observable<HttpResult<LoginBean>> getLoginByPhoneCode(@Field("token") String token, @Field("account") String account, @Field("code") String code, @Field("deviceld") String devicdld);
+
+    //忘记密码，发送验证码
+    @FormUrlEncoded
+    @POST(N.KEY_RESETCODE)
+    Observable<HttpResult> getResetCode(@Field("token") String token, @Field("account") String account);
+
+    //忘记密码，设置新密码
+    @FormUrlEncoded
+    @POST(N.KEY_RESET)
+    Observable<HttpResult> getReset(@Field("token") String token, @Field("account") String account, @Field("code") String code, @Field("newPwd") String newPwd);
+
+    /**
+     * 个人中心
+     */
+    //实名认证
+    @FormUrlEncoded
+    @POST(N.KEY_REALNAMEAUTH)
+    Observable<HttpResult> getRealNameAuth(@Field("token") String token, @Field("realname") String realName, @Field("idCard") String idCard);
+
+    //修改密码，发送验证码
+    @FormUrlEncoded
+    @POST(N.KEY_EDITCODE)
+    Observable<HttpResult> getEditCode(@Field("token") String token, @Field("account") String account);
+
+    //修改密码，设置新密码
+    @FormUrlEncoded
+    @POST(N.KEY_EDIT)
+    Observable<HttpResult> getEdit(@Field("token") String token, @Field("account") String account, @Field("code") String code, @Field("newPwd") String newPwd);
+
+    //更换绑定手机验证码
+    @FormUrlEncoded
+    @POST(N.KEY_BINDCELLPHONECODE)
+    Observable<HttpResult> getBindCellPhone(@Field("token") String token, @Field("account") String account);
+
+    //更换绑定手机
+    @FormUrlEncoded
+    @POST(N.KEY_BINGNEWCELLPHONE)
+    Observable<HttpResult> getBindNewCellPhone(@Field("token") String token, @Field("account") String account, @Field("code") String code, @Field("newPwd") String newPwd);
+
+    //退出登录
+    @GET(N.KEY_LOGOUT)
+    Observable<HttpResult> getLogout(@Query("token") String token);
+
+    //编辑昵称
+    @FormUrlEncoded
+    @POST(N.KEY_NICKNAME)
+    Observable<HttpResult> getNickName(@Field("token") String token, @Field("nickname") String nickname);
+
+    //编辑头像
+    @Multipart
+    @POST(N.KEY_AVATAR)
+    Observable<HttpResult> getAvatar(@Query("token") String token, @Part MultipartBody.Part file);
+
+    //会员信息
+    @GET(N.KEY_MEMBERINFO)
+    Observable<HttpResult<UserInfo>> getMemberInfo(@Query("token") String token);
+
+    //会员中心
+    @GET(N.KEY_MEMBERCENTER)
+    Observable<HttpResult<MemberInfo>> getMemberCenter(@Query("token") String token);
+
+    //消息列表
+    @FormUrlEncoded
+    @POST(N.KEY_MEMBERMSGS)
+    Observable<HttpResult> getMemberMsgs(@Field("token") String token, @Field("pageNum") int pageNum, @Field("pageSize") int pageSize);
+
+    //消息详情
+    @FormUrlEncoded
+    @POST(N.KEY_DETAIL)
+    Observable<HttpResult> getDetail(@Field("token") String token, @Field("id") String id);
+
+    /**
+     * 我的钱包
+     */
+    //个人钱包页,memberDeposit	我的押金 ;memberBeenz 我的余额 ;depositConfig	骑行押金配置
+    @GET(N.KEY_MEMBERWALLET)
+    Observable<HttpResult> getMemberWallet(@Field("token") String token);
+
+    //查看会员钱包流水
+    @FormUrlEncoded
+    @POST(N.KEY_MEMBERACCOUNNTLOGFORLL)
+    Observable<HttpResult> getMemBerAccountLogForall(@Field("token") String token, @Field("pageNum") String pageNum, @Field("pageSize") String pageSize);
+
+    //充值列表
+    @GET(N.KEY_PAYLIST)
+    Observable<HttpResult> getPayList(@Query("token") String token);
+
+    //充值
+    @FormUrlEncoded
+    @POST(N.KEY_RECHARGE)
+    Observable<HttpResult> getRecharge(@Field("token") String token, @Field("money") String money);
+
+    //充押金
+    @FormUrlEncoded
+    @POST(N.KEY_DEPOSIT)
+    Observable<HttpResult> getDeposit(@Field("token") String token, @Field("money") String money);
+
+    //退押金-申请
+    @FormUrlEncoded
+    @POST(N.KEY_REFUNDDEPOSIT)
+    Observable<HttpResult> getRefundDeposit(@Field("token") String token, @Field("reason") String reason);
+
+    /**
+     * 骑行
+     */
+    //index
+    @FormUrlEncoded
+    @POST(N.KEY_INDEX)
+    Observable<HttpResult<IndexBean>> getIndex(@Field("token") String token, @Field("longtitude") double longtitude, @Field("latitude") double latitude, @Field("maxDistance") int maxDistance);
+
+    //预约
+    @FormUrlEncoded
+    @POST(N.KEY_CREATE)
+    Observable<HttpResult<CreateBean>> getCreate(@Field("token") String token, @Field("bikeId") String bikeId, @Field("longtitude") double longtitude, @Field("latitude") double latitude, @Field("maxDistance") int maxDistance);
+
+    //取消预约
+    @GET(N.KEY_CANCEL)
+    Observable<HttpResult> getCancel(@Query("token") String token);
+
+    //租车
+    @FormUrlEncoded
+    @POST(N.KEY_RENT)
+    Observable<HttpResult<RentBean>> getRent(@Field("token") String token, @Field("bikeld") String bikeld);
+
+    //场地还车
+    @FormUrlEncoded
+    @POST(N.KEY_FINISH)
+    Observable<HttpResult> getFinish(@Field("token") String token, @Field("parkId") String parkId);
+
+    //我的行程
+    @FormUrlEncoded
+    @POST(N.KEY_RECORDS)
+    Observable<HttpResult> getRecords(@Field("token") String token, @Field("pageNum") String pageNum, @Field("pageSize") String pageSize);
+
+    //行程详情
+    @FormUrlEncoded
+    @POST(N.KEY_DETAIL_RIDE)
+    Observable<HttpResult<DetailBean>> getDetailRide(@Field("token") String token, @Field("orderId") String orderId);
+
+    //故障报修,该接口未完善
+    @FormUrlEncoded
+    @POST(N.KEY_MALFUNCTION)
+    Observable<HttpResult> getMalfunction(@Field("token") String token, @Field("bikeId") String bikeId, @Field("malfunctionType") String malfunctionType, @Field("pics") String pics, @Field("remark") String remark);
+}
+

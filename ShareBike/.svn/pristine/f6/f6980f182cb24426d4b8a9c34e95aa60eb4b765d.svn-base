@@ -1,0 +1,110 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/main_background</item>
+        <item name="android:screenOrientation">portrait</item>
+        <item name="android:windowAnimationStyle">@style/fade</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="AppTheme">
+        <!--在Android 4.4之前的版本上运行，直接跟随系统主题-->
+    </style>
+
+    <style name="LoadingTheme" parent="TranslucentTheme">
+        <item name="android:windowBackground">@drawable/bg_loading</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="KeyboardInputStyle" parent="Base.Widget.AppCompat.EditText">
+        <item name="android:layout_width">29dp</item>
+        <item name="android:layout_height">45dp</item>
+        <item name="android:background">#4d777777</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/bg_white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:maxLength">1</item>
+    </style>
+
+    <style name="fade" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_to_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_to_right</item>
+    </style>
+    <!--黑色字体默认属性-->
+    <style name="title_default_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/title_default</item>
+    </style>
+
+    <style name="fault_service_type">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="fault_radioButton_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/title_foreground</item>
+        <item name="android:textSize">@dimen/text_dimens_15</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:background">@drawable/bg_tv_rectangle_selector</item>
+    </style>
+
+    <style name="icon_iv_right">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">@dimen/space_dimens_3</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="guide_tv_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textSize">@dimen/text_dimens_15</item>
+        <item name="android:textColor">@color/title_default</item>
+    </style>
+
+    <style name="tv_share_bottom_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/et_hint_foreground</item>
+        <item name="android:layout_marginBottom">@dimen/space_dimens_130</item>
+        <item name="android:textSize">@dimen/text_dimens_16</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="load_dialog" parent="android:Theme.Holo.Light.Dialog">
+        <item name="android:windowBackground">@color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="money_tv_stytle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">65dp</item>
+        <item name="android:paddingTop">@dimen/space_dimens_6</item>
+        <item name="android:paddingBottom">@dimen/space_dimens_6</item>
+        <item name="android:layout_marginRight">@dimen/space_dimens_12</item>
+        <item name="android:layout_marginLeft">@dimen/space_dimens_12</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/tag_bg</item>
+    </style>
+</resources>

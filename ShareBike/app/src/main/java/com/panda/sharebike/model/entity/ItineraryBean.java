@@ -1,0 +1,347 @@
+package com.panda.sharebike.model.entity;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/24
+ * desc   :
+ * version: 1.0
+ */
+public class ItineraryBean implements Serializable {
+
+    /**
+     * code : 200
+     * data : {"pageNum":1,"totalItemsCount":1,"pageItemsCount":10,"items":[{"id":"08a9127d-5d66-413a-988a-294e7e65402b","state":"done","startTime":1499852195198,"endTime":1499855306753,"distance":0,"cost":-0.5,"bike":{"id":"bc356de3-c5e1-4f3d-bbda-d703f20b03ae","state":"normal","version":"version","lock":true,"electricquantity":0,"createTime":1499852194087},"member":{"id":"b07a3700-f737-4095-9cf2-729caafef1d2","cellphone":"34535","nickname":"525","avatar":"/qbike/img/defaut_avatar.png","realname":"realname","idCard":"idCard","realnameAuth":true,"registerTime":1499852194020,"lastActivateTime":1499852194020}}]}
+     */
+    /**
+     * pageNum : 1
+     * totalItemsCount : 1
+     * pageItemsCount : 10
+     * items : [{"id":"08a9127d-5d66-413a-988a-294e7e65402b","state":"done","startTime":1499852195198,"endTime":1499855306753,"distance":0,"cost":-0.5,"bike":{"id":"bc356de3-c5e1-4f3d-bbda-d703f20b03ae","state":"normal","version":"version","lock":true,"electricquantity":0,"createTime":1499852194087},"member":{"id":"b07a3700-f737-4095-9cf2-729caafef1d2","cellphone":"34535","nickname":"525","avatar":"/qbike/img/defaut_avatar.png","realname":"realname","idCard":"idCard","realnameAuth":true,"registerTime":1499852194020,"lastActivateTime":1499852194020}}]
+     */
+
+    private int pageNum;
+    private int totalItemsCount;
+    private int pageItemsCount;
+    private boolean hasNextPage;
+    private boolean hasPreviousPage;
+
+    public boolean isHasNextPage() {
+        return hasNextPage;
+    }
+
+    public void setHasNextPage(boolean hasNextPage) {
+        this.hasNextPage = hasNextPage;
+    }
+
+    public boolean isHasPreviousPage() {
+        return hasPreviousPage;
+    }
+
+    public void setHasPreviousPage(boolean hasPreviousPage) {
+        this.hasPreviousPage = hasPreviousPage;
+    }
+
+    public int getPageCount() {
+        return pageCount;
+    }
+
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
+    }
+
+    private int pageCount;
+    private List<ItemsBean> items;
+
+    public int getPageNum() {
+        return pageNum;
+    }
+
+    public void setPageNum(int pageNum) {
+        this.pageNum = pageNum;
+    }
+
+    public int getTotalItemsCount() {
+        return totalItemsCount;
+    }
+
+    public void setTotalItemsCount(int totalItemsCount) {
+        this.totalItemsCount = totalItemsCount;
+    }
+
+    public int getPageItemsCount() {
+        return pageItemsCount;
+    }
+
+    public void setPageItemsCount(int pageItemsCount) {
+        this.pageItemsCount = pageItemsCount;
+    }
+
+    public List<ItemsBean> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ItemsBean> items) {
+        this.items = items;
+    }
+
+    public static class ItemsBean {
+        /**
+         * id : 08a9127d-5d66-413a-988a-294e7e65402b
+         * state : done
+         * startTime : 1499852195198
+         * endTime : 1499855306753
+         * distance : 0
+         * cost : -0.5
+         * bike : {"id":"bc356de3-c5e1-4f3d-bbda-d703f20b03ae","state":"normal","version":"version","lock":true,"electricquantity":0,"createTime":1499852194087}
+         * member : {"id":"b07a3700-f737-4095-9cf2-729caafef1d2","cellphone":"34535","nickname":"525","avatar":"/qbike/img/defaut_avatar.png","realname":"realname","idCard":"idCard","realnameAuth":true,"registerTime":1499852194020,"lastActivateTime":1499852194020}
+         */
+
+        private String id;
+        private String state;
+        private long startTime;
+        private long endTime;
+        private double distance;
+        private double cost;
+        private BikeBean bike;
+        private MemberBean member;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public long getStartTime() {
+            return startTime;
+        }
+
+        public void setStartTime(long startTime) {
+            this.startTime = startTime;
+        }
+
+        public long getEndTime() {
+            return endTime;
+        }
+
+        public void setEndTime(long endTime) {
+            this.endTime = endTime;
+        }
+
+        public double getDistance() {
+            return distance;
+        }
+
+        public void setDistance(double distance) {
+            this.distance = distance;
+        }
+
+        public double getCost() {
+            return cost;
+        }
+
+        public void setCost(double cost) {
+            this.cost = cost;
+        }
+
+        public BikeBean getBike() {
+            return bike;
+        }
+
+        public void setBike(BikeBean bike) {
+            this.bike = bike;
+        }
+
+        public MemberBean getMember() {
+            return member;
+        }
+
+        public void setMember(MemberBean member) {
+            this.member = member;
+        }
+
+        public static class BikeBean {
+            /**
+             * id : bc356de3-c5e1-4f3d-bbda-d703f20b03ae
+             * state : normal
+             * version : version
+             * lock : true
+             * electricquantity : 0
+             * createTime : 1499852194087
+             */
+
+            private String id;
+            private String state;
+            private String version;
+            private boolean lock;
+            private int electricquantity;
+            private long createTime;
+            private String num;
+
+            public String getNum() {
+                return num;
+            }
+
+            public void setNum(String num) {
+                this.num = num;
+            }
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getState() {
+                return state;
+            }
+
+            public void setState(String state) {
+                this.state = state;
+            }
+
+            public String getVersion() {
+                return version;
+            }
+
+            public void setVersion(String version) {
+                this.version = version;
+            }
+
+            public boolean isLock() {
+                return lock;
+            }
+
+            public void setLock(boolean lock) {
+                this.lock = lock;
+            }
+
+            public int getElectricquantity() {
+                return electricquantity;
+            }
+
+            public void setElectricquantity(int electricquantity) {
+                this.electricquantity = electricquantity;
+            }
+
+            public long getCreateTime() {
+                return createTime;
+            }
+
+            public void setCreateTime(long createTime) {
+                this.createTime = createTime;
+            }
+        }
+
+        public static class MemberBean {
+            /**
+             * id : b07a3700-f737-4095-9cf2-729caafef1d2
+             * cellphone : 34535
+             * nickname : 525
+             * avatar : /qbike/img/defaut_avatar.png
+             * realname : realname
+             * idCard : idCard
+             * realnameAuth : true
+             * registerTime : 1499852194020
+             * lastActivateTime : 1499852194020
+             */
+
+            private String id;
+            private String cellphone;
+            private String nickname;
+            private String avatar;
+            private String realname;
+            private String idCard;
+            private boolean realnameAuth;
+            private long registerTime;
+            private long lastActivateTime;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getCellphone() {
+                return cellphone;
+            }
+
+            public void setCellphone(String cellphone) {
+                this.cellphone = cellphone;
+            }
+
+            public String getNickname() {
+                return nickname;
+            }
+
+            public void setNickname(String nickname) {
+                this.nickname = nickname;
+            }
+
+            public String getAvatar() {
+                return avatar;
+            }
+
+            public void setAvatar(String avatar) {
+                this.avatar = avatar;
+            }
+
+            public String getRealname() {
+                return realname;
+            }
+
+            public void setRealname(String realname) {
+                this.realname = realname;
+            }
+
+            public String getIdCard() {
+                return idCard;
+            }
+
+            public void setIdCard(String idCard) {
+                this.idCard = idCard;
+            }
+
+            public boolean isRealnameAuth() {
+                return realnameAuth;
+            }
+
+            public void setRealnameAuth(boolean realnameAuth) {
+                this.realnameAuth = realnameAuth;
+            }
+
+            public long getRegisterTime() {
+                return registerTime;
+            }
+
+            public void setRegisterTime(long registerTime) {
+                this.registerTime = registerTime;
+            }
+
+            public long getLastActivateTime() {
+                return lastActivateTime;
+            }
+
+            public void setLastActivateTime(long lastActivateTime) {
+                this.lastActivateTime = lastActivateTime;
+            }
+        }
+    }
+}

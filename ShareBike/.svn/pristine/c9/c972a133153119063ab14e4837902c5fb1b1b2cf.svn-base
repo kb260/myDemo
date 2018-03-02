@@ -1,0 +1,180 @@
+package com.panda.sharebike.model.entity;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/23
+ * desc   :
+ * version: 1.0
+ */
+public class IndexBean implements Serializable {
+
+    /**
+     * code : 200
+     * data : {"state":"normal","nearBikes":[{"bikeLocation":{"id":"0000001","position":[120.2708504874153,30.20555067014608],"locateTime":1499854233183},"distance":8.638249073014211E-7}],"memberRideConfig":{"id":"1","deposit":199,"bikeParkScope":300,"subscribeDuration":900000,"rental":0.5,"timeUnit":1800000}}
+     */
+    /**
+     * state : normal
+     * nearBikes : [{"bikeLocation":{"id":"0000001","position":[120.2708504874153,30.20555067014608],"locateTime":1499854233183},"distance":8.638249073014211E-7}]
+     * memberRideConfig : {"id":"1","deposit":199,"bikeParkScope":300,"subscribeDuration":900000,"rental":0.5,"timeUnit":1800000}
+     */
+
+    private String state;
+    private MemberRideConfigBean memberRideConfig;
+    private List<NearBikesBean> nearBikes;
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public MemberRideConfigBean getMemberRideConfig() {
+        return memberRideConfig;
+    }
+
+    public void setMemberRideConfig(MemberRideConfigBean memberRideConfig) {
+        this.memberRideConfig = memberRideConfig;
+    }
+
+    public List<NearBikesBean> getNearBikes() {
+        return nearBikes;
+    }
+
+    public void setNearBikes(List<NearBikesBean> nearBikes) {
+        this.nearBikes = nearBikes;
+    }
+
+    public static class MemberRideConfigBean {
+        /**
+         * id : 1
+         * deposit : 199
+         * bikeParkScope : 300
+         * subscribeDuration : 900000
+         * rental : 0.5
+         * timeUnit : 1800000
+         */
+
+        private String id;
+        private int deposit;
+        private int bikeParkScope;
+        private int subscribeDuration;
+        private double rental;
+        private int timeUnit;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public int getDeposit() {
+            return deposit;
+        }
+
+        public void setDeposit(int deposit) {
+            this.deposit = deposit;
+        }
+
+        public int getBikeParkScope() {
+            return bikeParkScope;
+        }
+
+        public void setBikeParkScope(int bikeParkScope) {
+            this.bikeParkScope = bikeParkScope;
+        }
+
+        public int getSubscribeDuration() {
+            return subscribeDuration;
+        }
+
+        public void setSubscribeDuration(int subscribeDuration) {
+            this.subscribeDuration = subscribeDuration;
+        }
+
+        public double getRental() {
+            return rental;
+        }
+
+        public void setRental(double rental) {
+            this.rental = rental;
+        }
+
+        public int getTimeUnit() {
+            return timeUnit;
+        }
+
+        public void setTimeUnit(int timeUnit) {
+            this.timeUnit = timeUnit;
+        }
+    }
+
+    public static class NearBikesBean {
+        /**
+         * bikeLocation : {"id":"0000001","position":[120.2708504874153,30.20555067014608],"locateTime":1499854233183}
+         * distance : 8.638249073014211E-7
+         */
+
+        private BikeLocationBean bikeLocation;
+        private double distance;
+
+        public BikeLocationBean getBikeLocation() {
+            return bikeLocation;
+        }
+
+        public void setBikeLocation(BikeLocationBean bikeLocation) {
+            this.bikeLocation = bikeLocation;
+        }
+
+        public double getDistance() {
+            return distance;
+        }
+
+        public void setDistance(double distance) {
+            this.distance = distance;
+        }
+
+        public static class BikeLocationBean {
+            /**
+             * id : 0000001
+             * position : [120.2708504874153,30.20555067014608]
+             * locateTime : 1499854233183
+             */
+
+            private String id;
+            private long locateTime;
+            private List<Double> position;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public long getLocateTime() {
+                return locateTime;
+            }
+
+            public void setLocateTime(long locateTime) {
+                this.locateTime = locateTime;
+            }
+
+            public List<Double> getPosition() {
+                return position;
+            }
+
+            public void setPosition(List<Double> position) {
+                this.position = position;
+            }
+        }
+    }
+}

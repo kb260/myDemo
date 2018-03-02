@@ -1,0 +1,86 @@
+package com.panda.sharebike.ui.deblocking;
+
+import android.app.AlertDialog;
+import android.content.Intent;
+
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.R;
+import com.panda.sharebike.app.AppApplication;
+import com.panda.sharebike.model.MessageEventInt;
+import com.panda.sharebike.service.SocketService;
+import com.panda.sharebike.ui.MainActivity;
+import com.panda.sharebike.ui.base.BaseActivity;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+/**
+ * 解锁页
+ */
+public class DeBlockingActivity extends BaseActivity {
+
+    private SocketService myService;
+    private AppApplication mApplication;
+    private AlertDialog mAlertDialog;
+    private boolean islockShow = false;
+    private String result;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_de_blocking;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        //
+        mAlertDialog = new AlertDialog.Builder(this).create();//初始化提示dialog
+        mApplication = (AppApplication) AppApplication.getAppContext();
+
+
+//        Intent intent = new Intent();
+//        intent.setAction("com.panda.sharebike.service.SocketService");
+//        bindService(intent, conn, Context.BIND_AUTO_CREATE);
+    }
+
+    /**
+     * 从faultrepairactivity传过来的数据
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onBusFaultRepair(MessageEventInt msg) {
+        Logger.e(msg.getType() + "<----------->");
+        if (0 == msg.getType()) {
+            Intent intent = new Intent(DeBlockingActivity.this, MainActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            DeBlockingActivity.this.finish();
+        } else if (1 == msg.getType()) {
+            ToastUtils.showShort("开锁失败");
+            DeBlockingActivity.this.finish();
+        }
+    }
+
+//    private ServiceConnection conn = new ServiceConnection() {
+//
+//        @Override
+//        public void onServiceConnected(ComponentName componentName, IBinder service) {
+//            myService = ((SocketService.LocalBinder) service).getService();
+//            System.out.println("Service连接成功");
+//            // 执行Service内部自己的方法
+//            myService.connect();
+//        }
+//
+//        @Override
+//        public void onServiceDisconnected(ComponentName componentName) {
+//            myService = null;
+//        }
+//    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //   unbindService(conn);
+    }
+
+
+}

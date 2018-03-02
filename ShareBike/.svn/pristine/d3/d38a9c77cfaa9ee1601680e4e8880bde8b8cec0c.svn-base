@@ -1,0 +1,126 @@
+package com.panda.sharebike.ui.login;
+
+import android.support.annotation.IdRes;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.MemberwalletBean;
+import com.panda.sharebike.model.entity.RechargeBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.MainActivity;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.widget.XRadioGroup;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 押金充值
+ */
+public class RechargeActivity extends BaseActivity implements XRadioGroup.OnCheckedChangeListener {
+    @BindView(R.id.tv_deposit)
+    TextView tvDeposit;
+    @BindView(R.id.rb_alipay)
+    RadioButton rbAlipay;
+    @BindView(R.id.rb_wechat)
+    RadioButton rbWechat;
+    @BindView(R.id.btn_recharge)
+    Button btnRecharge;
+    @BindView(R.id.radio_group)
+    XRadioGroup radioGroup;
+    private double chargeNum;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_recharge;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        radioGroup.setOnCheckedChangeListener(this);
+        getMemberWallet();
+    }
+
+    @Override
+    public void onCheckedChanged(XRadioGroup group, @IdRes int checkedId) {
+
+    }
+
+    /**
+     * 个人钱包页
+     */
+    private void getMemberWallet() {
+        Api.getInstance().getDefault().getMemberWallet(Config.TOKEN)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<MemberwalletBean>>(new SubscriberListener<HttpResult<MemberwalletBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<MemberwalletBean> model) {
+                        Logger.e(model.getData().getDepositConfig() + "");
+                        if (model.isOk()) {
+                            tvDeposit.setText(model.getData().getDepositConfig() + "");
+                            chargeNum = model.getData().getDepositConfig();
+                        } else if (EmptyUtils.isEmpty(model.getMsg())) {
+                            ToastUtils.showShort(model.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 充押金
+     */
+    private void getDeposit(double money) {
+        Api.getInstance().getDefault().getDeposit(Config.TOKEN, money)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<RechargeBean>>(new SubscriberListener<HttpResult<RechargeBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<RechargeBean> model) {
+                        if (model.isOk()) {
+                            startActivity(MainActivity.class);
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+
+    @OnClick({R.id.rb_alipay, R.id.rb_wechat, R.id.btn_recharge})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.rb_alipay:
+                ToastUtils.showShort("使用支付宝支付");
+                break;
+            case R.id.rb_wechat:
+                ToastUtils.showShort("使用微信支付");
+                break;
+            case R.id.btn_recharge:
+                if (EmptyUtils.isNotEmpty(chargeNum)) {
+                    getDeposit(chargeNum);
+                }
+                break;
+        }
+    }
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/default_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.panda.sharebike.ui.selfinfo.RefundSuccessActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_refund_success" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="退款中"
+        android:textColor="@color/title_foreground"
+        android:textSize="@dimen/title_size" />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="¥0"
+        android:textColor="@color/RechargeMoneyActivity_money"
+        android:textSize="40sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="由于银行原因可能会在0-3个工作日内到账"
+        android:textColor="@color/title_default"
+        android:textSize="@dimen/content_size" />
+
+    <Button
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bg_wallet_recharge"
+        android:text="确定"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/sub_title_size" />
+</LinearLayout>

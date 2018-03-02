@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_bg">#fdfdfd</color>
+    <color name="title_background">#fdfdfd</color>
+    <color name="title_foreground">#666666</color>
+    <color name="title_default">#333333</color>
+    <color name="line_background">#cccccc</color>
+    <color name="content_background">#fdfdfd</color>
+    <color name="content_foreground">#999999</color>
+    <color name="main_background">#f0f0f0</color>
+    <color name="bg_white">#ffffff</color>
+    <color name="bg_view">#DFDFDF</color>
+    <color name="split">#cccccc</color>
+    <color name="dark">#5e5656</color>
+    <color name="tv_number_color">#FF151515</color>
+    <color name="bt_foreground">#BBBBBB</color>
+    <color name="et_foreground">#333333</color>
+    <color name="et_hint_foreground">#999999</color>
+    <color name="et_background">#fdfdfd</color>
+    <color name="un_enable_background">#EAEAEA</color>
+    <color name="enable_background">#F14A61</color>
+    <color name="order_bt_color_start">#F94A4B</color>
+    <color name="order_bt_color_end">#DD174E</color>
+    <color name="tv_money_color">#EF354F</color>
+    <color name="tv_user_guide">#FFF7414F</color>
+    <color name="enable_color">#ffffff</color>
+    <color name="bg_scan">#a8292420</color>
+    <color name="tv_scan">#DBDBDB</color>
+    <color name="tv_bold_color">#FF333333</color>
+    <color name="transparent">#00000000</color>
+    <color name="bt_green_color">#ebfcf4</color>
+    <color name="lightlightgrey">#F1F1F1</color>
+    <color name="hint_map_color">#FF999999</color>
+    <color name="tv_normal_color">#FFFFFFFF</color>
+    <color name="tv_selected_color">#FF666666</color>
+</resources>

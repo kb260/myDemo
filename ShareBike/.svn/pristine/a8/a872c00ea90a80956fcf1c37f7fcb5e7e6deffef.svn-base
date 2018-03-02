@@ -1,0 +1,179 @@
+package com.panda.sharebike.ui.selfinfo;
+
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+
+import com.blankj.utilcode.util.SPUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.MemberInfo;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.login.LoginByPhoneActivity;
+import com.panda.sharebike.ui.login.RegisterActivity;
+import com.panda.sharebike.util.ImageLoaderUtils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+public class PersonalActivity extends BaseActivity {
+    @BindView(R.id.iv_avatar)
+    ImageView ivAvatar;
+    @BindView(R.id.llayout_login)
+    LinearLayout llayoutLogin;
+    @BindView(R.id.tv_nickname)
+    TextView tvNickname;
+    @BindView(R.id.tv_right_use)
+    TextView tvRightUse;
+    @BindView(R.id.rl_guide)
+    RelativeLayout rlGuide;
+    @BindView(R.id.tv_money)
+    TextView tvMoney;
+    @BindView(R.id.iv_right_back)
+    ImageView ivRightBack;
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_personal;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        // TODO: add setContentView(...) invocation
+        getHttpMemberInfo();
+        initView();
+
+    }
+
+    private void initData(MemberInfo memberInfo) {
+        ImageLoaderUtils.displayRound(this, ivAvatar, memberInfo.getMember().getAvatar());//头像
+        tvRightUse.setText(memberInfo.getMemberRideTimeStat() + "h");
+        Logger.e(SPUtils.getInstance("USER_INFO").getString("USER_ID"));
+        if (SPUtils.getInstance("USER_INFO").getString("USER_ID").equals(Config.STATUS_LOGIN)) {
+            Logger.e(SPUtils.getInstance("USER_INFO").getString("USER_ID"));
+            llayoutLogin.setVisibility(View.GONE);
+            tvNickname.setVisibility(View.VISIBLE);
+            ivRightBack.setVisibility(View.VISIBLE);
+            tvNickname.setText(memberInfo.getMember().getCellphone());
+        } else {
+            llayoutLogin.setVisibility(View.VISIBLE);
+            tvNickname.setVisibility(View.GONE);
+            ivRightBack.setVisibility(View.GONE);
+        }
+        if (0.0 != memberInfo.getMemberBeenz()) {
+            tvMoney.setVisibility(View.VISIBLE);
+            tvMoney.setText("￥" + memberInfo.getMemberBeenz());
+        }
+
+    }
+
+    private void initView() {
+        ButterKnife.bind(this);
+
+
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        hideTitleBar();
+    }
+
+    @OnClick({R.id.iv_back, R.id.iv_avatar, R.id.tv_login, R.id.tv_register, R.id.tv_right_use,
+            R.id.rl_schedule, R.id.rl_wallet, R.id.rl_account_manager, R.id.rl_guide, R.id.rl_invite, R.id.rl_setup, R.id.iv_message})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_back:
+                finish();
+                break;
+            case R.id.iv_avatar:
+                startActivity(new Intent(this, SelfInfoActivity.class));
+                break;
+            case R.id.tv_login:
+                startActivity(new Intent(this, LoginByPhoneActivity.class));
+                break;
+            case R.id.tv_register:
+                startActivity(new Intent(this, RegisterActivity.class));
+                break;
+            case R.id.tv_right_use:
+                break;
+            case R.id.rl_schedule://我的行程
+                break;
+            case R.id.rl_wallet:
+                startActivity(new Intent(this, MyWalletActivity.class));
+                break;
+            case R.id.rl_account_manager:
+                startActivity(new Intent(this, AccountManagerActivity.class));
+                break;
+            case R.id.rl_guide:
+                startActivity(new Intent(this, userGuideActivity.class));
+                break;
+            case R.id.rl_invite:
+                startActivity(UserShareBikeActivity.class);
+                break;
+            case R.id.iv_message://我的消息
+                break;
+            case R.id.rl_setup:
+                startActivity(new Intent(this, setUpActivity.class));
+                break;
+        }
+    }
+
+    /**
+     * 获取会员中心信息
+     */
+    private void getHttpMemberInfo() {
+        Api.getInstance().getDefault().getMemberCenter(Config.TOKEN)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<MemberInfo>>(new SubscriberListener<HttpResult<MemberInfo>>() {
+                    @Override
+                    public void onSuccess(HttpResult<MemberInfo> model) {
+                        //  app.setUserInfo(model.getData());//存储用户信息
+                        initData(model.getData());
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 使状态栏透明
+     * <p>
+     * 适用于图片作为背景的界面,此时需要图片填充到状态栏
+     */
+    public void setTranslucent() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            View decorView = getWindow().getDecorView();
+            int option = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(option);
+            getWindow().setNavigationBarColor(Color.TRANSPARENT);
+            getWindow().setStatusBarColor(Color.TRANSPARENT);
+        }
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+    }
+}

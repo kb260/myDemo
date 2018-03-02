@@ -1,0 +1,298 @@
+package com.panda.sharebike.ui.login;
+
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.model.entity.RechargeBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.MainActivity;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.util.PayImplForNew;
+import com.panda.sharebike.util.payutils.OrderInfoUtil2_0;
+import com.tsy.sdk.pay.alipay.Alipay;
+import com.tsy.sdk.pay.weixin.WXPay;
+
+import java.util.Map;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 充值
+ */
+public class RechargeMoneyActivity extends BaseActivity {
+
+
+    @BindView(R.id.tv_100)
+    TextView tv100;
+    @BindView(R.id.tv_50)
+    TextView tv50;
+    @BindView(R.id.tv_30)
+    TextView tv30;
+    @BindView(R.id.tv_10)
+    TextView tv10;
+    @BindView(R.id.btn_recharge)
+    Button btnRecharge;
+    private boolean isClick = true;//点击
+    private double mRecharge;
+    private String orderInfo;
+    private boolean Charge_State = false;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_recharge_money;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        initView();
+
+    }
+
+    private void initView() {
+    }
+
+
+    @OnClick({R.id.tv_100, R.id.tv_50, R.id.tv_30, R.id.tv_10, R.id.btn_recharge, R.id.rb_alipay, R.id.rb_wechat})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.tv_100:
+                setTextView100();
+                mRecharge = 100;
+                break;
+            case R.id.tv_50:
+                setTextView50();
+                mRecharge = 50;
+                break;
+            case R.id.tv_30:
+                setTextView30();
+                mRecharge = 30;
+                break;
+            case R.id.tv_10:
+                setTextView10();
+                mRecharge = 10;
+                break;
+            case R.id.btn_recharge:
+                if (mRecharge == 0.0) {
+                    ToastUtils.showShort("请选择充值金额");
+                } else {
+                    getRecharge(mRecharge);//获得网址进行支付宝或者微信支付
+                }
+                break;
+            case R.id.rb_alipay:
+                //    ToastUtils.showShort("选择支付宝支付");
+                Charge_State = false;
+                break;
+            case R.id.rb_wechat:
+                //      ToastUtils.showShort("选择微信支付");
+                Charge_State = true;
+                break;
+        }
+    }
+
+    /**
+     * 余额充值
+     *
+     * @param money
+     */
+    private void getRecharge(final double money) {
+        Api.getInstance().getDefault().getRecharge(Config.TOKEN, money)//暂时写死
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<RechargeBean>>(new SubscriberListener<HttpResult<RechargeBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<RechargeBean> model) {
+                            // doAlipay(rechargeOrderInfo(model.getData().getOrderName(), model.getData().getTotalPrice(), model.getData().getId()));
+                        //doAlipay(rechargeOrderInfo(model.getData().getOrderName(), model.getData().getTotalPrice(), model.getData().getId()));
+//                            PayImplForNew payImplForNew = new PayImplForNew(RechargeMoneyActivity.this, model.getData().getOrderName(), model.getData().getId(), (int) money);
+//                            payImplForNew.pay();
+                        if (!model.isOk() && EmptyUtils.isNotEmpty(model.getMsg())) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (model.isOk()) {
+                            // doAlipay(rechargeOrderInfo(model.getData().getTotalPrice(), model.getData().getId(), model.getData().getOrderName()));
+                            if (Charge_State) {
+                                PayImplForNew payImplForNew = new PayImplForNew(RechargeMoneyActivity.this, model.getData().getOrderName(), model.getData().getId(), (int) (model.getData().getTotalPrice() * 100));
+                                payImplForNew.pay();
+                            } else {
+                                doAlipay(rechargeOrderInfo(model.getData().getOrderName(), model.getData().getTotalPrice(), model.getData().getId()));
+                            }
+
+                            }
+
+
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, true));
+    }
+
+    /**
+     * 调起充值
+     */
+    private String rechargeOrderInfo(String orderName, double totalPrice, String orderId) {
+        boolean rsa2 = (Config.RSA2_PRIVATE.length() > 0);
+        Map<String, String> params = OrderInfoUtil2_0.buildOrderParamMap(Config.APPID, rsa2, totalPrice + "", orderName, orderId);
+        String orderParam = OrderInfoUtil2_0.buildOrderParam(params);
+
+        String privateKey = rsa2 ? Config.RSA2_PRIVATE : Config.RSA_PRIVATE;
+        String sign = OrderInfoUtil2_0.getSign(params, privateKey, rsa2);
+        return orderInfo = orderParam + "&" + sign;
+    }
+
+    /**
+     * 支付宝支付
+     *
+     * @param pay_param 支付服务生成的支付参数
+     */
+
+    private void doAlipay(String pay_param) {
+        new Alipay(this, pay_param, new Alipay.AlipayResultCallBack() {
+            @Override
+            public void onSuccess() {
+                Toast.makeText(getApplication(), "支付成功", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(RechargeMoneyActivity.this, MainActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                RechargeMoneyActivity.this.finish();
+            }
+
+            @Override
+            public void onDealing() {
+                Toast.makeText(getApplication(), "支付处理中...", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(int error_code) {
+                switch (error_code) {
+                    case Alipay.ERROR_RESULT:
+                        Toast.makeText(getApplication(), "支付失败:支付结果解析错误", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case Alipay.ERROR_NETWORK:
+                        Toast.makeText(getApplication(), "支付失败:网络连接错误", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case Alipay.ERROR_PAY:
+                        Toast.makeText(getApplication(), "支付错误:支付码支付失败", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    default:
+                        Toast.makeText(getApplication(), "支付错误", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplication(), "支付取消", Toast.LENGTH_SHORT).show();
+            }
+        }).doPay();
+    }
+
+    /**
+     * 微信支付
+     *
+     * @param pay_param 支付服务生成的支付参数
+     */
+    private void doWXPay(String pay_param) {
+        String wx_appid = "wxXXXXXXX";     //替换为自己的appid
+        WXPay.init(getApplicationContext(), wx_appid);      //要在支付前调用
+        WXPay.getInstance().doPay(pay_param, new WXPay.WXPayResultCallBack() {
+            @Override
+            public void onSuccess() {
+                Toast.makeText(getApplication(), "支付成功", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onError(int error_code) {
+                switch (error_code) {
+                    case WXPay.NO_OR_LOW_WX:
+                        Toast.makeText(getApplication(), "未安装微信或微信版本过低", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case WXPay.ERROR_PAY_PARAM:
+                        Toast.makeText(getApplication(), "参数错误", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case WXPay.ERROR_PAY:
+                        Toast.makeText(getApplication(), "支付失败", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+            }
+
+            @Override
+            public void onCancel() {
+                Toast.makeText(getApplication(), "支付取消", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    private void setTextView10() {
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView30() {
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView50() {
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+    private void setTextView100() {
+        tv100.setBackgroundDrawable(getResources().getDrawable(R.drawable.checked_bg));
+        tv100.setTextColor(getResources().getColor(R.color.tv_normal_color));
+
+        tv50.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv50.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv30.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv30.setTextColor(getResources().getColor(R.color.tv_selected_color));
+        tv10.setBackgroundDrawable(getResources().getDrawable(R.drawable.normal_bg));
+        tv10.setTextColor(getResources().getColor(R.color.tv_selected_color));
+    }
+
+
+}

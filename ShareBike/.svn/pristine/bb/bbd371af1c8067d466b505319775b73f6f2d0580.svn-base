@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--margin-->
+    <dimen name="margin_horizontal">12dp</dimen>
+    <dimen name="content_horizontal">14dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="item_margin">8dp</dimen>
+    <dimen name="title_margin">24dp</dimen>
+    <!--font size-->
+    <dimen name="title_size">16sp</dimen>
+    <dimen name="sub_title_size">15sp</dimen>
+    <dimen name="content_size">13sp</dimen>
+    <dimen name="sub_content_size">12sp</dimen>
+    <dimen name="match">1000dp</dimen>
+
+    <dimen name="text_dimens_10">10sp</dimen>
+    <dimen name="text_dimens_11">11sp</dimen>
+    <dimen name="text_dimens_12">12sp</dimen>
+    <dimen name="text_dimens_13">13sp</dimen>
+    <dimen name="text_dimens_14">14sp</dimen>
+    <dimen name="text_dimens_15">15sp</dimen>
+    <dimen name="text_dimens_16">16sp</dimen>
+    <dimen name="text_dimens_18">18sp</dimen>
+    <dimen name="text_dimens_20">20sp</dimen>
+    <dimen name="text_dimens_30">30sp</dimen>
+    <dimen name="text_dimens_40">40sp</dimen>
+    <dimen name="text_dimens_50">50sp</dimen>
+    <dimen name="space_dimens_0_5">0.5dp</dimen>
+
+    <dimen name="space_dimens_1">1dp</dimen>
+    <dimen name="space_dimens_2">2dp</dimen>
+    <dimen name="space_dimens_3">3dp</dimen>
+    <dimen name="space_dimens_4">4dp</dimen>
+    <dimen name="space_dimens_5">5dp</dimen>
+    <dimen name="space_dimens_6">6dp</dimen>
+    <dimen name="space_dimens_7">7dp</dimen>
+    <dimen name="space_dimens_8">8dp</dimen>
+    <dimen name="space_dimens_9">9dp</dimen>
+    <dimen name="space_dimens_10">10dp</dimen>
+    <dimen name="space_dimens_12">12dp</dimen>
+    <dimen name="space_dimens_15">15dp</dimen>
+    <dimen name="space_dimens_16">16dp</dimen>
+    <dimen name="space_dimens_20">20dp</dimen>
+    <dimen name="space_dimens_25">25dp</dimen>
+    <dimen name="space_dimens_27">27dp</dimen>
+    <dimen name="space_dimens_30">30dp</dimen>
+    <dimen name="space_dimens_35">35dp</dimen>
+    <dimen name="space_dimens_40">40dp</dimen>
+    <dimen name="space_dimens_50">50dp</dimen>
+    <dimen name="space_dimens_60">60dp</dimen>
+    <dimen name="space_dimens_80">90dp</dimen>
+    <dimen name="space_dimens_100">100dp</dimen>
+    <dimen name="space_dimens_150">150dp</dimen>
+    <dimen name="space_dimens_130">130dp</dimen>
+    <dimen name="space_dimens_200">200dp</dimen>
+    <dimen name="nav_bar_height">56dp</dimen>
+
+    <dimen name="default_divider_height">1dp</dimen>
+    <dimen name="default_divider_padding">4dp</dimen>
+</resources>

@@ -1,0 +1,107 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    signingConfigs {
+        debug {
+            storeFile file("H:\\ShareBike/shareBike.jks")
+            storePassword "123456"
+            keyAlias "shareBike"
+            keyPassword "123456"
+            // v2SigningEnabled false
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion '26.0.0'
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    defaultConfig {
+        applicationId "com.panda.sharebike"//JPush上注册的包名.
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //极光推送
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64', 'mips', 'mips64'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+        manifestPlaceholders = [
+                JPUSH_PKGNAME: "com.panda.sharebike",
+                JPUSH_APPKEY : "56b70a3d905a058f234acf00", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //用户渠道统计的渠道名称
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+
+repositories {
+    mavenCentral() // jcenter() works as well because it pulls from Maven Central
+    maven { url "https://jitpack.io" }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile files('libs/AMap3DMap_5.2.0_AMapNavi_5.1.0_AMapSearch_5.1.0_AMapLocation_3.4.0_20170602.jar')
+    // -------------------- 以下两个库是必须依赖的 启动页----------------------------
+    //retrofit和rxjava
+    //log信息
+    //解决findviewbyind问题
+    //图片加载框架
+    //拍照选取
+    //几乎囊括了所有的常用工具类
+    //Z信
+    //极光推送
+    compile 'com.github.vilyever:AndroidSocketClient:3.0.3'
+    compile('io.socket:socket.io-client:0.8.3') {
+        exclude group: 'org.json', module: 'json'
+    }
+    compile 'com.tsy:pay:1.0.0'
+    compile 'cn.jiguang.sdk:jpush:3.0.5'
+    compile 'cn.jiguang.sdk:jcore:1.1.2'
+    compile 'com.github.jdsjlzx:LRecyclerView:1.4.3'
+    compile 'cn.bingoogolapple:bga-banner:2.1.7@aar'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.2.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.orhanobut:logger:2.1.1'
+    compile 'com.jakewharton:butterknife:8.6.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile 'com.blankj:utilcode:1.7.1'
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.7@aar'
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.android.support:support-annotations:22.2.1'
+    compile 'com.android.support:cardview-v7:22.2.1'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.7@aar'
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-beta2'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.android.support:multidex:1.0.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.6.0'
+}

@@ -1,0 +1,232 @@
+package com.panda.sharebike.service;
+
+import android.app.Notification;
+import android.app.Service;
+import android.content.Intent;
+import android.os.Binder;
+import android.os.IBinder;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.util.Log;
+
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.model.MessageEventInt;
+import com.vilyever.socketclient.SocketClient;
+import com.vilyever.socketclient.helper.SocketClientDelegate;
+import com.vilyever.socketclient.helper.SocketPacketHelper;
+import com.vilyever.socketclient.helper.SocketResponsePacket;
+import com.vilyever.socketclient.util.CharsetUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by kun on 16/6/29.
+ */
+public class SocketServices extends Service {
+    public SocketClient socketClient;
+    public byte[] loginMessage;
+    private boolean userDisconnect;
+    int connectCount = 0;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //  EventBus.getDefault().register(this);
+    }
+
+    @Nullable
+    @Override
+    public IBinder onBind(Intent intent) {
+        return new MyBinder();
+    }
+
+    @Override
+    public int onStartCommand(Intent intent, int flags, int startId) {
+        getInetAddress();
+        Notification notification = new Notification();
+        notification.flags = Notification.FLAG_ONGOING_EVENT;
+        notification.flags |= Notification.FLAG_NO_CLEAR;
+        notification.flags |= Notification.FLAG_FOREGROUND_SERVICE;
+        startForeground(1, notification);
+        return START_REDELIVER_INTENT;
+    }
+
+    @Override
+    public boolean onUnbind(Intent intent) {
+        return super.onUnbind(intent);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        //   EventBus.getDefault().unregister(this);
+        Log.i("SocketService", "onDestroy");
+        disconnect();
+        stopForeground(true);
+    }
+
+
+    private void initSocket() {
+        socketClient = new SocketClient();
+        socketClient.getAddress().setRemoteIP("112.124.97.122");
+        socketClient.getAddress().setRemotePort("9999"); // 远程端端口号
+        socketClient.getAddress().setConnectionTimeout(30 * 1000);
+        socketClient.setCharsetName(CharsetUtil.UTF_8);
+        socketClient.getSocketPacketHelper().setReadStrategy(SocketPacketHelper.ReadStrategy.AutoReadByLength);
+        socketClient.getSocketPacketHelper().setReceivePacketLengthDataLength(4);
+        socketClient.getSocketPacketHelper().setSendTimeout(30 * 1000);
+        socketClient.getSocketPacketHelper().setSendTimeoutEnabled(true);
+        socketClient.getSocketPacketHelper().setReceivePacketDataLengthConvertor(new SocketPacketHelper.ReceivePacketDataLengthConvertor() {
+            @Override
+            public int obtainReceivePacketDataLength(SocketPacketHelper helper, byte[] packetLengthData) {
+                int length = (packetLengthData[3] & 0xFF) + ((packetLengthData[2] & 0xFF) << 8) + ((packetLengthData[1] & 0xFF) << 16) + ((packetLengthData[0] & 0xFF) << 24);
+
+                return length;
+            }
+        });
+        socketClient.registerSocketClientDelegate(new SocketClientDelegate() {
+            @Override
+            public void onConnected(SocketClient client) {
+                Log.i("SocketService", "onConnected " + sendData());
+                client.sendData(sendData());
+            }
+
+            @Override
+            public void onDisconnected(SocketClient client) {
+                Log.i("SocketService", "onDisconnected " + client.getState());
+                new Thread() {
+                    @Override
+                    public void run() {
+                        super.run();
+                        if (!userDisconnect) {
+                            Log.i("SocketService", " socketClient.connect ");
+                            socketClient.connect();
+                            connectCount++;
+                        }
+                    }
+                }.start();
+            }
+
+            @Override
+            public void onResponse(SocketClient client, @NonNull SocketResponsePacket responsePacket) {
+                Log.i("SocketService", "onResponse -->success");
+                Log.i("SocketService", "onResponse " + responsePacket.getMessage());
+                responseEncode(responsePacket.getMessage());
+            }
+        });
+
+        socketClient.connect();
+        Log.i("SocketService", " socketClient.connect ");
+
+    }
+
+    public void sendMessage(byte[] message) {
+        Log.i("SocketService", "sendMessage  " + message);
+        if (socketClient.isConnected()) {
+            socketClient.sendData(message);
+        }
+    }
+
+    private void disconnect() {
+        if (socketClient != null && socketClient.isConnected()) {
+            userDisconnect = true;
+            socketClient.disconnect();
+            socketClient = null;
+        }
+    }
+
+    /**
+     * 发送消息
+     */
+    private byte[] sendData() {
+        Map<String, String> map = new HashMap<String, String>();
+        map.put("type", "login");
+        map.put("token", Config.TOKEN);
+        //将json转化为String类型
+        JSONObject json = new JSONObject(map);
+        String jsonString = "";
+        jsonString = json.toString();
+        encodeData(jsonString);
+
+        //  localSocketClient.sendData(encodeData(jsonString));
+        return encodeData(jsonString);
+    }
+
+    private byte[] encodeData(String msg) {
+        byte[] bytes = null;
+        try {
+            bytes = msg.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        byte[] bytesToSend = encodeData(bytes);
+        return bytesToSend;
+    }
+
+    private byte[] encodeData(byte[] bytes) {
+        byte[] bytesToSend = new byte[bytes.length + 4];
+        ByteBuffer byteBuffer = ByteBuffer.wrap(bytesToSend);
+        byteBuffer.putInt(bytes.length);
+        byteBuffer.put(bytes);
+        return bytesToSend;
+    }
+
+    private void getInetAddress() {
+        new Thread() {
+            @Override
+            public void run() {
+                super.run();
+                initSocket();
+            }
+        }.start();
+    }
+
+    private void responseEncode(String data) {
+        try {
+            JSONObject resultObject = new JSONObject(data);
+            if (resultObject.getInt("code") == 200) {
+                if (resultObject.has("data")) {
+                    JSONObject dataObj = resultObject.getJSONObject("data");
+                    if (dataObj.has("type")) {
+                        Logger.e("socket" + "---->" + dataObj.getInt("type"));
+                        responseEvent(dataObj.getInt("type"));
+                    }
+                } else {
+                }
+            } else if (resultObject.getInt("code") == 401) {
+//                PandaApplication.getInstance().accountService().logout();
+//                Intent i = new Intent("com.pandaol.pandaking.ui.login.NLoginActivity");
+//                i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                startActivity(i);
+            } else {
+//                ToastUtils.showToast(resultObject.getString("msg"));
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void responseEvent(int type) {
+
+        EventBus.getDefault().post(new MessageEventInt(type));
+    }
+
+    public class MyBinder extends Binder {
+
+        public SocketServices getService() {
+            return SocketServices.this;
+        }
+    }
+
+
+    private MyBinder myBinder = new MyBinder();
+
+}

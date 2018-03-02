@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <size
+        android:width="53dp"
+        android:height="22dp" />
+    <solid android:color="@color/RechargeMoneyActivity_money" />
+    <!-- 设置描边 -->
+    <stroke
+        android:width="0.5dp"
+        android:color="@color/RechargeMoneyActivity_money" />
+    <corners android:radius="2dp" />
+</shape>

@@ -1,0 +1,178 @@
+/**
+ * Project Name:Android_Car_Example
+ * File Name:Utils.java
+ * Package Name:com.amap.api.car.example
+ * Date:2015年4月7日下午3:43:05
+ */
+
+package com.panda.sharebike.lib;
+
+import com.amap.api.maps.AMap;
+import com.amap.api.maps.model.BitmapDescriptor;
+import com.amap.api.maps.model.BitmapDescriptorFactory;
+import com.amap.api.maps.model.LatLng;
+import com.amap.api.maps.model.Marker;
+import com.amap.api.maps.model.MarkerOptions;
+import com.panda.sharebike.R;
+import com.panda.sharebike.model.entity.BikeLocationBean;
+import com.panda.sharebike.model.entity.StopPointBean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+
+/**
+ * ClassName:Utils <br/>
+ * Function: TODO ADD FUNCTION. <br/>
+ * Reason:   TODO ADD REASON. <br/>
+ * Date:     2015年4月7日 下午3:43:05 <br/>
+ *
+ * @author yiyi.qi
+ * @see
+ * @since JDK 1.6
+ */
+public class Utils {
+
+    private static ArrayList<Marker> markers = new ArrayList<Marker>();
+    private static ArrayList<Marker> mParkers = new ArrayList<Marker>();
+    /**
+     * 添加模拟测试的车的点
+     */
+    public static void addEmulateData(AMap amap, LatLng center) {
+        if (markers.size() == 0) {
+            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory
+                    .fromResource(R.drawable.stable_cluster_marker_one_normal);
+
+            for (int i = 0; i < 20; i++) {
+                double latitudeDelt;
+                double longtitudeDelt;
+                if (i % 2 == 0) {
+                    latitudeDelt = (Math.random() - 0.5) * 0.1;
+                    longtitudeDelt = (Math.random() - 0.5) * 0.1;
+                } else {
+                    latitudeDelt = (Math.random() - 0.5) * 0.01;
+                    longtitudeDelt = (Math.random() - 0.5) * 0.01;
+                }
+                MarkerOptions markerOptions = new MarkerOptions();
+//                markerOptions.setFlat(true);
+//                markerOptions.anchor(0.5f, 0.5f);
+                markerOptions.icon(bitmapDescriptor);
+
+                markerOptions.position(new LatLng(center.latitude + latitudeDelt, center.longitude + longtitudeDelt));
+                //markerOptions.position(new LatLng(center.latitude, center.longitude));
+                Marker marker = amap.addMarker(markerOptions);
+                markers.add(marker);
+            }
+        } else {
+            for (Marker marker : markers) {
+                double latitudeDelt = (Math.random() - 0.5) * 0.1;
+                double longtitudeDelt = (Math.random() - 0.5) * 0.1;
+                marker.setPosition(new LatLng(center.latitude + latitudeDelt, center.longitude + longtitudeDelt));
+
+            }
+        }
+    }
+
+    /**
+     * 添加线上的车的点，可骑行车辆
+     */
+    public static void addEmulateList(AMap amap, List<BikeLocationBean> bikeLocationList) {
+        //  if (markers.size() == 0) {
+            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory
+                    .fromResource(R.drawable.stable_cluster_marker_one_normal);
+
+            for (int i = 0; i < bikeLocationList.size(); i++) {
+
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.period(1);
+                markerOptions.icon(bitmapDescriptor);
+                markerOptions.snippet(bikeLocationList.get(i).getId());//将单车id塞进去
+                markerOptions.title(String.valueOf(bikeLocationList.get(i).getMoney()));//预计费用
+                markerOptions.position(new LatLng(bikeLocationList.get(i).getLatitude(), bikeLocationList.get(i).getLongtitude()));
+                Marker marker = amap.addMarker(markerOptions);
+                markers.add(marker);
+            }
+//        } else {
+//            for (int i = 0; i < markers.size(); i++) {
+//                markers.get(i).setPosition(new LatLng(bikeLocationList.get(i).getLatitude(), bikeLocationList.get(i).getLongtitude()));
+//            }
+//        }
+    }
+
+    /**
+     * 添加线上的车的点，停车点
+     */
+    public static void addEmulateStopPoint(AMap amap, List<StopPointBean> bikeLocationList) {
+        // if (markers.size() != 0) {
+            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory
+                    .fromResource(R.mipmap.p_car);
+
+            for (int i = 0; i < bikeLocationList.size(); i++) {
+                MarkerOptions markerOptions = new MarkerOptions();
+                markerOptions.period(2);
+                markerOptions.icon(bitmapDescriptor);
+                markerOptions.snippet(bikeLocationList.get(i).getId());//将单车id塞进去
+                markerOptions.title(bikeLocationList.get(i).getName());//地点名称
+                markerOptions.position(new LatLng(bikeLocationList.get(i).getLatitude(), bikeLocationList.get(i).getLongtitude()));
+                Marker marker = amap.addMarker(markerOptions);
+                markers.add(marker);
+                //      }
+//        } else {
+//            BitmapDescriptor bitmapDescriptor = BitmapDescriptorFactory
+//                    .fromResource(R.mipmap.p_car);
+//
+//            for (int i = 0; i < bikeLocationList.size(); i++) {
+//
+//                MarkerOptions markerOptions = new MarkerOptions();
+//                //   markerOptions.setFlat(true);
+//                //  markerOptions.anchor(0.5f, 0.5f);
+//                markerOptions.icon(bitmapDescriptor);
+//                markerOptions.snippet(bikeLocationList.get(i).getId());//将单车id塞进去
+//                markerOptions.title(bikeLocationList.get(i).getName());//预计费用
+//                markerOptions.period(2);
+//                markerOptions.position(new LatLng(bikeLocationList.get(i).getLatitude(), bikeLocationList.get(i).getLongtitude()));
+//                //markerOptions.position(new LatLng(center.latitude, center.longitude));
+//                Marker marker = amap.addMarker(markerOptions);
+//                markers.add(marker);
+//            }
+//            for (int i = 0; i < markers.size(); i++) {
+//                markers.get(i).setPosition(new LatLng(bikeLocationList.get(i).getLatitude(), bikeLocationList.get(i).getLongtitude()));
+//            }
+//
+        }
+    }
+    /**
+     * 移除marker
+     */
+    public static void removeMarkers() {
+        for (Marker marker : markers) {
+            marker.remove();
+            marker.destroy();
+        }
+        markers.clear();
+    }
+
+    /**
+     * marker可以点击
+     */
+    public static void clickMarkers() {
+        if (markers != null) {
+            for (Marker marker : markers) {
+                marker.setClickable(true);
+            }
+        }
+    }
+
+    /**
+     * marker不可以点击
+     */
+    public static void unClickMarkers() {
+        if (markers != null) {
+            for (Marker marker : markers) {
+                marker.setClickable(false);
+            }
+        }
+    }
+
+}
+  

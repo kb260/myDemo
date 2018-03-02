@@ -1,0 +1,351 @@
+package com.panda.sharebike.ui.unlock;
+
+import android.app.AlertDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Vibrator;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationClient;
+import com.amap.api.location.AMapLocationClientOption;
+import com.amap.api.location.AMapLocationListener;
+import com.blankj.utilcode.util.EmptyUtils;
+import com.blankj.utilcode.util.ToastUtils;
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.Config;
+import com.panda.sharebike.R;
+import com.panda.sharebike.api.Api;
+import com.panda.sharebike.api.HttpResult;
+import com.panda.sharebike.api.Nsubscriber;
+import com.panda.sharebike.kb260.KbData;
+import com.panda.sharebike.model.MessageEvent;
+import com.panda.sharebike.model.MessageEventInt;
+import com.panda.sharebike.model.entity.RentBean;
+import com.panda.sharebike.model.entity.ReturnBikeBean;
+import com.panda.sharebike.ui.Iinterface.SubscriberListener;
+import com.panda.sharebike.ui.base.BaseActivity;
+import com.panda.sharebike.ui.deblocking.DeBlockingActivity;
+import com.panda.sharebike.ui.login.LoginByPhoneActivity;
+import com.panda.sharebike.ui.maintenance.FaultRepairActivity;
+import com.panda.sharebike.ui.ride.RideEndActivity;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import butterknife.BindView;
+import butterknife.OnClick;
+import cn.bingoogolapple.qrcode.core.QRCodeView;
+import cn.bingoogolapple.qrcode.zxing.ZXingView;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+/**
+ * 二维码扫码
+ */
+public class ScanUnlockActivity extends BaseActivity implements QRCodeView.Delegate {
+
+    @BindView(R.id.scan_view)
+    ZXingView scanView;
+    @BindView(R.id.iv_title)
+    ImageView ivTitle;
+    @BindView(R.id.tv_alert)
+    TextView tvAlert;
+    @BindView(R.id.iv_input)
+    ImageView ivInput;
+    @BindView(R.id.iv_light)
+    ImageView ivLight;
+    @BindView(R.id.tv_light)
+    TextView tvLight;
+    @BindView(R.id.llayout_bottom)
+    LinearLayout llayoutBottom;
+    @BindView(R.id.ll_scan_left)
+    LinearLayout llScanLeft;
+    private AlertDialog mAlertDialog;
+    private int code;
+    // private AppApplication mApplication;
+    private AMapLocationClient locationClientContinue;
+    private double longtitude, latitude;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_scan_unlock;
+    }
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mAlertDialog = new AlertDialog.Builder(this).create();//初始化提示dialog
+        //  mApplication = (AppApplication) AppApplication.getAppContext();
+
+        initLocation();
+    }
+
+    private void initLocation() {
+        locationClientContinue = new AMapLocationClient(this.getApplicationContext());
+        AMapLocationClientOption option = new AMapLocationClientOption();
+        option.setLocationMode(AMapLocationClientOption.AMapLocationMode.Hight_Accuracy);
+        option.setOnceLocation(false);//false多次定位
+        option.setInterval(1000 * 2);
+        locationClientContinue.setLocationOption(option);
+        //启动定位
+        locationClientContinue.startLocation();
+        //启动定位
+        locationClientContinue.setLocationListener(locationContinueListener);
+    }
+
+    /**
+     * 单次客户端的定位监听（不能用单次应该用多次定位，不然别人进来就不知道在哪里了）
+     */
+    AMapLocationListener locationContinueListener = new AMapLocationListener() {
+        @Override
+        public void onLocationChanged(AMapLocation location) {
+            if (location.getErrorCode() == 0) {
+                longtitude = location.getLongitude();
+                latitude = location.getLatitude();
+            }
+        }
+    };
+    /**
+     * 2，主页面扫码，3，报修页面扫码，4，还车界面扫码
+     */
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        scanView.setDelegate(this);
+        code = getIntentData();
+        if (3 == code) {
+            llScanLeft.setVisibility(View.GONE);
+        }
+        if (4 == code) {
+            setTitle("扫码还车");
+            llScanLeft.setVisibility(View.GONE);
+        }
+    }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        scanView.startCamera();
+        scanView.showScanRect();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        scanView.startSpot();
+    }
+
+    @Override
+    public void onStop() {
+        scanView.stopCamera();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (scanView != null) {
+            scanView.onDestroy();
+        }
+        super.onDestroy();
+
+    }
+
+
+    private void vibrate() {
+        Vibrator vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
+        vibrator.vibrate(200);
+    }
+
+    @Override
+    public void onScanQRCodeSuccess(String s) {
+        String result=s;
+        if(s.indexOf("m=")>-1){
+            result = s.substring(s.indexOf("m=") + 2).trim();
+        }
+        Logger.i(result);
+        Log.i("abcd", result);
+        //  ToastUtils.showLong(result);
+        switch (code) {
+            case 2://主页面扫码
+                if (EmptyUtils.isNotEmpty(latitude) && EmptyUtils.isNotEmpty(longtitude)) {
+                    getHttpRent(result, longtitude, latitude);//扫码租车
+                }
+
+                //扫码成功后,跳到开锁界面
+//                Intent intent = new Intent(ScanUnlockActivity.this, DeBlockingActivity.class);
+//                intent.putExtra("result", result);
+//                startActivity(intent);
+                break;
+            case 3://维修页面
+                EventBus.getDefault().post(new MessageEvent(result));
+                finish();
+                break;
+            case 4:
+                if (EmptyUtils.isNotEmpty(latitude) && EmptyUtils.isNotEmpty(longtitude)) {
+                    getBikeFinish(result, longtitude, latitude);//扫码还车
+                }
+                break;
+        }
+        vibrate();
+        scanView.startSpot();
+    }
+
+    @Override
+    public void onScanQRCodeOpenCameraError() {
+        Log.i("abcd", "error");
+        Logger.i("打开相机出错");
+    }
+
+    @OnClick({R.id.iv_input, R.id.iv_light})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_input:
+                startActivity(new Intent(this, ManualUnlockActivity.class));
+                scanView.onDestroy();
+                finish();
+                break;
+            case R.id.iv_light:
+                if (ivLight.getTag() == null || ivLight.getTag().equals("close")) {
+                    tvLight.setText("关闭手电筒");
+                    scanView.openFlashlight();
+                    ivLight.setTag("open");
+                } else {
+                    tvLight.setText("打开手电筒");
+                    scanView.closeFlashlight();
+                    ivLight.setTag("close");
+                }
+                break;
+        }
+    }
+
+    /**
+     * @param title
+     * @param cancle
+     * @param ok     故障车提示dialog
+     */
+    private void showTakePhotoDlg(String title, String cancle, String ok) {
+        mAlertDialog.show();
+        mAlertDialog.getWindow().setContentView(R.layout.dialog_photo_source);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_info))).setText(title);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_taking_picture))).setText(cancle);
+        ((TextView) (mAlertDialog.getWindow().findViewById(R.id.photo_source_photo_graph))).setText(ok);
+        mAlertDialog.getWindow().findViewById(R.id.photo_source_taking_picture).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAlertDialog.dismiss();
+            }
+        });//灰
+
+        mAlertDialog.getWindow().findViewById(R.id.photo_source_photo_graph).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //执行报修操作
+                Intent intent = new Intent(ScanUnlockActivity.this, FaultRepairActivity.class);
+                // intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+    }//蓝
+
+    /**
+     * 扫码租车
+     *
+     * @param bikeId
+     */
+    private void getHttpRent(String bikeId, double longtitude, double latitude) {
+        Api.getInstance().getDefault().getRent(Config.TOKEN, bikeId, longtitude + "", latitude + "", 5000)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<KbData>>(new SubscriberListener<HttpResult<KbData>>() {
+                    @Override
+                    public void onSuccess(HttpResult<KbData> model) {
+                        if (401 == model.getCode()) {
+                            startActivity(LoginByPhoneActivity.class);
+                            return;
+                        }
+                        if (501 == model.getCode()) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (502 == model.getCode()) {
+                            showTakePhotoDlg("该车锁有故障，换一辆再扫吧！", "取消", "去报修");
+                            return;
+                        }
+                        if (model.isOk()) {
+                            String  ps = model.getData().getLockInfo().getPassword();
+                            String mac =  model.getData().getLockInfo().getMacAddress();
+                            Intent intent = new Intent(ScanUnlockActivity.this, DeBlockingActivity.class);
+                            intent.putExtra("ps",ps);
+                            intent.putExtra("mac",mac);
+                            startActivity(intent);
+//                            intent.putExtra("main", 1002);
+//                            ScanUnlockActivity.this.setResult(RESULT_OK, intent);
+                            //     ScanUnlockActivity.this.finish();
+//                        } else {
+//                            if (502 == model.getCode()) {
+//                                showTakePhotoDlg("该车锁有故障，换一辆再扫吧！", "取消", "去报修");
+//                            } else {
+//                            ToastUtils.showShort(model.getMsg());
+//                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, false));
+    }
+
+    /**
+     * 从faultrepairactivity传过来的数据
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onBusFaultRepair(MessageEventInt msg) {
+        Logger.e(msg.getType() + "<----------->");
+        if (1 == msg.getType()) {
+            //锁车
+        }
+    }
+    /**
+     * 场地还车
+     */
+    private void getBikeFinish(String parkId, double longtitude, double latitude) {
+        Api.getInstance().getDefault().getFinish(Config.TOKEN, parkId, longtitude, latitude)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Nsubscriber<HttpResult<ReturnBikeBean>>(new SubscriberListener<HttpResult<ReturnBikeBean>>() {
+                    @Override
+                    public void onSuccess(HttpResult<ReturnBikeBean> model) {
+                        if (!model.isOk() && EmptyUtils.isNotEmpty(model.getMsg())) {
+                            ToastUtils.showShort(model.getMsg());
+                            return;
+                        }
+                        if (model.isOk()) {
+                            ToastUtils.showShort("还车成功");
+                            Intent intent = new Intent(ScanUnlockActivity.this, RideEndActivity.class);
+                            intent.putExtra(Config.SCANUNLOCK_KEY, model.getData().getOrder().getId());//将对应位置订单ID传给另一个界面
+                            startActivity(intent);
+                            ScanUnlockActivity.this.finish();
+                        } else {
+                            if (TextUtils.isEmpty(model.getMsg())) {
+                                ToastUtils.showShort(model.getMsg());
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(String msg) {
+
+                    }
+                }, this, false));
+    }
+
+}

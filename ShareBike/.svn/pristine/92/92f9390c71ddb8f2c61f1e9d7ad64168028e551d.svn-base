@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">巧骑单车</string>
+    <string name="app_setup">设置</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+
+    <!-- faultPrpairActivity-->
+    <string name="cycle_number">车牌号</string>
+    <string name="fault_repair_hint">手动输入车牌号</string>
+    <string name="fault_repair_scan">扫一扫</string>
+    <string name="fault_repair_title_type">请选择问题类型</string>
+    <string name="fault_repair_title_photo">请拍摄单车和单车周围的照片</string>
+    <!--问题类型 -->
+    <string name="question_no_lock">无法开锁</string>
+    <string name="question_no_code">二维码损坏</string>
+    <string name="question_report_parked">举报违停</string>
+    <string name="question_parts_damaged">零件损坏</string>
+    <string name="question_bike_sound">车辆异响</string>
+    <string name="question_other">其他问题</string>
+    <string name="fault_remark">备注</string>
+    <string name="fault_question_explain">问题补充说明</string>
+    <!-- 用户指南-->
+    <string name="guide_register_account">注册与账户</string>
+    <string name="guide_order_open_lock">预约/开锁问题</string>
+    <string name="guide_car_cash">租车费与押金</string>
+    <string name="guide_car_about">还车相关</string>
+    <string name="guide_ours_about">关于我们</string>
+    <!--设置-->
+    <string name="setUp_version">版本信息</string>
+    <string name="setUp_user">用户协议</string>
+    <string name="setUp_recharge">充值协议</string>
+    <string name="setUp_noLock">不能开锁</string>
+    <string name="setUp_reporting">举报违停</string>
+    <string name="setUp_description">押金说明</string>
+    <string name="setup_log_off">退出登录</string>
+    <!--正在骑行-->
+    <string name="riding_bike">正在骑行中</string>
+    <string name="riding_bike_number">单车编号</string>
+    <string name="riding_bike_charge">预计费用</string>
+    <string name="riding_bike_time">骑行时间</string>
+    <string name="riding_bike_distance">骑行距离</string>
+    <!--预约用车-->
+    <string name="order_use_car">预约用车</string>
+    <string name="unorder_user_car">取消预约</string>
+    <string name="order_use_position">杭州民防大厦</string>
+    <string name="order_use_time">30分钟</string>
+    <string name="order_use_walk">步行时间</string>
+    <string name="order_use_distance">距离起始位置</string>
+    <!--解锁页-->
+    <string name="de_blocking">正在解锁…</string>
+</resources>

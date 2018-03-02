@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_bg"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/content_horizontal"
+    android:paddingRight="@dimen/content_horizontal"
+    tools:context="com.panda.sharebike.ui.login.LoginByPhoneActivity">
+
+    <com.panda.sharebike.ui.widget.ClearEditText
+        android:id="@+id/et_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="@color/et_background"
+        android:hint="请输入手机号"
+        android:inputType="phone"
+        android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+        android:textColor="@color/et_foreground"
+        android:textColorHint="@color/et_hint_foreground"
+        android:textSize="@dimen/sub_title_size" />
+
+    <View
+        android:layout_below="@+id/et_phone"
+        android:id="@+id/view_1"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="3dp"
+        android:background="@color/line_background" />
+
+    <LinearLayout
+        android:layout_below="@+id/view_1"
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <com.panda.sharebike.ui.widget.ClearEditText
+            android:id="@+id/et_code"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/et_background"
+            android:hint="请输入验证码"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/et_foreground"
+            android:textColorHint="@color/et_hint_foreground"
+            android:textSize="@dimen/sub_title_size" />
+
+        <com.panda.sharebike.ui.widget.CountDownTV
+            android:id="@+id/tv_get_code"
+            android:layout_width="82dp"
+            android:layout_height="36dp"
+            android:enabled="false"
+            android:gravity="center"
+            android:inputType="number"
+            app:end_string="获取验证码"
+            android:text="获取验证码" />
+    </LinearLayout>
+
+    <View
+        android:layout_below="@+id/layout1"
+        android:id="@+id/view_2"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="3dp"
+        android:background="@color/line_background" />
+
+    <Button
+        android:layout_below="@+id/view_2"
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_btn_selector"
+        android:enabled="false"
+        android:text="立即登录"
+        android:textColor="@color/color_tv_selector"
+        android:textSize="@dimen/sub_title_size" />
+
+    <LinearLayout
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:id="@+id/tv_user_protocol"
+        android:textColor="@color/hint_map_color"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/Black"
+            android:textSize="@dimen/text_dimens_12"
+            android:text="点击开始，即表示已阅读并已同意"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/RechargeMoneyActivity_money"
+            android:textSize="@dimen/text_dimens_12"
+            android:text="《用车服务条款》"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_below="@+id/tv_user_protocol"
+        android:id="@+id/tv_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="密码登录"
+        android:textColor="@color/et_foreground"
+        android:textSize="@dimen/sub_title_size" />
+</RelativeLayout>

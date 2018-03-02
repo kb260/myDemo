@@ -1,0 +1,69 @@
+package com.panda.sharebike.ui.deblocking;
+
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.IBinder;
+
+import com.orhanobut.logger.Logger;
+import com.panda.sharebike.R;
+import com.panda.sharebike.model.MessageEventInt;
+import com.panda.sharebike.service.SocketService;
+import com.panda.sharebike.ui.base.BaseActivity;
+
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+/**
+ * 解锁页
+ */
+public class DeBlockingActivity extends BaseActivity {
+
+    private SocketService myService;
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_de_blocking;
+    }
+
+    @Override
+    protected void setUpView() {
+        super.setUpView();
+        Intent intent = new Intent();
+        intent.setAction("com.panda.sharebike.service.SocketService");
+        bindService(intent, conn, Context.BIND_AUTO_CREATE);
+    }
+
+    /**
+     * 从faultrepairactivity传过来的数据
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onBusFaultRepair(MessageEventInt msg) {
+        Logger.e(msg.getType() + "<----------->");
+        if (0 == msg.getType()) {
+
+        }
+    }
+
+    private ServiceConnection conn = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder service) {
+            myService = ((SocketService.LocalBinder) service).getService();
+            System.out.println("Service连接成功");
+            // 执行Service内部自己的方法
+            myService.connect();
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            myService = null;
+        }
+    };
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(conn);
+    }
+}

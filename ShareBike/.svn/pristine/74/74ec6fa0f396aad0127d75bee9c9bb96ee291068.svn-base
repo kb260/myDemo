@@ -1,0 +1,91 @@
+package com.panda.sharebike;
+
+import com.blankj.utilcode.util.SPUtils;
+import com.panda.sharebike.api.N;
+import com.panda.sharebike.util.LoginUtil;
+
+/**
+ * <pre>
+ *     author : zhangyuan
+ *     e-mail : zhangyuan_min@163.com
+ *     time   : 2017/06/16
+ *     desc   : 定义配置数据（常量）
+ *     version: 1.0
+ * </pre>
+ */
+public class Config {
+    /**
+     * "status":"loggedmember":登录状态
+     * "status":"guest"退出状态/游客状态
+     */
+    public static final String STATUS_LOGIN = "loggedmember";
+    public static final String STATUS_GUEST = "guest";
+    //游客token主要
+    public static final String TOKEN = SPUtils.getInstance(N.SHARE_TOKEN).getString(N.SHARE_TOKEN_KEY, "");
+
+    public static final String CHAT_SERVER_URL = "https://socketio-chat.now.sh/";
+
+    public static final String SCANUNLOCK_KEY = "activity_end";
+
+    public static String USER_ID = "";
+
+    //登录凭证token
+    public static String SIGN_ID = "";
+    //登录回调接口
+    public static LoginUtil.ILoginCallBack LOGINCALLBACK;
+    //appid 微信分配的公众账号ID
+    public static String APP_WE_CHAT_ID = "";
+
+
+    /**
+     * 支付宝支付业务：入参app_id
+     */
+    public static final String APPID = "2017071107712729";
+
+    /**
+     * 支付宝账户登录授权业务：入参pid值
+     */
+    public static final String PID = "";
+    /**
+     * 支付宝账户登录授权业务：入参target_id值
+     */
+    public static final String TARGET_ID = "";
+
+    /** 商户私钥，pkcs8格式 */
+    /** 如下私钥，RSA2_PRIVATE 或者 RSA_PRIVATE 只需要填入一个 */
+    /** 如果商户两个都设置了，优先使用 RSA2_PRIVATE */
+    /** RSA2_PRIVATE 可以保证商户交易在更加安全的环境下进行，建议使用 RSA2_PRIVATE */
+    /** 获取 RSA2_PRIVATE，建议使用支付宝提供的公私钥生成工具生成， */
+    /**
+     * 工具地址：https://doc.open.alipay.com/docs/doc.htm?treeId=291&articleId=106097&docType=1
+     */
+    public static final String RSA2_PRIVATE = "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCzCLxF9ph7ynKkcR/gBwpNWDPaTbx3k3df2GTUoF5MmzEyBMpTMNNgAqYM6T8Q9LAJEtgp6GsmRZLqUCrWq6BHs87DZlultVi/WlETmDWX15vSGQyb09oAFe4tKx9c1z9t5/k1/KXuZCJVka2Dl2Wa0o15K93P5ySsmZ1ctj+/lIjm7IZEQ2CZSKrJiane530T/BMmzIU8A16XK/MDozyBJe6mUwktYvkKswGd7TUswRv8EqVWeRugVJua0+SDHACV1bll+3h2BuzfHbo6Q39gfWKThZsP5pr4PcDhI7TVhQ1JulYlpedQYc56qcmXweOe696gqqGLfsPbaGw13WppAgMBAAECggEAE2Ps0D8HANFKXVkLNL5OdVYKN6iXsvO7yButwAGmdPGSAHLYXu441nsy9M8GT5XQwwrRcqiDgl+iq9IG8b0g3OMyj6M0ZdwgQolLoq2nkEx/yd+AqBfn0n6Nj0LOYMXHTuYC7b/xUMJznYTroAbzsDMBs4/2tB+6rx7sFjB+8wa62wPaExKP230jLT7Fa+//lwmsR+uVKpK4MezclGFhkVdGXmooYNB1x8XWmkyQxSdGBmOvs3aV3XdNv2o/+k8Ks4feIyJ6brRFT4sOdwOVcsugKehN3HFr6WTHXd5zRV0RwfiSKdWVXjcOSk2l8St59h+Fcv1ou4p+Yb/vZQPKoQKBgQDk1T30t60qAx/mziCfCLHa3fDm4xik4j/T83p2PiEHqbNwVZ+fFaihSi3bq8idk36vLBXFcSZ9G89gUSjoq0WhdCzLMfhX3zw55z6vxxC1S6acMe7sOqeEHpe/09BHjXhEimMOgWIIk8Mgvjz7DwdPahpgAFU/7F7leXoIsl4LLQKBgQDISf4FEqi3xmFdrwX6zDQ1QL7z8XnXne8CksatIMIePOhw+1k4NrcA0siUO3XGfsj7k2gPmztYL6ZednZrs4SJTwLR9ohfX80UNdH8BVaM+JiiQmkH9mGgz6tQhO3SkBk5BV7G3qE9KokFQagp0zDoi1MPmF4xCrPjbE6Sp4VxrQKBgQC3FdILQQYgLf3ROayp8VfzqE09PgeSrJ6q4wxhHJZqviEeSLN8oeSYn3QPZOMPCFp8pwYIQd6sjJqgEm9rsNT2N7A7JxDupWJXZagnFVtN4mg8Yksp4Ef1ElERntPu28aU+DAHBAe+mxKs2OiLalvL8zWFB98tVN4cNdQoryVFRQKBgGtBLFVdG5pmEofPjR0zsxV9WYRaoIu1WGOBZAEcFLeKmFLAVpPCwRcgySaP/M7R4CDQXB5XW10rDyVwvJOKK4Q4GmODaJ3iOHkFJTCXTzTofxwNAh+wcbFi4/OXa5+haNBfLtTCLYgKuhtlgH79SCiPS2iDiJUsjQ5RVnY0XUJ1AoGAc7o5nTPG/c/py5QPx6FpqVii7/cbgmnueDTRm9fmiMkiPLHOSc55I43u3PA7aQDRiH4bu3JikQTmaQ8iqn0d++tMjYG5dTsT8Rg/Ddj98NOkVg+lEbFVBnigUBLT8zYrsfd2xvocHsd08ycxZ3p3bTB3/PRY0POuR0mwbVGMGTM=";
+    public static final String RSA_PRIVATE = "";
+
+    private static final int SDK_PAY_FLAG = 1;
+    private static final int SDK_AUTH_FLAG = 2;
+}
+/**
+ * ************************************************************************
+ * **                              _oo0oo_                               **
+ * **                             o8888888o                              **
+ * **                             88" . "88                              **
+ * **                             (| -_- |)                              **
+ * **                             0\  =  /0                              **
+ * **                           ___/'---'\___                            **
+ * **                        .' \\\|     |// '.                          **
+ * **                       / \\\|||  :  |||// \\                        **
+ * **                      / _ ||||| -:- |||||- \\                       **
+ * **                      | |  \\\\  -  /// |   |                       **
+ * **                      | \_|  ''\---/''  |_/ |                       **
+ * **                      \  .-\__  '-'  __/-.  /                       **
+ * **                    ___'. .'  /--.--\  '. .'___                     **
+ * **                 ."" '<  '.___\_<|>_/___.' >'  "".                  **
+ * **                | | : '-  \'.;'\ _ /';.'/ - ' : | |                 **
+ * **                \  \ '_.   \_ __\ /__ _/   .-' /  /                 **
+ * **            ====='-.____'.___ \_____/___.-'____.-'=====             **
+ * **                              '=---='                               **
+ * ************************************************************************
+ * **                        佛祖保佑      镇类之宝                         **
+ * ************************************************************************
+ */

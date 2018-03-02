@@ -1,0 +1,146 @@
+TASK com.panda.sharebike id=334
+  ACTIVITY com.panda.sharebike/.ui.unlock.ManualUnlockActivity 424fe658 pid=14742
+    Local FragmentActivity 423c3d90 State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@4270caf8
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@4270caf8
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{425d3520 V.E..... ... 0,0-720,1280}
+        android.widget.LinearLayout{42777628 V.E..... ... 0,0-720,1280}
+          android.view.ViewStub{42827f08 G.E..... ... 0,0-0,0 #1020324}
+          android.widget.FrameLayout{42a17fc0 V.E..... ... 0,0-720,1280}
+            android.support.v7.widget.FitWindowsLinearLayout{42958d60 V.E..... ... 0,0-720,1280 #7f090005 app:id/action_bar_root}
+              android.support.v7.widget.ViewStubCompat{426ce1b0 G.E..... ... 0,0-0,0 #7f090010 app:id/action_mode_bar_stub}
+              android.support.v7.widget.ContentFrameLayout{4246ba18 V.ED.... ... 0,0-720,1280 #1020002 android:id/content}
+                android.widget.LinearLayout{42834630 V.E..... ... 0,0-720,1280}
+                  com.panda.sharebike.ui.widget.CustomTitleBar{425e2108 V.E..... ... 0,50-720,140}
+                    android.widget.RelativeLayout{42794e18 V.E..... ... 0,0-720,90}
+                      android.widget.RelativeLayout{42803490 V.E..... ... 0,0-720,88 #7f09010d app:id/relay_background}
+                        android.support.v7.widget.AppCompatImageView{42786f70 V.ED..C. ... 24,0-72,88 #7f090091 app:id/iv_left}
+                        android.support.v7.widget.AppCompatTextView{42487ba0 G.ED.... ... 0,0-0,0 #7f090188 app:id/tv_left}
+                        android.support.v7.widget.AppCompatTextView{42697810 V.ED.... ... 296,0-424,88 #7f0901a1 app:id/tv_title}
+                        android.support.v7.widget.AppCompatImageView{427d23f8 G.ED.... ... 0,0-0,0 #7f0900a0 app:id/iv_right}
+                        android.support.v7.widget.AppCompatTextView{427cf888 G.ED.... ... 0,0-0,0 #7f09019b app:id/tv_right}
+                      android.view.View{4251a2a8 V.ED.... ... 0,88-720,90 #7f0900be app:id/line}
+                  android.widget.RelativeLayout{4296c820 V.E..... ... 0,140-720,1280}
+                    android.widget.RelativeLayout{4285c4d0 V.E..... ... 0,0-720,1140}
+                      cn.bingoogolapple.qrcode.zxing.ZXingView{4252f368 V.E..... ... 0,0-720,1140 #7f09012c app:id/scan_view}
+                        cn.bingoogolapple.qrcode.core.CameraPreview{42a4d268 V.E..... ... 0,0-720,1280 #7f09001f app:id/bgaqrcode_camera_preview}
+                        cn.bingoogolapple.qrcode.core.ScanBoxView{4256b388 V.ED.... ... 0,0-720,1280}
+                      android.support.v7.widget.AppCompatImageView{4284ee68 V.ED.... ... 235,98-485,256 #7f0900b7 app:id/iv_title}
+                      android.widget.LinearLayout{425d1268 V.E..... ... 121,354-599,444 #7f0900ce app:id/llayout_keyboard}
+                        android.support.v7.widget.AppCompatEditText{42644af8 VFED..CL ... 0,0-58,90 #7f090056 app:id/et1}
+                        android.support.v7.widget.AppCompatEditText{425cfcb0 VFED..CL ... 70,0-128,90 #7f090058 app:id/et2}
+                        android.support.v7.widget.AppCompatEditText{427d95c8 VFED..CL ... 140,0-198,90 #7f090059 app:id/et3}
+                        android.support.v7.widget.AppCompatEditText{428cae20 VFED..CL ... 210,0-268,90 #7f09005a app:id/et4}
+                        android.support.v7.widget.AppCompatEditText{428d87d8 VFED..CL ... 280,0-338,90 #7f09005b app:id/et5}
+                        android.support.v7.widget.AppCompatEditText{42599ea0 VFED..CL ... 350,0-408,90 #7f09005c app:id/et6}
+                        android.support.v7.widget.AppCompatEditText{427213a8 VFED..CL F.. 420,0-478,90 #7f09005d app:id/et7}
+                        android.support.v7.widget.AppCompatEditText{42723a40 GFED..CL ... 0,0-0,0 #7f09005e app:id/et8}
+                        android.support.v7.widget.AppCompatEditText{429dc6e0 GFED..CL ... 0,0-0,0 #7f09005f app:id/et9}
+                        android.support.v7.widget.AppCompatEditText{429ff030 GFED..CL ... 0,0-0,0 #7f090057 app:id/et10}
+                      android.support.v7.widget.AppCompatTextView{426ab048 V.ED.... ... 240,488-480,521 #7f090187 app:id/tv_input_alert}
+                      android.widget.LinearLayout{4272e2f8 V.E..... ... 0,573-720,702 #7f0900cd app:id/llayout_bottom}
+                        android.widget.LinearLayout{42693050 V.E..... ... 0,0-360,129}
+                          android.support.v7.widget.AppCompatImageView{42736410 V.ED..C. ... 140,0-220,80 #7f0900ad app:id/iv_scan}
+                          android.support.v7.widget.AppCompatTextView{4271d630 V.ED.... ... 132,96-228,129}
+                        android.widget.LinearLayout{426fab08 V.E..... ... 360,0-720,129}
+                          android.support.v7.widget.AppCompatImageView{42634cc0 V.ED..C. ... 140,0-220,80 #7f090092 app:id/iv_light}
+                          android.support.v7.widget.AppCompatTextView{4299f710 V.ED.... ... 120,96-240,129 #7f090189 app:id/tv_light}
+        android.view.View{42521c50 V.ED.... ... 0,0-720,50}
+
+  ACTIVITY com.panda.sharebike/.ui.MainActivity 4274a5a0 pid=14742
+    Local FragmentActivity 42408a60 State:
+      mCreated=truemResumed=false mStopped=true mReallyStopped=true
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@42b6a6a0
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@42b6a6a0
+      mCurState=2 mStateSaved=true mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{425afd30 I.E..... ... 0,0-720,1280}
+        android.widget.LinearLayout{429561d0 V.E..... ... 0,0-720,1280}
+          android.view.ViewStub{42499618 G.E..... ... 0,0-0,0 #1020324}
+          android.widget.FrameLayout{429b45f8 V.E..... ... 0,0-720,1280}
+            android.support.v7.widget.FitWindowsLinearLayout{4250acf0 V.E..... ... 0,0-720,1280 #7f090005 app:id/action_bar_root}
+              android.support.v7.widget.ViewStubCompat{42639078 G.E..... ... 0,0-0,0 #7f090010 app:id/action_mode_bar_stub}
+              android.support.v7.widget.ContentFrameLayout{4260a9b0 V.ED.... ... 0,0-720,1280 #1020002 android:id/content}
+                android.widget.LinearLayout{42566f48 V.E..... ... 0,0-720,1280}
+                  com.panda.sharebike.ui.widget.CustomTitleBar{42432128 G.E..... ... 0,0-0,0}
+                    android.widget.RelativeLayout{425b4d18 V.E..... ... 0,0-0,0}
+                      android.widget.RelativeLayout{42656688 V.E..... ... 0,0-0,0 #7f09010d app:id/relay_background}
+                        android.support.v7.widget.AppCompatImageView{4246a450 V.ED..C. ... 0,0-0,0 #7f090091 app:id/iv_left}
+                        android.support.v7.widget.AppCompatTextView{426ec7f8 G.ED.... ... 0,0-0,0 #7f090188 app:id/tv_left}
+                        android.support.v7.widget.AppCompatTextView{4270b648 V.ED.... ... 0,0-0,0 #7f0901a1 app:id/tv_title}
+                        android.support.v7.widget.AppCompatImageView{424b9e00 G.ED.... ... 0,0-0,0 #7f0900a0 app:id/iv_right}
+                        android.support.v7.widget.AppCompatTextView{4279d898 G.ED.... ... 0,0-0,0 #7f09019b app:id/tv_right}
+                      android.view.View{425429d8 V.ED.... ... 0,0-0,0 #7f0900be app:id/line}
+                  android.widget.RelativeLayout{4274a180 V.E..... ... 0,50-720,1280}
+                    android.widget.RelativeLayout{42944518 V.E..... ... 0,0-720,1230}
+                      android.widget.RelativeLayout{42a4cfd0 V.E..... ... 0,0-720,88 #7f090083 app:id/include_title}
+                        android.support.v7.widget.AppCompatImageView{4252e158 V.ED..C. ... 24,20-72,68 #7f090096 app:id/iv_main_self}
+                        android.support.v7.widget.AppCompatTextView{427c8b30 G.ED.... ... 0,0-0,0 #7f09018d app:id/tv_main_title}
+                        android.support.v7.widget.AppCompatImageView{42533db0 V.ED.... ... 249,22-471,66 #7f090097 app:id/iv_main_title}
+                        android.support.v7.widget.AppCompatImageView{42579c50 V.ED..C. ... 656,23-696,65 #7f090095 app:id/iv_main_search}
+                      android.support.v7.widget.AppCompatTextView{4281b3a0 G.ED..C. ... 0,0-0,0 #7f09018f app:id/tv_mt}
+                      com.amap.api.maps.MapView{42571590 V.E..... ... 0,88-720,1230 #7f0900d6 app:id/map_view}
+                        com.amap.api.col.dg{427c8f08 V.E..... ... 0,0-720,1142}
+                          com.amap.api.mapcore.c{42555e78 V.E..... ... 0,0-720,1142}
+                          com.amap.api.col.dc{42b499b0 G.ED.... ... 0,0-720,1142}
+                          com.amap.api.col.di{425d1af0 V.ED.... ... 0,0-720,1142}
+                          com.amap.api.col.dh{427d0750 G.ED.... ... 0,0-720,1142}
+                          com.amap.api.col.de{42931588 VFED.... ... 20,1023-20,1023}
+                            android.widget.LinearLayout{42af0208 V.E..... ... 0,0-0,0}
+                          com.amap.api.col.dj{4260c440 G.E..... ... 620,964-720,1142}
+                            android.widget.ImageView{427aa9c8 V.ED..C. ... 0,0-100,78}
+                            android.widget.ImageView{4297acc8 V.ED..C. ... 0,78-100,178}
+                          com.amap.api.col.df{423567f0 G.E..... ... 620,0-720,100}
+                            android.widget.ImageView{42813ef8 V.ED..C. ... 0,0-100,100}
+                          com.amap.api.col.dd{4282af50 G.E..... ... 0,0-102,102}
+                            android.widget.ImageView{42572fe8 V.ED..C. ... 0,0-102,102}
+                      android.widget.RelativeLayout{425ab518 G.E..... ... 0,0-0,0 #7f0900e9 app:id/order_sticker}
+                        android.support.v7.widget.CardView{425e78a0 V.E..... ... 0,0-0,0}
+                          android.widget.LinearLayout{425c8c38 V.E..... ... 0,0-0,0}
+                            android.widget.LinearLayout{425d0260 V.E..... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatImageView{426f92f8 V.ED.... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{42824dd0 V.ED.... ... 0,0-0,0 #7f0900ea app:id/order_title}
+                            android.view.View{426bd140 V.ED.... ... 0,0-0,0}
+                            android.widget.LinearLayout{4260bc00 V.E..... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{429b53e8 V.ED.... ... 0,0-0,0 #7f09019a app:id/tv_riding_order}
+                              android.support.v7.widget.AppCompatTextView{42ace178 V.ED.... ... 0,0-0,0 #7f0901a0 app:id/tv_time_order}
+                              android.support.v7.widget.AppCompatTextView{43276240 V.ED.... ... 0,0-0,0 #7f090182 app:id/tv_distance_order}
+                            android.support.v7.widget.AppCompatButton{4266f3b0 VFED..C. ... 0,0-0,0 #7f090027 app:id/btn_order_sticker}
+                      android.widget.RelativeLayout{426c65a8 G.E..... ... 0,0-0,0 #7f0901a4 app:id/un_order_sticker}
+                        android.support.v7.widget.CardView{426054f8 V.E..... ... 0,0-0,0 #7f090030 app:id/cardView}
+                          android.widget.LinearLayout{42793858 V.E..... ... 0,0-0,0}
+                            android.widget.LinearLayout{4279c230 V.E..... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatImageView{427cd7e0 V.ED.... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{426edaf8 V.ED.... ... 0,0-0,0 #7f090177 app:id/tv_address}
+                            android.view.View{427e7f10 V.ED.... ... 0,0-0,0}
+                            android.widget.RelativeLayout{4279cac8 V.E..... ... 0,0-0,0}
+                              android.widget.LinearLayout{427dbf50 V.E..... ... 0,0-0,0}
+                                android.support.v7.widget.AppCompatTextView{426fbbb0 V.ED.... ... 0,0-0,0 #7f090161 app:id/textView4}
+                                android.support.v7.widget.AppCompatTextView{428736a0 V.ED.... ... 0,0-0,0 #7f0901a2 app:id/tv_unorder_car}
+                              com.panda.sharebike.ui.widget.CountDownProgress{42626910 V.ED.... ... 0,0-0,0 #7f09003d app:id/countdownProgress}
+                            android.support.v7.widget.AppCompatButton{429107c0 VFED..C. ... 0,0-0,0 #7f090022 app:id/btn_cancelorder}
+                      android.widget.RelativeLayout{42804da8 G.E..... ... 0,0-0,0 #7f090110 app:id/riding_sticker}
+                        android.support.v7.widget.CardView{42740df0 V.E...C. ... 0,0-0,0}
+                          android.widget.LinearLayout{42821680 V.E..... ... 0,0-0,0}
+                            android.widget.LinearLayout{4285d650 V.E..... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{425c2a98 V.ED.... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{425c79d8 V.ED.... ... 0,0-0,0 #7f090186 app:id/tv_info_bike}
+                            android.view.View{427f6138 V.ED.... ... 0,0-0,0}
+                            android.widget.LinearLayout{428d6578 V.E..... ... 0,0-0,0}
+                              android.support.v7.widget.AppCompatTextView{426ce608 V.ED.... ... 0,0-0,0 #7f090199 app:id/tv_riding_ing}
+                              android.support.v7.widget.AppCompatTextView{427e4928 V.ED.... ... 0,0-0,0 #7f09019f app:id/tv_time_ing}
+                              android.support.v7.widget.AppCompatTextView{428b0298 V.ED.... ... 0,0-0,0 #7f090181 app:id/tv_distance_ing}
+                      android.support.v7.widget.AppCompatImageView{4296ca58 V.ED..C. ... 20,1108-122,1210 #7f090094 app:id/iv_location}
+                      android.widget.LinearLayout{4294d258 V.E...C. ... 257,1024-463,1230 #7f0900d0 app:id/llayout_scan}
+                        android.support.v7.widget.AppCompatImageView{42a2f850 V.ED.... ... 79,49-127,97}
+                        android.support.v7.widget.AppCompatTextView{428da428 V.ED.... ... 39,113-167,156}
+                      android.support.v7.widget.AppCompatImageView{425239e8 V.ED..C. ... 598,986-700,1088 #7f09009f app:id/iv_repair}
+                      android.support.v7.widget.AppCompatImageView{425cef40 V.ED..C. ... 598,1108-700,1210 #7f09009e app:id/iv_refresh}
+        android.view.View{428333a0 V.ED.... ... 0,0-720,50}

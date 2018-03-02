@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_background"
+    android:orientation="vertical"
+    tools:context="com.panda.sharebike.ui.login.CertificationActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="25dp"
+        android:paddingTop="18dp">
+
+        <ImageView
+            android:layout_width="312dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_certify_title" />
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="手机验证"
+                android:textColor="@color/title_foreground"
+                android:textSize="@dimen/sub_title_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="实名认证"
+                android:textColor="@color/title_foreground"
+                android:textSize="@dimen/sub_title_size" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="押金充值"
+                android:textColor="@color/title_foreground"
+                android:textSize="@dimen/sub_title_size" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_horizontal">
+
+        <com.panda.sharebike.ui.widget.ClearEditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/et_background"
+            android:hint="请输入姓名"
+            android:inputType="textPersonName"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/et_foreground"
+            android:textColorHint="@color/et_hint_foreground"
+            android:textSize="@dimen/sub_title_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="3dp"
+            android:background="@color/line_background" />
+
+        <com.panda.sharebike.ui.widget.ClearEditText
+            android:id="@+id/et_identity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/et_background"
+            android:hint="请输入身份证"
+            android:paddingBottom="6dp"
+            android:paddingTop="6dp"
+            android:textColor="@color/et_foreground"
+            android:textColorHint="@color/et_hint_foreground"
+            android:textSize="@dimen/sub_title_size" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="3dp"
+            android:background="@color/line_background" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="26dp"
+            android:background="@drawable/bg_btn_selector"
+            android:enabled="false"
+            android:text="立即注册"
+            android:textColor="@color/color_tv_selector"
+            android:textSize="@dimen/sub_title_size" />
+    </LinearLayout>
+</LinearLayout>

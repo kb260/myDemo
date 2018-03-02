@@ -1,0 +1,58 @@
+package com.panda.sharebike;
+
+import com.blankj.utilcode.util.SPUtils;
+import com.panda.sharebike.api.N;
+import com.panda.sharebike.util.LoginUtil;
+
+/**
+ * <pre>
+ *     author : zhangyuan
+ *     e-mail : zhangyuan_min@163.com
+ *     time   : 2017/06/16
+ *     desc   : 定义配置数据（常量）
+ *     version: 1.0
+ * </pre>
+ */
+public class Config {
+    /**
+     * "status":"loggedmember":登录状态
+     * "status":"guest"退出状态/游客状态
+     */
+    public static final String STATUS_LOGIN = "loggedmember";
+    public static final String STATUS_GUEST = "guest";
+    //游客token主要
+    public static final String TOKEN = SPUtils.getInstance(N.SHARE_TOKEN).getString(N.SHARE_TOKEN_KEY, "");
+
+    public static final String CHAT_SERVER_URL = "https://socketio-chat.now.sh/";
+    public static String USER_ID = "";
+    //登录凭证token
+    public static String SIGN_ID = "";
+    //登录回调接口
+    public static LoginUtil.ILoginCallBack LOGINCALLBACK;
+    //appid 微信分配的公众账号ID
+    public static String APP_WE_CHAT_ID = "";
+}
+/**
+ * ************************************************************************
+ * **                              _oo0oo_                               **
+ * **                             o8888888o                              **
+ * **                             88" . "88                              **
+ * **                             (| -_- |)                              **
+ * **                             0\  =  /0                              **
+ * **                           ___/'---'\___                            **
+ * **                        .' \\\|     |// '.                          **
+ * **                       / \\\|||  :  |||// \\                        **
+ * **                      / _ ||||| -:- |||||- \\                       **
+ * **                      | |  \\\\  -  /// |   |                       **
+ * **                      | \_|  ''\---/''  |_/ |                       **
+ * **                      \  .-\__  '-'  __/-.  /                       **
+ * **                    ___'. .'  /--.--\  '. .'___                     **
+ * **                 ."" '<  '.___\_<|>_/___.' >'  "".                  **
+ * **                | | : '-  \'.;'\ _ /';.'/ - ' : | |                 **
+ * **                \  \ '_.   \_ __\ /__ _/   .-' /  /                 **
+ * **            ====='-.____'.___ \_____/___.-'____.-'=====             **
+ * **                              '=---='                               **
+ * ************************************************************************
+ * **                        佛祖保佑      镇类之宝                         **
+ * ************************************************************************
+ */

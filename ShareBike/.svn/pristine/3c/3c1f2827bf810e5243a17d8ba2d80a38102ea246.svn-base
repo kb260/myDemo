@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.panda.sharebike.ui.MainActivity">
+
+
+    <!-- 地图-->
+    <com.amap.api.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="44dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/view_title_main" />
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="当前网络不可用!"
+            android:gravity="center"
+            android:textColor="@color/White"
+            android:drawableRight="@drawable/icon_right"
+            android:padding="10dp"
+            android:visibility="gone"
+            android:background="@color/tv_user_guide"
+            android:id="@+id/tv_mt" />
+        <!--正在骑行中-->
+        <include layout="@layout/view_riding_sticker" />
+        <!--预约用车-->
+        <include layout="@layout/rs_view_order_sticker" />
+        <!--取消用车-->
+        <include layout="@layout/rs_view_un_order_sticker" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/space_dimens_10"
+        android:layout_marginBottom="@dimen/space_dimens_10"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_main_location" />
+
+    <LinearLayout
+        android:id="@+id/llayout_scan"
+        android:layout_width="103dp"
+        android:layout_height="103dp"
+        android:layout_marginBottom="@dimen/space_dimens_10"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_main_scan"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:src="@drawable/icon_main_scan" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="扫码骑车"
+            android:textColor="@color/enable_color"
+            android:textSize="@dimen/title_size" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_repair"
+        android:layout_above="@+id/iv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/space_dimens_10"
+        android:layout_marginBottom="@dimen/space_dimens_10"
+
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_main_falutrepair" />
+
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/space_dimens_10"
+        android:layout_marginBottom="@dimen/space_dimens_10"
+        android:scaleType="fitCenter"
+        android:src="@drawable/icon_main_refresh" />
+</RelativeLayout>

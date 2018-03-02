@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:padding="@dimen/space_dimens_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_reason"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/title_foreground"
+            android:textSize="@dimen/text_dimens_14"
+            tools:text="骑行费用" />
+
+        <TextView
+            android:id="@+id/tv_deltaFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="@color/title_foreground"
+            android:textSize="@dimen/text_dimens_14"
+            tools:text="-1.00元" />
+    </RelativeLayout>
+
+    <TextView
+        android:paddingLeft="@dimen/space_dimens_8"
+        android:paddingStart="@dimen/space_dimens_8"
+        android:paddingBottom="@dimen/space_dimens_8"
+        android:id="@+id/tv_logTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF999999"
+        android:textSize="@dimen/text_dimens_12"
+        tools:text="2017-06-08  14:12" />
+
+    <View
+        android:background="@color/split"
+        android:layout_width="match_parent"
+        android:layout_height="1px">
+
+    </View>
+</LinearLayout>

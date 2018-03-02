@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.panda.sharebike.ui.selfinfo.ApplyRefundActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:background="@color/bg_white"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/space_dimens_12"
+            android:text="退款金额"
+            android:textColor="@color/title_default"
+            android:textSize="@dimen/sub_title_size" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:text="0元"
+            android:textColor="@color/content_foreground"
+            android:textSize="@dimen/content_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginLeft="24dp"
+        android:text="退款原因"
+        android:textColor="#FF666666"
+        android:textSize="@dimen/content_size" />
+
+    <com.panda.sharebike.ui.widget.XRadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/bg_white"
+        android:orientation="vertical"
+        android:paddingBottom="12dp"
+        android:paddingLeft="@dimen/margin_horizontal"
+        android:paddingRight="@dimen/margin_horizontal"
+        android:paddingTop="12dp">
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="车费太贵了"
+                android:layout_gravity="center"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_money_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:layout_gravity="center"
+                android:text="车子难骑"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_bike_no_ride"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="车子太少了"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_bike_less"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="押金有点高"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_charge_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="很少骑车了"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_bike_ride_less"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="骑其他车子了"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_bike_ride_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/line_background" />
+
+        <LinearLayout
+            android:padding="@dimen/space_dimens_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_weight="1"
+                android:text="其他"
+                android:textColor="@color/title_default"
+                android:textSize="@dimen/sub_title_size" />
+
+            <RadioButton
+                android:id="@+id/rb_other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/icon_recharge_pay_selector"
+                android:button="@null"
+                android:checked="true" />
+        </LinearLayout>
+
+
+    </com.panda.sharebike.ui.widget.XRadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_refund"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="26dp"
+        android:layout_marginRight="26dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_wallet_recharge"
+        android:text="申请退款"
+        android:textColor="@color/bg_white"
+        android:textSize="@dimen/sub_title_size" />
+</LinearLayout>

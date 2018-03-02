@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FF333333"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:maxEms="18"
+            tools:text="憔悴的单车获得啦！周一到周五免费" />
+
+        <TextView
+            android:id="@+id/item_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:textColor="#FF666666"
+            android:textSize="@dimen/text_dimens_11"
+            android:padding="@dimen/space_dimens_6"
+            android:layout_marginRight="@dimen/space_dimens_5"
+            tools:text="2017-01-03" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#FF666666"
+        android:textSize="12sp"
+        android:singleLine="true"
+        android:layout_centerVertical="true"
+        tools:text="憔悴的单车获得啦！憔悴的单憔悴的单车获得啦！周一到周五免车获得啦！周一到周五周一到周五免费" />
+</LinearLayout>

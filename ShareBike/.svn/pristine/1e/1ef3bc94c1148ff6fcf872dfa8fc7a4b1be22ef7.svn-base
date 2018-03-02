@@ -1,0 +1,135 @@
+package com.panda.sharebike.model.entity;
+
+import java.io.Serializable;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/20
+ * desc   :
+ * version: 1.0
+ */
+public class UserInfo implements Serializable {
+
+
+    /**
+     * id : 09c08e5f-d750-47de-b971-91cf9a0032d7
+     * cellphone : 13478606965
+     * nickname : 13478606965
+     * avatar : http://192.168.0.177:91/qbike/upload/avatar/221500542828972.jpg
+     * email : null
+     * realname : 宁立森
+     * idCard : 450721199209140974
+     * realnameAuth : true
+     * registerTime : 1500279856111
+     * lastActivateTime : 1500542985869
+     */
+
+    private String id;
+    private String cellphone;
+    private String nickname;
+    private String avatar;
+    private Object email;
+    private String realname;
+    private String idCard;
+    private boolean realnameAuth;
+    private long registerTime;
+    private long lastActivateTime;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public Object getEmail() {
+        return email;
+    }
+
+    public void setEmail(Object email) {
+        this.email = email;
+    }
+
+    public String getRealname() {
+        return realname;
+    }
+
+    public void setRealname(String realname) {
+        this.realname = realname;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public boolean isRealnameAuth() {
+        return realnameAuth;
+    }
+
+    public void setRealnameAuth(boolean realnameAuth) {
+        this.realnameAuth = realnameAuth;
+    }
+
+    public long getRegisterTime() {
+        return registerTime;
+    }
+
+    public void setRegisterTime(long registerTime) {
+        this.registerTime = registerTime;
+    }
+
+    public long getLastActivateTime() {
+        return lastActivateTime;
+    }
+
+    public void setLastActivateTime(long lastActivateTime) {
+        this.lastActivateTime = lastActivateTime;
+    }
+
+    @Override
+    public String toString() {
+        return "UserInfo{" +
+                "id='" + id + '\'' +
+                ", cellphone='" + cellphone + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", avatar='" + avatar + '\'' +
+                ", email=" + email +
+                ", realname='" + realname + '\'' +
+                ", idCard='" + idCard + '\'' +
+                ", realnameAuth=" + realnameAuth +
+                ", registerTime=" + registerTime +
+                ", lastActivateTime=" + lastActivateTime +
+                '}';
+    }
+}
+

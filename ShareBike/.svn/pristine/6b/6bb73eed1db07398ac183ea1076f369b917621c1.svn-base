@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/order_cardView"
+    android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:layout_below="@+id/circleImageView"
+    app:elevation="5dp"
+    android:layout_marginTop="@dimen/space_dimens_12"
+    android:layout_marginLeft="@dimen/space_dimens_12"
+    android:layout_marginRight="@dimen/space_dimens_12"
+    app:cardCornerRadius="11dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/space_dimens_12"
+            android:paddingBottom="@dimen/space_dimens_12"
+            android:gravity="center_horizontal">
+
+            <ImageView
+                android:paddingLeft="@dimen/space_dimens_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_order" />
+
+            <TextView
+                android:id="@+id/tv_order_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/text_dimens_11"
+                android:text="@string/order_use_position" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5px"
+            android:background="@color/hint_color_line" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/space_dimens_12"
+            android:paddingTop="@dimen/space_dimens_12">
+
+
+            <TextView
+                android:id="@+id/tv_order_cost_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/riding_bike_charge"
+                android:textColor="@color/content_foreground"
+                android:textSize="@dimen/text_dimens_12" />
+
+            <TextView
+                android:id="@+id/tv_order_time_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/riding_bike_time"
+                android:textColor="@color/content_foreground"
+                android:textSize="@dimen/text_dimens_12" />
+
+            <TextView
+                android:id="@+id/tv_order_distance_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:text="@string/riding_bike_distance"
+                android:textColor="@color/content_foreground"
+                android:textSize="@dimen/text_dimens_12" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_order_tip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:layout_marginLeft="26dp"
+            android:layout_marginRight="26dp"
+            android:background="@drawable/bg_order_use_car"
+            android:enabled="true"
+            android:text="@string/order_use_car"
+            android:textColor="@color/tv_money_color"
+            android:textSize="@dimen/sub_title_size" />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

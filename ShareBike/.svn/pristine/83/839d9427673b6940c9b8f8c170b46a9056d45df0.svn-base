@@ -1,0 +1,12 @@
+package com.panda.sharebike.ui.selfinfo;
+
+import com.panda.sharebike.R;
+import com.panda.sharebike.ui.base.BaseActivity;
+
+public class BalanceDetailActivity extends BaseActivity {
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_balance_detail;
+    }
+}

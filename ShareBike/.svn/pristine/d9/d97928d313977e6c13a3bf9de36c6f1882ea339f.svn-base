@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_share_back"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    tools:context="com.panda.sharebike.ui.selfinfo.UserShareBikeActivity">
+
+    <ImageView
+        android:id="@+id/iv_share_bike_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="@dimen/space_dimens_25"
+        android:layout_marginLeft="@dimen/space_dimens_12"
+        android:src="@drawable/icon_title_back" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/icon_share_background" />
+
+    <TextView
+        android:text="分享到"
+        style="@style/tv_share_bottom_style" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_dimens_50"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/iv_share_wechat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share_wechat" />
+
+        <ImageView
+            android:id="@+id/iv_share_circle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share_circle" />
+
+        <ImageView
+            android:id="@+id/iv_share_qq"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share_qq" />
+
+        <ImageView
+            android:id="@+id/iv_share_space"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share_space" />
+
+        <ImageView
+            android:id="@+id/iv_share_blog"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/icon_share_blog" />
+    </LinearLayout>
+
+</RelativeLayout>

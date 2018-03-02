@@ -1,0 +1,179 @@
+package com.panda.sharebike.model.entity;
+
+import java.io.Serializable;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/20
+ * desc   :
+ * version: 1.0
+ */
+public class MemberInfo implements Serializable {
+
+
+    /**
+     * member : {"id":"15612","nickname":"15612","cellphone":"15612","email":"","avatar":"/avatar/461486455217267.jpg","realname":"15612","idCard":"15612","registerTime":1486372304360,"lastActivateTime":1486372304360,"realnameAuth":true}
+     * memberBeenz : 0.0
+     * memberRideTimeStat : 0
+     */
+
+    private MemberBean member;
+    private double memberBeenz;
+    private int memberRideTimeStat;
+
+    public MemberBean getMember() {
+        return member;
+    }
+
+    public void setMember(MemberBean member) {
+        this.member = member;
+    }
+
+    public double getMemberBeenz() {
+        return memberBeenz;
+    }
+
+    public void setMemberBeenz(double memberBeenz) {
+        this.memberBeenz = memberBeenz;
+    }
+
+    public int getMemberRideTimeStat() {
+        return memberRideTimeStat;
+    }
+
+    public void setMemberRideTimeStat(int memberRideTimeStat) {
+        this.memberRideTimeStat = memberRideTimeStat;
+    }
+
+    public static class MemberBean {
+        /**
+         * id : 15612
+         * nickname : 15612
+         * cellphone : 15612
+         * email :
+         * avatar : /avatar/461486455217267.jpg
+         * realname : 15612
+         * idCard : 15612
+         * registerTime : 1486372304360
+         * lastActivateTime : 1486372304360
+         * realnameAuth : true
+         */
+
+        private String id;
+        private String nickname;
+        private String cellphone;
+        private String email;
+        private String avatar;
+        private String realname;
+        private String idCard;
+        private long registerTime;
+        private long lastActivateTime;
+        private boolean realnameAuth;
+
+        public String getId() {
+            return id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getNickname() {
+            return nickname;
+        }
+
+        public void setNickname(String nickname) {
+            this.nickname = nickname;
+        }
+
+        public String getCellphone() {
+            return cellphone;
+        }
+
+        public void setCellphone(String cellphone) {
+            this.cellphone = cellphone;
+        }
+
+        public String getEmail() {
+            return email;
+        }
+
+        public void setEmail(String email) {
+            this.email = email;
+        }
+
+        public String getAvatar() {
+            return avatar;
+        }
+
+        public void setAvatar(String avatar) {
+            this.avatar = avatar;
+        }
+
+        public String getRealname() {
+            return realname;
+        }
+
+        public void setRealname(String realname) {
+            this.realname = realname;
+        }
+
+        public String getIdCard() {
+            return idCard;
+        }
+
+        public void setIdCard(String idCard) {
+            this.idCard = idCard;
+        }
+
+        public long getRegisterTime() {
+            return registerTime;
+        }
+
+        public void setRegisterTime(long registerTime) {
+            this.registerTime = registerTime;
+        }
+
+        public long getLastActivateTime() {
+            return lastActivateTime;
+        }
+
+        public void setLastActivateTime(long lastActivateTime) {
+            this.lastActivateTime = lastActivateTime;
+        }
+
+        public boolean isRealnameAuth() {
+            return realnameAuth;
+        }
+
+        public void setRealnameAuth(boolean realnameAuth) {
+            this.realnameAuth = realnameAuth;
+        }
+
+        @Override
+        public String toString() {
+            return "MemberBean{" +
+                    "id='" + id + '\'' +
+                    ", nickname='" + nickname + '\'' +
+                    ", cellphone='" + cellphone + '\'' +
+                    ", email='" + email + '\'' +
+                    ", avatar='" + avatar + '\'' +
+                    ", realname='" + realname + '\'' +
+                    ", idCard='" + idCard + '\'' +
+                    ", registerTime=" + registerTime +
+                    ", lastActivateTime=" + lastActivateTime +
+                    ", realnameAuth=" + realnameAuth +
+                    '}';
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "MemberInfo{" +
+                "member=" + member +
+                ", memberBeenz=" + memberBeenz +
+                ", memberRideTimeStat=" + memberRideTimeStat +
+                '}';
+    }
+}

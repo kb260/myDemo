@@ -1,0 +1,2 @@
+include ':app', ':FastBleLibs'
+project(':FastBleLibs').projectDir = new File('FastBleLib')

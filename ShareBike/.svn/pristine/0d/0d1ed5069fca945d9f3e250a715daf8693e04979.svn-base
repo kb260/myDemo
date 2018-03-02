@@ -1,0 +1,18 @@
+package com.panda.sharebike.ui.deblocking;
+
+import com.panda.sharebike.R;
+import com.panda.sharebike.ui.base.BaseActivity;
+
+/**
+ * 解锁页
+ */
+public class DeBlockingActivity extends BaseActivity {
+
+
+    @Override
+    protected int getLayoutView() {
+        return R.layout.activity_de_blocking;
+    }
+
+
+}

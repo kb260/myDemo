@@ -1,0 +1,602 @@
+package com.panda.sharebike.model.entity;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/23
+ * desc   :
+ * version: 1.0
+ */
+public class CreateBean implements Serializable {
+
+
+        /**
+         * parks : [{"bikePark":{"id":"p1","position":[120.2708504872148,30.20555067014208],"name":"p1","bikeCount":0},"distance":414.91258122690346}]
+         * leftTime : 705408
+         * state : subscribing
+         * nearBikes : []
+         * memberRideConfig : {"id":"1","deposit":199,"bikeParkScope":300,"maxBikePark":30,"subscribeDuration":900000,"rental":0.5,"timeUnit":1800000}
+         * order : {"id":"5542dbe6-92b4-489e-9c82-bc3a758ad354","state":"underway","startTime":1501222579438,"endTime":0,"bike":{"id":"0000001","state":"subscribed","num":"0000001","bikeType":null,"version":"version","createTime":1500952236833,"bikeLock":{"id":"864501036626143","bikeId":"0000001","position":[120.2708504872148,30.20555067014208],"locateTime":0,"electricQuantity":363.2,"lock":true}},"member":{"id":"4f42297e-0aff-45e0-99da-ebe9b4d686a4","cellphone":"13478606965","nickname":"5名","avatar":"http://192.168.0.177:91/qbike/upload/avatar/201500962457100.jpg","email":"","realname":"宁立森","idCard":"450721199209140974","realnameAuth":true,"registerTime":1500956254462,"lastActivateTime":1501222174081}}
+         */
+
+        private int leftTime;
+        private String state;
+        private MemberRideConfigBean memberRideConfig;
+        private OrderBean order;
+    private List<ParksBean> parks;
+        private List<NearBikesBean> nearBikes;
+
+        public int getLeftTime() {
+            return leftTime;
+        }
+
+        public void setLeftTime(int leftTime) {
+            this.leftTime = leftTime;
+        }
+
+        public String getState() {
+            return state;
+        }
+
+        public void setState(String state) {
+            this.state = state;
+        }
+
+        public MemberRideConfigBean getMemberRideConfig() {
+            return memberRideConfig;
+        }
+
+        public void setMemberRideConfig(MemberRideConfigBean memberRideConfig) {
+            this.memberRideConfig = memberRideConfig;
+        }
+
+        public OrderBean getOrder() {
+            return order;
+        }
+
+        public void setOrder(OrderBean order) {
+            this.order = order;
+        }
+
+    public List<ParksBean> getParks() {
+        return parks;
+    }
+
+    public void setParks(List<ParksBean> parks) {
+        this.parks = parks;
+    }
+
+        public List<NearBikesBean> getNearBikes() {
+            return nearBikes;
+        }
+
+        public void setNearBikes(List<NearBikesBean> nearBikes) {
+            this.nearBikes = nearBikes;
+        }
+
+    public static class NearBikesBean {
+        /**
+         * bikeLocation : {"id":"0000001","position":[120.27085048742481,30.205550670144582],"locateTime":1499854233183}
+         * distance : 417.9047656004829
+         */
+
+        private BikeLocationBeanX bikeLocation;
+        private double distance;
+
+        public BikeLocationBeanX getBikeLocation() {
+            return bikeLocation;
+        }
+
+        public void setBikeLocation(BikeLocationBeanX bikeLocation) {
+            this.bikeLocation = bikeLocation;
+        }
+
+        public double getDistance() {
+            return distance;
+        }
+
+        public void setDistance(double distance) {
+            this.distance = distance;
+        }
+
+        public static class BikeLocationBeanX {
+            /**
+             * id : 0000001
+             * position : [120.27085048742481,30.205550670144582]
+             * locateTime : 1499854233183
+             */
+
+            private String id;
+            private long locateTime;
+            private List<Double> position;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public long getLocateTime() {
+                return locateTime;
+            }
+
+            public void setLocateTime(long locateTime) {
+                this.locateTime = locateTime;
+            }
+
+            public List<Double> getPosition() {
+                return position;
+            }
+
+            public void setPosition(List<Double> position) {
+                this.position = position;
+            }
+        }
+    }
+        public static class MemberRideConfigBean {
+            /**
+             * id : 1
+             * deposit : 199
+             * bikeParkScope : 300
+             * maxBikePark : 30
+             * subscribeDuration : 900000
+             * rental : 0.5
+             * timeUnit : 1800000
+             */
+
+            private String id;
+            private double deposit;
+            private int bikeParkScope;
+            private int maxBikePark;
+            private int subscribeDuration;
+            private double rental;
+            private int timeUnit;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public double getDeposit() {
+                return deposit;
+            }
+
+            public void setDeposit(int deposit) {
+                this.deposit = deposit;
+            }
+
+            public int getBikeParkScope() {
+                return bikeParkScope;
+            }
+
+            public void setBikeParkScope(int bikeParkScope) {
+                this.bikeParkScope = bikeParkScope;
+            }
+
+            public int getMaxBikePark() {
+                return maxBikePark;
+            }
+
+            public void setMaxBikePark(int maxBikePark) {
+                this.maxBikePark = maxBikePark;
+            }
+
+            public int getSubscribeDuration() {
+                return subscribeDuration;
+            }
+
+            public void setSubscribeDuration(int subscribeDuration) {
+                this.subscribeDuration = subscribeDuration;
+            }
+
+            public double getRental() {
+                return rental;
+            }
+
+            public void setRental(double rental) {
+                this.rental = rental;
+            }
+
+            public int getTimeUnit() {
+                return timeUnit;
+            }
+
+            public void setTimeUnit(int timeUnit) {
+                this.timeUnit = timeUnit;
+            }
+        }
+
+        public static class OrderBean {
+            /**
+             * id : 5542dbe6-92b4-489e-9c82-bc3a758ad354
+             * state : underway
+             * startTime : 1501222579438
+             * endTime : 0
+             * bike : {"id":"0000001","state":"subscribed","num":"0000001","bikeType":null,"version":"version","createTime":1500952236833,"bikeLock":{"id":"864501036626143","bikeId":"0000001","position":[120.2708504872148,30.20555067014208],"locateTime":0,"electricQuantity":363.2,"lock":true}}
+             * member : {"id":"4f42297e-0aff-45e0-99da-ebe9b4d686a4","cellphone":"13478606965","nickname":"5名","avatar":"http://192.168.0.177:91/qbike/upload/avatar/201500962457100.jpg","email":"","realname":"宁立森","idCard":"450721199209140974","realnameAuth":true,"registerTime":1500956254462,"lastActivateTime":1501222174081}
+             */
+
+            private String id;
+            private String state;
+            private long startTime;
+            private int endTime;
+            private BikeBean bike;
+            private MemberBean member;
+
+            public String getId() {
+                return id;
+            }
+
+            public void setId(String id) {
+                this.id = id;
+            }
+
+            public String getState() {
+                return state;
+            }
+
+            public void setState(String state) {
+                this.state = state;
+            }
+
+            public long getStartTime() {
+                return startTime;
+            }
+
+            public void setStartTime(long startTime) {
+                this.startTime = startTime;
+            }
+
+            public int getEndTime() {
+                return endTime;
+            }
+
+            public void setEndTime(int endTime) {
+                this.endTime = endTime;
+            }
+
+            public BikeBean getBike() {
+                return bike;
+            }
+
+            public void setBike(BikeBean bike) {
+                this.bike = bike;
+            }
+
+            public MemberBean getMember() {
+                return member;
+            }
+
+            public void setMember(MemberBean member) {
+                this.member = member;
+            }
+
+            public static class BikeBean {
+                /**
+                 * id : 0000001
+                 * state : subscribed
+                 * num : 0000001
+                 * bikeType : null
+                 * version : version
+                 * createTime : 1500952236833
+                 * bikeLock : {"id":"864501036626143","bikeId":"0000001","position":[120.2708504872148,30.20555067014208],"locateTime":0,"electricQuantity":363.2,"lock":true}
+                 */
+
+                private String id;
+                private String state;
+                private String num;
+                private Object bikeType;
+                private String version;
+                private long createTime;
+                private BikeLockBean bikeLock;
+
+                public String getId() {
+                    return id;
+                }
+
+                public void setId(String id) {
+                    this.id = id;
+                }
+
+                public String getState() {
+                    return state;
+                }
+
+                public void setState(String state) {
+                    this.state = state;
+                }
+
+                public String getNum() {
+                    return num;
+                }
+
+                public void setNum(String num) {
+                    this.num = num;
+                }
+
+                public Object getBikeType() {
+                    return bikeType;
+                }
+
+                public void setBikeType(Object bikeType) {
+                    this.bikeType = bikeType;
+                }
+
+                public String getVersion() {
+                    return version;
+                }
+
+                public void setVersion(String version) {
+                    this.version = version;
+                }
+
+                public long getCreateTime() {
+                    return createTime;
+                }
+
+                public void setCreateTime(long createTime) {
+                    this.createTime = createTime;
+                }
+
+                public BikeLockBean getBikeLock() {
+                    return bikeLock;
+                }
+
+                public void setBikeLock(BikeLockBean bikeLock) {
+                    this.bikeLock = bikeLock;
+                }
+
+                public static class BikeLockBean {
+                    /**
+                     * id : 864501036626143
+                     * bikeId : 0000001
+                     * position : [120.2708504872148,30.20555067014208]
+                     * locateTime : 0
+                     * electricQuantity : 363.2
+                     * lock : true
+                     */
+
+                    private String id;
+                    private String bikeId;
+                    private long locateTime;
+                    private double electricQuantity;
+                    private boolean lock;
+                    private List<Double> position;
+
+                    public String getId() {
+                        return id;
+                    }
+
+                    public void setId(String id) {
+                        this.id = id;
+                    }
+
+                    public String getBikeId() {
+                        return bikeId;
+                    }
+
+                    public void setBikeId(String bikeId) {
+                        this.bikeId = bikeId;
+                    }
+
+                    public long getLocateTime() {
+                        return locateTime;
+                    }
+
+                    public void setLocateTime(long locateTime) {
+                        this.locateTime = locateTime;
+                    }
+
+                    public double getElectricQuantity() {
+                        return electricQuantity;
+                    }
+
+                    public void setElectricQuantity(double electricQuantity) {
+                        this.electricQuantity = electricQuantity;
+                    }
+
+                    public boolean isLock() {
+                        return lock;
+                    }
+
+                    public void setLock(boolean lock) {
+                        this.lock = lock;
+                    }
+
+                    public List<Double> getPosition() {
+                        return position;
+                    }
+
+                    public void setPosition(List<Double> position) {
+                        this.position = position;
+                    }
+                }
+            }
+
+            public static class MemberBean {
+                /**
+                 * id : 4f42297e-0aff-45e0-99da-ebe9b4d686a4
+                 * cellphone : 13478606965
+                 * nickname : 5名
+                 * avatar : http://192.168.0.177:91/qbike/upload/avatar/201500962457100.jpg
+                 * email :
+                 * realname : 宁立森
+                 * idCard : 450721199209140974
+                 * realnameAuth : true
+                 * registerTime : 1500956254462
+                 * lastActivateTime : 1501222174081
+                 */
+
+                private String id;
+                private String cellphone;
+                private String nickname;
+                private String avatar;
+                private String email;
+                private String realname;
+                private String idCard;
+                private boolean realnameAuth;
+                private long registerTime;
+                private long lastActivateTime;
+
+                public String getId() {
+                    return id;
+                }
+
+                public void setId(String id) {
+                    this.id = id;
+                }
+
+                public String getCellphone() {
+                    return cellphone;
+                }
+
+                public void setCellphone(String cellphone) {
+                    this.cellphone = cellphone;
+                }
+
+                public String getNickname() {
+                    return nickname;
+                }
+
+                public void setNickname(String nickname) {
+                    this.nickname = nickname;
+                }
+
+                public String getAvatar() {
+                    return avatar;
+                }
+
+                public void setAvatar(String avatar) {
+                    this.avatar = avatar;
+                }
+
+                public String getEmail() {
+                    return email;
+                }
+
+                public void setEmail(String email) {
+                    this.email = email;
+                }
+
+                public String getRealname() {
+                    return realname;
+                }
+
+                public void setRealname(String realname) {
+                    this.realname = realname;
+                }
+
+                public String getIdCard() {
+                    return idCard;
+                }
+
+                public void setIdCard(String idCard) {
+                    this.idCard = idCard;
+                }
+
+                public boolean isRealnameAuth() {
+                    return realnameAuth;
+                }
+
+                public void setRealnameAuth(boolean realnameAuth) {
+                    this.realnameAuth = realnameAuth;
+                }
+
+                public long getRegisterTime() {
+                    return registerTime;
+                }
+
+                public void setRegisterTime(long registerTime) {
+                    this.registerTime = registerTime;
+                }
+
+                public long getLastActivateTime() {
+                    return lastActivateTime;
+                }
+
+                public void setLastActivateTime(long lastActivateTime) {
+                    this.lastActivateTime = lastActivateTime;
+                }
+            }
+        }
+
+        public static class ParksBean {
+            /**
+             * bikePark : {"id":"p1","position":[120.2708504872148,30.20555067014208],"name":"p1","bikeCount":0}
+             * distance : 414.91258122690346
+             */
+
+            private BikeParkBean bikePark;
+            private double distance;
+
+            public BikeParkBean getBikePark() {
+                return bikePark;
+            }
+
+            public void setBikePark(BikeParkBean bikePark) {
+                this.bikePark = bikePark;
+            }
+
+            public double getDistance() {
+                return distance;
+            }
+
+            public void setDistance(double distance) {
+                this.distance = distance;
+            }
+
+            public static class BikeParkBean {
+                /**
+                 * id : p1
+                 * position : [120.2708504872148,30.20555067014208]
+                 * name : p1
+                 * bikeCount : 0
+                 */
+
+                private String id;
+                private String name;
+                private int bikeCount;
+                private List<Double> position;
+
+                public String getId() {
+                    return id;
+                }
+
+                public void setId(String id) {
+                    this.id = id;
+                }
+
+                public String getName() {
+                    return name;
+                }
+
+                public void setName(String name) {
+                    this.name = name;
+                }
+
+                public int getBikeCount() {
+                    return bikeCount;
+                }
+
+                public void setBikeCount(int bikeCount) {
+                    this.bikeCount = bikeCount;
+                }
+
+                public List<Double> getPosition() {
+                    return position;
+                }
+
+                public void setPosition(List<Double> position) {
+                    this.position = position;
+                }
+            }
+        }
+}

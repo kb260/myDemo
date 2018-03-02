@@ -1,0 +1,157 @@
+package com.panda.sharebike.util;
+
+import android.graphics.Color;
+import android.graphics.Typeface;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
+import android.widget.TextView;
+
+/**
+ * author : 宁立森
+ * e-mail : byning2012@163.com
+ * time   : 2017/07/11
+ * desc   :
+ * version: 1.0
+ */
+public class SpannableStringUtil {
+
+    /**
+     * spannableString设置ridingtip里的文本,
+     */
+    public static void setTipString(String money, String time, String distance, TextView tvRiding, TextView tvTime, TextView tvDistance) {
+        //money
+        SpannableStringBuilder span = new SpannableStringBuilder(money);
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.parseColor("#EF354F"));
+        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(1.5f);
+        StyleSpan styleSpan = new StyleSpan(Typeface.BOLD);
+        span.setSpan(relativeSizeSpan, 0, money.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.setSpan(styleSpan, 0, money.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.append("\t");
+        span.append("元");
+        span.setSpan(foregroundColorSpan, 0, span.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.append("\n\n");
+        span.append("费用总计");
+        tvRiding.setText(span);
+        //time
+        SpannableStringBuilder spanTime = new SpannableStringBuilder(time);
+        ForegroundColorSpan foregroundColorSpan1 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan1 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan1 = new RelativeSizeSpan(1.5f);
+        spanTime.setSpan(relativeSizeSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(foregroundColorSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(styleSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.append("\t");
+        spanTime.append("分钟");
+        spanTime.append("\n\n");
+        spanTime.append("骑行时间");
+        tvTime.setText(spanTime);
+        //distance
+        SpannableStringBuilder spanDistance = new SpannableStringBuilder(distance);
+        ForegroundColorSpan foregroundColorSpan2 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan2 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan2 = new RelativeSizeSpan(1.5f);
+        spanDistance.setSpan(relativeSizeSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(foregroundColorSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(styleSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.append("\t");
+        spanDistance.append("米");
+        spanDistance.append("\n\n");
+        spanDistance.append("骑行距离");
+        tvDistance.setText(spanDistance);
+    }
+
+    /**
+     * spannableString设置ridingtip里的文本,
+     */
+    public static void setMainTipString(String money, String time, String distance, TextView tvRiding, TextView tvTime, TextView tvDistance) {
+        //money
+        SpannableStringBuilder span = new SpannableStringBuilder(money);
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.parseColor("#EF354F"));
+        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(1.5f);
+        StyleSpan styleSpan = new StyleSpan(Typeface.BOLD);
+        span.setSpan(relativeSizeSpan, 0, money.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.setSpan(styleSpan, 0, money.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.append("\t");
+        span.append("元");
+        span.setSpan(foregroundColorSpan, 0, span.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.append("\n\n");
+        span.append("预计费用");
+        tvRiding.setText(span);
+        //time
+        SpannableStringBuilder spanTime = new SpannableStringBuilder(time);
+        ForegroundColorSpan foregroundColorSpan1 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan1 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan1 = new RelativeSizeSpan(1.5f);
+        spanTime.setSpan(relativeSizeSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(foregroundColorSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(styleSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.append("\t");
+        spanTime.append("分钟");
+        spanTime.append("\n\n");
+        spanTime.append("骑行时间");
+        tvTime.setText(spanTime);
+        //distance
+        SpannableStringBuilder spanDistance = new SpannableStringBuilder(distance);
+        ForegroundColorSpan foregroundColorSpan2 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan2 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan2 = new RelativeSizeSpan(1.5f);
+        spanDistance.setSpan(relativeSizeSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(foregroundColorSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(styleSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.append("\t");
+        spanDistance.append("米");
+        spanDistance.append("\n\n");
+        spanDistance.append("骑行距离");
+        tvDistance.setText(spanDistance);
+    }
+
+    /**
+     * spannableString设置ridingtip里的文本,
+     */
+    public static void setMainOrderTipString(String money, String time, String distance, TextView tvRiding, TextView tvTime, TextView tvDistance) {
+        //money
+        SpannableStringBuilder span = new SpannableStringBuilder(money);
+        ForegroundColorSpan foregroundColorSpan = new ForegroundColorSpan(Color.parseColor("#EF354F"));
+        RelativeSizeSpan relativeSizeSpan = new RelativeSizeSpan(1.5f);
+        StyleSpan styleSpan = new StyleSpan(Typeface.BOLD);
+        //  span.append("\t");
+        span.append("元");
+        span.setSpan(relativeSizeSpan, 0, span.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.setSpan(styleSpan, 0, span.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.setSpan(foregroundColorSpan, 0, span.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        span.append("\n\n");
+        span.append("30分钟");
+        tvRiding.setText(span);
+        //time
+        SpannableStringBuilder spanTime = new SpannableStringBuilder(time);
+        ForegroundColorSpan foregroundColorSpan1 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan1 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan1 = new RelativeSizeSpan(1.5f);
+//        spanTime.setSpan(relativeSizeSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+//        spanTime.setSpan(foregroundColorSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+//        spanTime.setSpan(styleSpan1, 0, time.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        //  spanTime.append("\t");
+        spanTime.append("分钟");
+        spanTime.setSpan(relativeSizeSpan1, 0, spanTime.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(foregroundColorSpan1, 0, spanTime.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.setSpan(styleSpan1, 0, spanTime.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanTime.append("\n\n");
+        spanTime.append("步行时间");
+        tvTime.setText(spanTime);
+        //distance
+        SpannableStringBuilder spanDistance = new SpannableStringBuilder(distance);
+        ForegroundColorSpan foregroundColorSpan2 = new ForegroundColorSpan(Color.parseColor("#FF333333"));
+        StyleSpan styleSpan2 = new StyleSpan(Typeface.BOLD);
+        RelativeSizeSpan relativeSizeSpan2 = new RelativeSizeSpan(1.5f);
+        spanDistance.setSpan(relativeSizeSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(foregroundColorSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.setSpan(styleSpan2, 0, distance.length(), Spanned.SPAN_INCLUSIVE_EXCLUSIVE);
+        spanDistance.append("\t");
+        spanDistance.append("\n\n");
+        spanDistance.append("距离起始位置");
+        tvDistance.setText(spanDistance);
+    }
+}

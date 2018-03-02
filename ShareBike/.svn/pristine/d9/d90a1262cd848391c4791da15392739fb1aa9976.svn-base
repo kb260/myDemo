@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">巧骑单车</string>
+    <string name="app_setup">设置</string>
+    <string name="no_result">对不起，没有搜索到相关数据！</string>
+
+    <!-- faultPrpairActivity-->
+    <string name="cycle_number">车牌号</string>
+    <string name="fault_repair_hint">手动输入车牌号</string>
+    <string name="fault_repair_scan">扫一扫</string>
+    <string name="fault_repair_title_type">请选择问题类型</string>
+    <string name="fault_repair_title_photo">请拍摄单车和单车周围的照片</string>
+    <!--问题类型 -->
+    <string name="question_no_lock">无法开锁</string>
+    <string name="question_no_code">二维码损坏</string>
+    <string name="question_report_parked">举报违停</string>
+    <string name="question_parts_damaged">零件损坏</string>
+    <string name="question_bike_sound">车辆异响</string>
+    <string name="question_other">其他问题</string>
+    <string name="fault_remark">备注</string>
+    <string name="fault_question_explain">问题补充说明</string>
+    <!-- 用户指南-->
+    <string name="guide_register_account">注册与账户</string>
+    <string name="guide_order_open_lock">预约问题</string>
+    <string name="guide_car_cash">租车费与押金</string>
+    <string name="guide_car_about">还车相关</string>
+    <string name="guide_ours_about">关于我们</string>
+    <!--设置-->
+    <string name="setUp_version">版本信息</string>
+    <string name="setUp_user">用户协议</string>
+    <string name="setUp_recharge">充值协议</string>
+    <string name="setUp_noLock">充值说明</string>
+    <string name="setUp_reporting">关于我们</string>
+    <string name="setUp_description">押金说明</string>
+    <string name="setup_log_off">退出登录</string>
+    <!--正在骑行-->
+    <string name="riding_bike">正在骑行中</string>
+    <string name="riding_bike_number">单车编号</string>
+    <string name="riding_bike_charge">预计费用</string>
+    <string name="riding_bike_time">骑行时间</string>
+    <string name="riding_bike_distance">骑行距离</string>
+    <!--预约用车-->
+    <string name="order_use_car">预约用车</string>
+    <string name="unorder_user_car">取消预约</string>
+    <string name="order_use_position">杭州民防大厦</string>
+    <string name="order_use_time">30分钟</string>
+    <string name="order_use_walk">步行时间</string>
+    <string name="order_use_distance">距离起始位置</string>
+    <!--解锁页-->
+    <string name="de_blocking">正在解锁…</string>
+    <!--用户指南-->
+    <string name="order_title">预约能为我保留多久？</string>
+    <string name="order_content">点击地图页面的单车图标，点击预约，该单车将为您保留15分钟。如果您在前往预约的车途中遇到其他可用的车，可以扫码开锁使用。</string>
+    <string name="register_account_one">1.请您用简体中文输入您的姓名以及身份证号码，来进行实名认证</string>
+    <string name="reguster_account_two">2.请确保填写的信息与证件信息一致。</string>
+    <string name="return_car_content">巧奇单车应停放在“路边白线或停车架”，当附近没有白线或停车架时，请停放在路边不阻碍交通的空旷区域或路边其他单车聚集停放的区域。严禁停放在小区、地下及室内车库、胡同以及收费停车区域。\n
+
+\n我们一直在很努力，很努力的做这件事，在我们的服务区域内，放你在出门时，只要走一小段路，就能迅速找到一辆车，扫一下二维码就能开锁，顺利骑行到目的地，1秒钟就能还车。为了完成这个目标，我们在持续提高定位准确度，持续缩短开锁时间，持续提升单车骑行舒适感。
+
+\n\n高效顺畅的用车体验，使我们唯一关心的事。\n\n
+
+为了做到这件事，我们需要您与我们一起努力，请您还车时，将单车停在路口白线或停车圈，放在容易发现的地方。想象一下如果是自己找车，单车放在哪里最容易找到，不会阻碍交通或交警拖走，那就是您可以停车的位置。\n
+
+\n正确的停车姿势：路边白线，停车圈，或单车聚集区域。
+</string>
+    <string name="rent_fee">1.押金为使用巧骑单车的保证金。目前缴纳押金方式有:\n\n
+微信支付和支付宝\n\n
+押金可原路退回。\n\n
+2.巧骑单车的系统为了保证用户能通过自己操作app就能自动退回押金的流畅体验,押金和车费是分开的。\n\n
+3.充值车费请点击app左上角,进入个人中心,我的钱包,点击充值。\n\n
+提示:\n\n
+·充值车费后,车费余额用于支付用车订单,不设失效期,不能转移、转赠。\n\n
+·巧骑官方赠送您的优惠金额只能用于骑行支付,此部分金额不能提现。\n\n
+·如遇到车费余额相关问题请联系客服!</string>
+    <string name="recharge_instruction">巧奇单车为实现用户关锁即可离开，费用支付自动完成的流畅体验，用户需要充值支付车费。充值车费请点击APP左上角的“ ”图标，进入“个人中心”后再进入“我的钱包”，点击充值。目前充值方式有：\n\n
+
+支付宝支付和微信支付</string>
+    <string name="recharge_tip">提示：\n
+1.充值车费后，车费余额用于支付用车订单，不设失效期，不能转移，转赠。\n\n
+2.充值余额可以退还，如需帮助请联系refundsupport@qiaoqi.com，并提供您的注册手机号码、姓名和单笔余额充值流水号。我们会在7个工作日内为您处理。
+</string>
+</resources>
